@@ -1,0 +1,5 @@
+package com.dt.api.main;
+
+public class Config {
+
+}

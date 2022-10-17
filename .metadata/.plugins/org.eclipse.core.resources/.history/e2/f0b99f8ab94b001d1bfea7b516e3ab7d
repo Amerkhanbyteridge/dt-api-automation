@@ -1,0 +1,41 @@
+package com.dt.api.users.put;
+
+import static io.restassured.RestAssured.baseURI;
+import static io.restassured.RestAssured.given;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.json.simple.JSONObject;
+import org.testng.annotations.Test;
+
+import io.restassured.http.ContentType;
+
+public class testPUT_UserDetail {
+	public String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbElkIjoidmluZGh5YXJAYnl0ZXJpZGdlLmNvbSIsImZpcnN0TmFtZSI6IlZpbmRoeWEiLCJsYXN0TmFtZSI6IlJhamVuZGVyIiwicGhvbmVOdW1iZXIiOiIiLCJpYXQiOjE2NjU3NDYwNzcsImV4cCI6MTY2NTc0OTY3N30.Vn2ZMBsSBcCIgU4OTOSQa8ijGfMe19kAcns5fIQSwt8";
+	@SuppressWarnings("unchecked")
+	@Test
+	
+	public void testPUT()
+	{
+		JSONObject request = new JSONObject();
+		request.put("firstName", "Vin");
+		request.put("lastName", "Raj");
+		request.put("phoneNumber", "");
+		request.put("imageURL", "");
+		System.out.println(request);
+		System.out.println(request.toJSONString());
+		
+		baseURI="https://api-qa.dthreaddev.com/api";
+		given()
+		.header("Authorization","bearer "+token,"accept" ,"application/json").contentType(ContentType.JSON)
+		.params("email","vindhyar@byteridge.com")
+		.body(request.toJSONString())
+		.when()
+		.put("/users/{email}")
+		.then()
+		.statusCode(200);
+	}
+	
+
+}

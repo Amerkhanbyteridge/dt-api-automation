@@ -1,0 +1,38 @@
+package com.dt.api.users.get;
+
+import static io.restassured.RestAssured.baseURI;
+import static io.restassured.RestAssured.given;
+import static org.testng.Assert.assertEquals;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import com.dt.api.main.Config;
+
+import io.restassured.response.Response;
+
+public class testGET_UserInvites {
+	
+	//public String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbElkIjoidmluZGh5YXJAYnl0ZXJpZGdlLmNvbSIsImZpcnN0TmFtZSI6IlZpbmRoeWEiLCJsYXN0TmFtZSI6IlJhamVuZGVyIiwicGhvbmVOdW1iZXIiOiIiLCJpYXQiOjE2NjU3NDYwNzcsImV4cCI6MTY2NTc0OTY3N30.Vn2ZMBsSBcCIgU4OTOSQa8ijGfMe19kAcns5fIQSwt8";
+	
+
+	
+	@Test
+	public void testGet002() throws FileNotFoundException, IOException {
+		baseURI = "https://api-qa.dthreaddev.com/api";
+		Response response = given().headers("Authorization","bearer "+Config.token(), "accept" ,"application/json").log().all()
+				.params("email","vindhyar@byteridge.com")
+		.get("/api/users/details/").andReturn();
+		 System.out.println(response.getStatusCode());
+		 System.out.println(response.getTime());
+		 System.out.println(response.getBody().toString());
+		 System.out.println(response.getStatusLine());
+		 System.out.println(response.getHeader("content-type"));
+		 assertEquals(response.getStatusCode(),200);
+		
+	}
+
+}

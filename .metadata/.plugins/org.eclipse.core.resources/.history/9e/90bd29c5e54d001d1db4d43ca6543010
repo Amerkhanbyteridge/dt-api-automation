@@ -1,0 +1,28 @@
+package com.dt.api.main;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.json.simple.JSONObject;
+
+public class Config {
+	
+	
+	@SuppressWarnings("unchecked")
+	public static String token() throws FileNotFoundException, IOException {
+		
+		JSONObject request = new JSONObject();
+		request.put("email", "vindhyar@byteridge.com");
+		request.put("password", "Pass@12345");
+		
+		String propertyFilePath = System.getProperty("user.dir")+
+	            "\\src\\test\\resources\\config.properties";
+				
+				Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		 String token = prop.getProperty("token"); 
+			return token;
+	}
+}

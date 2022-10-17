@@ -1,0 +1,42 @@
+package com.dt.api.main;
+import static org.testng.Assert.assertEquals;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.json.simple.JSONObject;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import static io.restassured.RestAssured.*;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+
+
+
+
+@Test
+
+public class Authentication {
+	
+	@BeforeClass
+	public void authroization() {
+	
+	String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbElkIjoidmluZGh5YXJAYnl0ZXJpZGdlLmNvbSIsImZpcnN0TmFtZSI6IlZpbmRoeWEiLCJsYXN0TmFtZSI6IlJhamVuZGVyIiwicGhvbmVOdW1iZXIiOiIiLCJpYXQiOjE2NjU3Mzc0ODcsImV4cCI6MTY2NTc0MTA4N30.dcu_y1THdP74hS_2C5Kt8xnLr1qHKEnt9WFuQchy1Lg";
+		
+	JSONObject request = new JSONObject();
+	request.put("email", "vindhyar@byteridge.com");
+	request.put("password", "Pass@12345");
+	System.out.println(request);
+	System.out.println(request.toJSONString());
+	
+	baseURI ="https://api-qa.dthreaddev.com/api";
+	given()
+	.header("Authorization","bearer "+token,"accept" ,"application/json").contentType(ContentType.JSON)
+	.body(request.toJSONString())
+	.when()
+	.post("/sessions/")
+	.then()
+	.statusCode(200);
+	}
+}

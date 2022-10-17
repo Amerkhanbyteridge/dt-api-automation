@@ -1,0 +1,19 @@
+package com.dt.api.main;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
+public class Config {
+	
+	
+	public static void setup() throws FileNotFoundException, IOException {
+		String propertyFilePath = System.getProperty("user.dir")+
+	            "\\src\\test\\resources\\config.properties";
+				
+				Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+			public static String token = prop.getProperty("token"); 
+	}
+}

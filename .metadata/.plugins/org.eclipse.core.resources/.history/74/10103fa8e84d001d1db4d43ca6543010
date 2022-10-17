@@ -1,0 +1,4 @@
+emaidID=vindhyar@byteridge.com
+password=Password@12345
+baseURI="https://api-qa.dthreaddev.com"
+token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbElkIjoidmluZGh5YXJAYnl0ZXJpZGdlLmNvbSIsImZpcnN0TmFtZSI6IlZpbm55IiwibGFzdE5hbWUiOiJSYWphbiIsInBob25lTnVtYmVyIjoiIiwiaWF0IjoxNjY1OTg3OTIwLCJleHAiOjE2NjU5OTE1MjB9.l0N7n4qRZzYn92-tJ27HIaB7TbYD9rkUVHipt_3NmfE";

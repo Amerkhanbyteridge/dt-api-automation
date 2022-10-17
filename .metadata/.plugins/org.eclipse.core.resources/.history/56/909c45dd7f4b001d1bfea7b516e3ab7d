@@ -1,0 +1,8 @@
+package com.dt.api.qa.helpers;
+
+public class userHelper {
+	
+	public static final String baseURL ="https://api-qa.dthreaddev.com";
+	public static final String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbElkIjoidmluZGh5YXJAYnl0ZXJpZGdlLmNvbSIsImZpcnN0TmFtZSI6IlZpbiIsImxhc3ROYW1lIjoiUiIsInBob25lTnVtYmVyIjoiIiwiaWF0IjoxNjY1NzIyNTMzLCJleHAiOjE2NjU3MjYxMzN9.EiTcRCkgD5axkzyWmM_urKniAWK98ys_fYaTYIZ8xKk";
+
+}

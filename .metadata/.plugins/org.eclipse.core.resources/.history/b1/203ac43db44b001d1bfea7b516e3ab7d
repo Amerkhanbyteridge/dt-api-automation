@@ -1,0 +1,5 @@
+package com.dt.api.users.post;
+
+public class testPOST_CancelInvitation {
+
+}
