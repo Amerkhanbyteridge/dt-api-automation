@@ -2,7 +2,9 @@ package com.dt.api.main;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.Properties;
 
 import org.json.simple.JSONObject;
@@ -18,8 +20,10 @@ public class Config {
 	            "\\src\\test\\resources\\config.properties";
 				
 				Properties prop = new Properties();
-		prop.load(new FileInputStream(propertyFilePath));
-		prop.setProperty(name, value);
+				OutputStream output = new FileOutputStream(propertyFilePath);
+		prop.setProperty("token", value);
+		prop.store(output, null);
+		System.out.println("value--"+value);
 		
 		}
 	
