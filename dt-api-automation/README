@@ -2,4 +2,4 @@ To get started..
 
 
 Add endpoints in Endpoints.java class
-Use Config Method to set or get token
+Run post session test for new session
