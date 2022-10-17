@@ -10,61 +10,68 @@ import java.util.Properties;
 import org.json.simple.JSONObject;
 
 public class Config {
-	
+
 
 	@SuppressWarnings("unchecked")
 	public Config(String name, String value) throws FileNotFoundException, IOException {
-		
-	
+
+
 		String propertyFilePath = System.getProperty("user.dir")+
-	            "\\src\\test\\resources\\config.properties";
-				
-				Properties prop = new Properties();
-				OutputStream output = new FileOutputStream(propertyFilePath);
-		prop.setProperty("token", value);
+				"\\src\\test\\resources\\config.properties";
+
+		Properties prop = new Properties();
+		FileInputStream input = new FileInputStream(propertyFilePath);
+		prop.load(input);
+		input.close();
+		OutputStream output = new FileOutputStream(propertyFilePath);
+		prop.put("token", value);
+		//prop.setProperty("token", value);
 		prop.store(output, null);
+		output.close();
 		System.out.println("value--"+value);
-		
-		}
-	
+
+	}
+
 	@SuppressWarnings("unchecked")
 	public static String getToken() throws FileNotFoundException, IOException {
-		
 
-	
+
+
 		String propertyFilePath = System.getProperty("user.dir")+
-	            "\\src\\test\\resources\\config.properties";
-				
-				Properties prop = new Properties();
-		prop.load(new FileInputStream(propertyFilePath));
-		 String token = prop.getProperty("token"); 
-			return token;
+				"\\src\\test\\resources\\config.properties";
+
+		Properties prop = new Properties();
+		FileInputStream input = new FileInputStream(propertyFilePath);
+		prop.load(input);
+		String token = prop.getProperty("token"); 
+		
+		return token;
 	}
-	
+
 	public static String getemailID() throws FileNotFoundException, IOException {
-		
 
-		
+
+
 		String propertyFilePath = System.getProperty("user.dir")+
-	            "\\src\\test\\resources\\config.properties";
-				
-				Properties prop = new Properties();
+				"\\src\\test\\resources\\config.properties";
+
+		Properties prop = new Properties();
 		prop.load(new FileInputStream(propertyFilePath));
-		 String emailID = prop.getProperty("emailID"); 
-			return emailID;
+		String emailID = prop.getProperty("emailID"); 
+		return emailID;
 	}
-	
+
 	public static String getPassword() throws FileNotFoundException, IOException {
-		
 
-		
+
+
 		String propertyFilePath = System.getProperty("user.dir")+
-	            "\\src\\test\\resources\\config.properties";
-				
-				Properties prop = new Properties();
+				"\\src\\test\\resources\\config.properties";
+
+		Properties prop = new Properties();
 		prop.load(new FileInputStream(propertyFilePath));
-		 String password = prop.getProperty("password"); 
-			return password;
+		String password = prop.getProperty("password"); 
+		return password;
 	}
-	
+
 }
