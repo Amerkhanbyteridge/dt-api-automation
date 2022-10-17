@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.json.simple.JSONObject;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.dt.api.main.Config;
@@ -16,15 +17,20 @@ import io.restassured.http.ContentType;
 
 public class testPOST_Session {
 	
+	JSONObject request;
+	@BeforeClass
+	public void init() throws FileNotFoundException, IOException {
+		request = new JSONObject();
+		request.put("email", Config.getemailID());
+		request.put("password", Config.getPassword());
+		baseURI=Endpoints.baseURI;
+		
+	}
+	
 	@SuppressWarnings({ "unchecked" })
 	@Test
 	public void testPost() throws FileNotFoundException, IOException {
-		
-		JSONObject request = new JSONObject();
-		request.put("email", Config.getemailID());
-		request.put("password", Config.getPassword());
-		
-		baseURI=Endpoints.baseURI;
+	
 		String sessionToken = given()
 		.header("accept" ,"application/json").contentType(ContentType.JSON)
 		.body(request.toJSONString())
