@@ -1,7 +1,0 @@
-
-public class test {
-	public static final String baseurl = "";
-	public static final String token = "";
-	
-
-}

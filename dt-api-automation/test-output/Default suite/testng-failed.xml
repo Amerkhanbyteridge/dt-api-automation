@@ -6,6 +6,7 @@
       <class name="com.dt.api.session.testPOST_Session">
         <methods>
           <include name="testPost"/>
+          <include name="init"/>
         </methods>
       </class> <!-- com.dt.api.session.testPOST_Session -->
     </classes>
