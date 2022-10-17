@@ -11,9 +11,9 @@ import org.json.simple.JSONObject;
 
 public class Config {
 
-
+	// Using Config to set key and value in config.properties
 	@SuppressWarnings("unchecked")
-	public Config(String name, String value) throws FileNotFoundException, IOException {
+	public Config(String key, String value) throws FileNotFoundException, IOException {
 
 
 		String propertyFilePath = System.getProperty("user.dir")+
@@ -24,7 +24,7 @@ public class Config {
 		prop.load(input);
 		input.close();
 		OutputStream output = new FileOutputStream(propertyFilePath);
-		prop.put("token", value);
+		prop.put(key, value);
 		//prop.setProperty("token", value);
 		prop.store(output, null);
 		output.close();

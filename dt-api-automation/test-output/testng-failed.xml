@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.dt.api.session.testPOST_Session">
+      <class name="com.dt.api.users.get.testGET_UserInvites">
         <methods>
-          <include name="testPost"/>
-          <include name="init"/>
+          <include name="testGet001"/>
         </methods>
-      </class> <!-- com.dt.api.session.testPOST_Session -->
+      </class> <!-- com.dt.api.users.get.testGET_UserInvites -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

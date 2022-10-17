@@ -1,5 +1,6 @@
 To get started..
 
-Update token value in config.properties file 
+
 Add endpoints in Endpoints.java class
 Use Config Method to set or get token
+Run session test class to generate new session
