@@ -1,4 +1,4 @@
-/.metadata/
+/target/
 .mylyn/.taskListIndex/
 *.log
 .plugins/org.eclipse.m2e.core/nexus/
