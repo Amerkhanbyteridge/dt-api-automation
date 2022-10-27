@@ -13,7 +13,7 @@ import com.dt.api.main.Endpoints;
 
 public class Baseclass {
 
-	JSONObject request = new JSONObject();
+	public JSONObject request = new JSONObject();
 	public Logger logger = LogManager.getLogger(getClass());
 	
 

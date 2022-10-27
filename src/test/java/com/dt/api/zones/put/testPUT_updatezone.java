@@ -10,12 +10,13 @@ import org.json.simple.JSONObject;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.dt.api.baseclass.Baseclass;
 import com.dt.api.main.Config;
 import com.dt.api.main.Endpoints;
 
 import io.restassured.http.ContentType;
 
-public class testPUT_updatezone {
+public class testPUT_updatezone extends Baseclass {
 
 	JSONObject request = new JSONObject();
 
@@ -25,7 +26,7 @@ public class testPUT_updatezone {
 		request = new JSONObject();
 		request.put("name", Config.getname());
 		request.put("typeId", Config.gettypeId());
-		System.out.println(request.toJSONString());
+		logger.info(request.toJSONString());
 		baseURI = Endpoints.baseURI;
 	}
 

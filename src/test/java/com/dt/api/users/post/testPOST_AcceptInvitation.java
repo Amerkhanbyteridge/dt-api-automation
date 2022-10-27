@@ -34,6 +34,7 @@ public class testPOST_AcceptInvitation {
 		
 	}
 	
+	
 	@Test
 	public void testPost001() throws FileNotFoundException, IOException {
 		given().header("Authorization", "bearer " + Config.getToken(), "accept", "application/json")

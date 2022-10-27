@@ -8,25 +8,16 @@ import static org.testng.Assert.assertEquals;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import org.apache.http.HttpStatus;
-import org.json.simple.JSONObject;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.dt.api.baseclass.Baseclass;
 import com.dt.api.main.Config;
 import com.dt.api.main.Endpoints;
 
 import io.restassured.http.ContentType;
 
-public class testDELETE_User {
+public class testDELETE_User extends Baseclass{
 
-	JSONObject request = new JSONObject();
-
-	@BeforeClass
-	public void init() throws FileNotFoundException, IOException {
-		baseURI = Endpoints.baseURI;
-	}
 
 	@Test
 	public void testDELETE001() throws FileNotFoundException, IOException {

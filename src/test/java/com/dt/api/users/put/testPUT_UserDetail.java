@@ -12,12 +12,13 @@ import org.json.simple.JSONObject;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.dt.api.baseclass.Baseclass;
 import com.dt.api.main.Config;
 import com.dt.api.main.Endpoints;
 
 import io.restassured.http.ContentType;
 
-public class testPUT_UserDetail {
+public class testPUT_UserDetail extends Baseclass {
 	JSONObject request = new JSONObject();
 
 	@SuppressWarnings("unchecked")
@@ -28,7 +29,7 @@ public class testPUT_UserDetail {
 		request.put("lastName", Config.getlastname());
 		request.put("phoneNumber", Config.getphonenumber());
 		request.put("imageURL", Config.getimage());
-		System.out.println(request.toJSONString());
+		logger.info(request.toJSONString());
 		baseURI = Endpoints.baseURI;
 	}
 
