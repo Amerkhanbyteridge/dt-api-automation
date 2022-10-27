@@ -1,31 +1,41 @@
-package com.dt.api.users.get;
+package com.dt.api.properties.get;
+
+import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 import static org.testng.Assert.assertEquals;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
+import org.json.simple.JSONObject;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 import com.dt.api.baseclass.Baseclass;
 import com.dt.api.main.Config;
 import com.dt.api.main.Endpoints;
+
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 
-public class testGET_UserDetails extends Baseclass {
+public class testGET_propertyallusers extends Baseclass {
 	
 	@SuppressWarnings("rawtypes")
 	@Test
-	public void testGet001() throws FileNotFoundException, IOException {
-		Response response = given()
-				.headers("Authorization", "bearer " + Config.getToken(), "accept", "application/json").log().all()
-				.get(Endpoints.userdetails, Config.getemailID()).andReturn();
-		ResponseBody body = response.getBody();
+	public void testGetPropertyusers() throws FileNotFoundException, IOException {
+		Response response = given().headers("Authorization","bearer "+Config.getToken(), "accept" ,"application/json").log().all()
+		.get(Endpoints.propertyallusers,Config.getpropertyID()).andReturn();
+		ResponseBody body= response.getBody();
 		logger.info("Status code is: " + response.getStatusCode());
 		logger.info("Response time is: " + response.getTime());
 		logger.info("Response body is: " + body.asPrettyString());
 		logger.info("Status line is: " + response.getStatusLine());
 		logger.info("Content type is: " + response.getHeader("content-type"));
 		assertEquals(response.getStatusCode(), 200);
+		 
 	}
+
+	
 }
+
+

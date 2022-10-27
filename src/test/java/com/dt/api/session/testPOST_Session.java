@@ -7,9 +7,6 @@ import static io.restassured.RestAssured.given;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.json.simple.JSONObject;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -43,10 +40,12 @@ public class testPOST_Session {
 		.post("/api/sessions/")
 		.then()
 		.statusCode(200).extract().path("data.sessionToken");
+		
 		new Config("token",sessionToken);
 		System.out.println("sessionToken--"+sessionToken);
 		System.out.println(Config.getToken());
 }
+
 
 
 }

@@ -1,4 +1,4 @@
-package com.dt.api.users.post;
+package com.dt.zones.put;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
@@ -15,24 +15,26 @@ import com.dt.api.main.Endpoints;
 
 import io.restassured.http.ContentType;
 
-public class testPOST_CancelInvitation {
+public class testPUT_updatezone {
+
 	JSONObject request = new JSONObject();
 
 	@SuppressWarnings("unchecked")
 	@BeforeClass
 	public void init() throws FileNotFoundException, IOException {
 		request = new JSONObject();
-		request.put("email", Config.getemailID());
-		request.put("propertyId", Config.getpropertyID());
+		request.put("name", Config.getname());
+		request.put("typeId", Config.gettypeId());
 		System.out.println(request.toJSONString());
 		baseURI = Endpoints.baseURI;
-
 	}
+
 	@Test
-	public void testPost() throws FileNotFoundException, IOException {
-		given().header("Authorization", "bearer " + Config.getToken(), "accept", "application/json")
-				.contentType(ContentType.JSON).body(request.toJSONString()).when().post(Endpoints.cancelinvite).then()
-				.statusCode(400).log().all();
 
+	public void testPUT001() throws FileNotFoundException, IOException {
+		given().headers("accept", "application/json", "Authorization", "bearer " + Config.getToken())
+				.contentType(ContentType.JSON).log().all()
+				.body(request.toJSONString()).when().put(Endpoints.updatezone , Config.getzoneID()).then().statusCode(200).log().all();
 	}
+
 }

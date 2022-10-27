@@ -16,10 +16,12 @@ import com.dt.api.main.Config;
 import com.dt.api.main.Endpoints;
 
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 
 public class testPOST_AcceptInvitation {
 
 	JSONObject request = new JSONObject();
+	Response response;
 	@SuppressWarnings("unchecked")
 	@BeforeClass
 	public void init() throws FileNotFoundException, IOException {
@@ -36,7 +38,8 @@ public class testPOST_AcceptInvitation {
 	public void testPost001() throws FileNotFoundException, IOException {
 		given().header("Authorization", "bearer " + Config.getToken(), "accept", "application/json")
 				.contentType(ContentType.JSON).body(request.toJSONString()).when().post(Endpoints.acceptinvite).then()
-				.statusCode(401);
+				.statusCode(400).log().all();
+		
 
 	}
 
