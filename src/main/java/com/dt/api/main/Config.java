@@ -332,4 +332,22 @@ public class Config {
 		String protocolId = prop.getProperty("protocolId");
 		return protocolId;
 	}
+	public static String getdevicehudID() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String id = prop.getProperty("devicehubID");
+		return id;
+	}
+	public static String getroleType() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String roletype = prop.getProperty("roletype");
+		return roletype;
+	}
 }
