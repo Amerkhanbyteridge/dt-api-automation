@@ -7,6 +7,7 @@ public class Endpoints {
 	// *********Users*****************//
 	public static final String userdetails = "/api/users/details/{email}";
 	public static final String userInvites = "/api/users/invites";
+	public static final String userdetails_userrole = "/api/userroles/{propertyId}/{emailId}/{isActive}";
 	// *********properties*****************//
 	public static final String propertybyID = "/api/properties/{propertyId}";
 	public static final String propertydetails = "/api/properties/";
@@ -30,6 +31,7 @@ public class Endpoints {
 	public static final String devicebatterystatus = "/api/devices/{deviceId}/battery-status";
 	public static final String deviceactivity = "/api/devices/{propertyId}/{zoneId}/issue/count";
 	public static final String lockstatusfromsmartThings = "/api/devices/{deviceId}/lock-status";
+	public static final String Adddevicestozone = "/api/devices/";
 	// *************HubDevices********************//
 	public static final String allhubdevices = "/api/hubdevices/";
 	public static final String hubdevicebyID = "/api/hubdevices/{id}";
@@ -80,5 +82,31 @@ public class Endpoints {
 	// *********Devices*****************//
 	public static final String movedevices = "/api/devices"; // fromonezonetoanotherzone
 	public static final String renamedevice= "/api/devices/{deviceId}";
-
+	public static final String updateuserrole = "/api/userroles/{propertyId}";
+	public static final String updatedeviceename= "/api/devices/{deviceId}";
+	//------------------------------------------------------------------------------------------------------------------//
+	// *************Smartthing********************//
+	public static final String addsmartthingaccount= "/api/smartthings";
+	public static final String getsmartthingaccountdeails= "/api/smartthings/accounts/{propertyId}";
+	public static final String UpdatePAT= "/api/smartthings";
+	public static final String deletesmartthing= "/api/smartthings/{protocolId}";
+	public static final String updateuserdetails= "/api/users/{email}";
+	
+	//------------------------------------------------------------------------------------------------------------------//
+	// *************GUEST KEY Request********************//
+	public static final String createguestkey= "/api/keyrequest/create";
+	public static final String viewguestkey= "/api/keyrequest/{propertyId}/{type}";
+	public static final String regeneraterequestkey= "/api/keyrequest/update/{keyId}";
+	public static final String deleteguestkey= "/api/keyrequest/{keyId}";
+	public static final String resendkeycode= "/api/keyrequest/resend/{keyId}";
+	public static final String updateguest= "/api/keyrequest/update-guest/{keyId}";
+	
+	//------------------------------------------------------------------------------------------------------------------//
+		// *************STAFF KEY Request********************//
+	public static final String createStaffkey= "/api/keyrequest/create";
+	public static final String viewstaffkey= "/api/keyrequest/{propertyId}/{type}";
+	public static final String regeneraterequestaffkey= "/api/keyrequest/update/{keyId}";
+	public static final String deletestaffkey= "/api/keyrequest/{keyId}";
+	public static final String resendstaffkeycode= "/api/keyrequest/resend/{keyId}";
+	
 }

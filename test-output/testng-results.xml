@@ -1,21 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="31" passed="31" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-19T11:38:43 IST" name="Default suite" finished-at="2022-10-19T11:38:48 IST" duration-ms="4784">
+  <suite started-at="2022-11-01T15:14:59 IST" name="Default suite" finished-at="2022-11-01T15:15:45 IST" duration-ms="45958">
     <groups>
     </groups>
-    <test started-at="2022-10-19T11:38:43 IST" name="Default test" finished-at="2022-10-19T11:38:48 IST" duration-ms="4784">
-      <class name="com.dt.api.session.testPOST_Session">
-        <test-method is-config="true" signature="init()[pri:0, instance:com.dt.api.session.testPOST_Session@243c4f91]" started-at="2022-10-19T11:38:43 IST" name="init" finished-at="2022-10-19T11:38:44 IST" duration-ms="589" status="PASS">
+    <test started-at="2022-11-01T15:14:59 IST" name="Default test" finished-at="2022-11-01T15:15:45 IST" duration-ms="45958">
+      <class name="com.dt.api.Auth.test_PM">
+        <test-method is-config="true" signature="init()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:14:59 IST" name="init" finished-at="2022-11-01T15:15:00 IST" duration-ms="524" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method signature="testPost()[pri:0, instance:com.dt.api.session.testPOST_Session@243c4f91]" started-at="2022-10-19T11:38:44 IST" name="testPost" finished-at="2022-10-19T11:38:48 IST" duration-ms="4160" status="PASS">
+        <test-method signature="UpdateUserRole()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:00 IST" name="UpdateUserRole" finished-at="2022-11-01T15:15:02 IST" duration-ms="2598" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testPost -->
-      </class> <!-- com.dt.api.session.testPOST_Session -->
+        </test-method> <!-- UpdateUserRole -->
+        <test-method signature="testAddDevices()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:02 IST" name="testAddDevices" finished-at="2022-11-01T15:15:04 IST" duration-ms="1470" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddDevices -->
+        <test-method signature="testAddSmartthingAccount()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:04 IST" name="testAddSmartthingAccount" finished-at="2022-11-01T15:15:05 IST" duration-ms="1326" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddSmartthingAccount -->
+        <test-method signature="testAddZone()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:05 IST" name="testAddZone" finished-at="2022-11-01T15:15:06 IST" duration-ms="1302" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddZone -->
+        <test-method signature="testCreateGuestKey()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:06 IST" name="testCreateGuestKey" finished-at="2022-11-01T15:15:08 IST" duration-ms="1861" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateGuestKey -->
+        <test-method signature="testCreateProperty()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:08 IST" name="testCreateProperty" finished-at="2022-11-01T15:15:10 IST" duration-ms="1512" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateProperty -->
+        <test-method signature="testCreateStaffKey()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:10 IST" name="testCreateStaffKey" finished-at="2022-11-01T15:15:11 IST" duration-ms="1817" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateStaffKey -->
+        <test-method signature="testDeleteDevice()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:11 IST" name="testDeleteDevice" finished-at="2022-11-01T15:15:13 IST" duration-ms="1345" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteDevice -->
+        <test-method signature="testDeleteGuestKey()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:13 IST" name="testDeleteGuestKey" finished-at="2022-11-01T15:15:14 IST" duration-ms="1378" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteGuestKey -->
+        <test-method signature="testDeleteProperty()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:14 IST" name="testDeleteProperty" finished-at="2022-11-01T15:15:15 IST" duration-ms="1322" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteProperty -->
+        <test-method signature="testDeleteSmartthing()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:15 IST" name="testDeleteSmartthing" finished-at="2022-11-01T15:15:17 IST" duration-ms="1287" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteSmartthing -->
+        <test-method signature="testDeleteStaffKey()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:17 IST" name="testDeleteStaffKey" finished-at="2022-11-01T15:15:18 IST" duration-ms="1351" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteStaffKey -->
+        <test-method signature="testDeleteUser()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:18 IST" name="testDeleteUser" finished-at="2022-11-01T15:15:20 IST" duration-ms="1494" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteUser -->
+        <test-method signature="testDeleteZone()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:20 IST" name="testDeleteZone" finished-at="2022-11-01T15:15:21 IST" duration-ms="1320" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteZone -->
+        <test-method signature="testGetDevices()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:21 IST" name="testGetDevices" finished-at="2022-11-01T15:15:22 IST" duration-ms="1536" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetDevices -->
+        <test-method signature="testGetZones()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:22 IST" name="testGetZones" finished-at="2022-11-01T15:15:24 IST" duration-ms="1431" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetZones -->
+        <test-method signature="testGetpropertydetails()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:24 IST" name="testGetpropertydetails" finished-at="2022-11-01T15:15:25 IST" duration-ms="1446" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetpropertydetails -->
+        <test-method signature="testInviteUser()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:25 IST" name="testInviteUser" finished-at="2022-11-01T15:15:27 IST" duration-ms="1296" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInviteUser -->
+        <test-method signature="testResendStaffkeycode()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:27 IST" name="testResendStaffkeycode" finished-at="2022-11-01T15:15:28 IST" duration-ms="1274" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResendStaffkeycode -->
+        <test-method signature="testResendkeycode()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:28 IST" name="testResendkeycode" finished-at="2022-11-01T15:15:29 IST" duration-ms="1466" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResendkeycode -->
+        <test-method signature="testSelfDetails()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:29 IST" name="testSelfDetails" finished-at="2022-11-01T15:15:31 IST" duration-ms="1336" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSelfDetails -->
+        <test-method signature="testUpdateDevices()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:31 IST" name="testUpdateDevices" finished-at="2022-11-01T15:15:32 IST" duration-ms="1298" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateDevices -->
+        <test-method signature="testUpdateGuestDetails()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:32 IST" name="testUpdateGuestDetails" finished-at="2022-11-01T15:15:33 IST" duration-ms="1281" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateGuestDetails -->
+        <test-method signature="testUpdatePAT()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:33 IST" name="testUpdatePAT" finished-at="2022-11-01T15:15:35 IST" duration-ms="1480" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdatePAT -->
+        <test-method signature="testUpdateProperty()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:35 IST" name="testUpdateProperty" finished-at="2022-11-01T15:15:36 IST" duration-ms="1361" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateProperty -->
+        <test-method signature="testUpdateZone()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:36 IST" name="testUpdateZone" finished-at="2022-11-01T15:15:38 IST" duration-ms="1416" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateZone -->
+        <test-method signature="testUserDetails()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:38 IST" name="testUserDetails" finished-at="2022-11-01T15:15:39 IST" duration-ms="1326" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUserDetails -->
+        <test-method signature="testViewSmartthingDetails()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:39 IST" name="testViewSmartthingDetails" finished-at="2022-11-01T15:15:40 IST" duration-ms="1427" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testViewSmartthingDetails -->
+        <test-method signature="testuserList()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:40 IST" name="testuserList" finished-at="2022-11-01T15:15:42 IST" duration-ms="1293" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testuserList -->
+        <test-method signature="viewGuestKey()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:42 IST" name="viewGuestKey" finished-at="2022-11-01T15:15:43 IST" duration-ms="1561" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- viewGuestKey -->
+        <test-method signature="viewStaffKey()[pri:0, instance:com.dt.api.Auth.test_PM@a22cb6a]" started-at="2022-11-01T15:15:43 IST" name="viewStaffKey" finished-at="2022-11-01T15:15:45 IST" duration-ms="1734" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- viewStaffKey -->
+      </class> <!-- com.dt.api.Auth.test_PM -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
