@@ -332,21 +332,37 @@ public class Config {
 		String protocolId = prop.getProperty("protocolId");
 		return protocolId;
 	}
+
 	public static String getpat() throws FileNotFoundException, IOException {
 
+	
 		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
 
 		Properties prop = new Properties();
 		prop.load(new FileInputStream(propertyFilePath));
+
 		String pat = prop.getProperty("pat");
 		return pat;
 	}
-	public static String getcloudEmailId() throws FileNotFoundException, IOException {
+	public static String getdevicehudID() throws FileNotFoundException, IOException {
+
 
 		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
 
 		Properties prop = new Properties();
 		prop.load(new FileInputStream(propertyFilePath));
+
+		String devicehudID = prop.getProperty("devicehudID");
+		return devicehudID;}
+	
+	public static String getroleType() throws FileNotFoundException, IOException {
+
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+
 		String cloudEmailId = prop.getProperty("cloudEmailId");
 		return cloudEmailId;
 	}
@@ -529,5 +545,10 @@ public class Config {
 		prop.load(new FileInputStream(propertyFilePath));
 		String firstname2 = prop.getProperty("firstname2");
 		return firstname2;
+
+		//String roletype = prop.getProperty("roletype");
+		//return roletype;
+         //  c5894a01452583338382fe5cfcbda8788ea89e1c
 	}
+	
 }

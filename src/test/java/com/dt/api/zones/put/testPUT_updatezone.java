@@ -36,6 +36,7 @@ public class testPUT_updatezone extends Baseclass {
 		given().headers("accept", "application/json", "Authorization", "bearer " + Config.getToken())
 				.contentType(ContentType.JSON).log().all()
 				.body(request.toJSONString()).when().put(Endpoints.updatezone , Config.getzoneID()).then().statusCode(200).log().all();
+		
 	}
 
 }
