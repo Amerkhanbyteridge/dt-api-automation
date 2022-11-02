@@ -1,58 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.dt.api.users.put.testPUT_UserDetail">
+      <class name="com.dt.api.Auth.test_PM">
         <methods>
+          <include name="regeneratekey"/>
           <include name="testPUT"/>
-        </methods>
-      </class> <!-- com.dt.api.users.put.testPUT_UserDetail -->
-      <class name="com.dt.api.users.post.testPOST_ResendInvitation">
-        <methods>
-          <include name="testPost"/>
-        </methods>
-      </class> <!-- com.dt.api.users.post.testPOST_ResendInvitation -->
-      <class name="com.dt.api.users.delete.testDELETE_User">
-        <methods>
-          <include name="testDELETE001"/>
+          <include name="testUpdateSelfDetails"/>
           <include name="init"/>
         </methods>
-      </class> <!-- com.dt.api.users.delete.testDELETE_User -->
-      <class name="com.dt.api.users.get.testGET_UserInvites">
-        <methods>
-          <include name="testGet"/>
-        </methods>
-      </class> <!-- com.dt.api.users.get.testGET_UserInvites -->
-      <class name="com.dt.api.users.get.testGET_UserDetails">
-        <methods>
-          <include name="testGet001"/>
-        </methods>
-      </class> <!-- com.dt.api.users.get.testGET_UserDetails -->
-      <class name="com.dt.api.tests.testExample">
-        <methods>
-          <include name="testGet"/>
-          <include name="testPATCH"/>
-          <include name="testDELETE"/>
-          <include name="testPost"/>
-          <include name="testPUT"/>
-        </methods>
-      </class> <!-- com.dt.api.tests.testExample -->
-      <class name="com.dt.api.users.post.testPOST_CancelInvitation">
-        <methods>
-          <include name="testPost"/>
-        </methods>
-      </class> <!-- com.dt.api.users.post.testPOST_CancelInvitation -->
-      <class name="com.dt.api.users.post.testPOST_Invitation">
-        <methods>
-          <include name="testPost"/>
-        </methods>
-      </class> <!-- com.dt.api.users.post.testPOST_Invitation -->
-      <class name="com.dt.api.users.post.testPOST_ForgetPassword">
-        <methods>
-          <include name="testPost"/>
-        </methods>
-      </class> <!-- com.dt.api.users.post.testPOST_ForgetPassword -->
+      </class> <!-- com.dt.api.Auth.test_PM -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
