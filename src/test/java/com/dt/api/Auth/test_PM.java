@@ -51,7 +51,7 @@ public class test_PM extends Baseclass {
 		request.put("devices", Config.getdevices());
 		request.put("protocolId", Config.getprotocolId());
 		request.put("moveToZoneId", Config.getmoveToZoneId());
-		request.put("cloudEmailId", Config.getcloudEmailId());
+		//request.put("cloudEmailId", Config.getcloudEmailId());
 		request.put("pat", Config.getpat());
 		request.put("tokenname", Config.gettokenname());
 		request.put("type", Config.gettype());
@@ -121,6 +121,15 @@ public class test_PM extends Baseclass {
 				.contentType(ContentType.JSON).log().all()
 			.body(request.toJSONString()).when().put(Endpoints.updateuserrole,Config.getpropertyID()).then().statusCode(200);
 	}
+	 @Test
+
+
+
+	   public void testPUT() throws FileNotFoundException, IOException {
+	        given().headers("accept", "application/json", "Authorization", "bearer " + Config.getToken())
+	                .contentType(ContentType.JSON).log().all().pathParam("email", Config.getemailID())
+	                .body(request.toJSONString()).when().put(Endpoints.updateuserdetail).then().statusCode(200);
+	    }
 	
 	//-----------------------------------------------------------------------------------------//
 	
@@ -147,13 +156,13 @@ public class test_PM extends Baseclass {
 		logger.info("Content type is: " + response.getHeader("content-type"));
 		assertEquals(response.getStatusCode(), 200);}
 	//-----------------------------------------------------------------------------------------//
-	//@Test 
+	@Test 
 
-	//public void testUpdateSelfDetails() throws FileNotFoundException, IOException {
-	//	given().headers("accept", "application/json", "Authorization", "bearer " + Config.getToken())
-	//			.contentType(ContentType.JSON).log().all()
-	//			.body(request.toJSONString()).when().put(Endpoints.updateuserdetails,Config.getemail()).then().statusCode(200).log().all();
-//	}
+	public void testUpdateSelfDetails() throws FileNotFoundException, IOException {
+		given().headers("accept", "application/json", "Authorization", "bearer " + Config.getToken())
+				.contentType(ContentType.JSON).log().all()
+				.body(request.toJSONString()).when().put(Endpoints.updateuserdetails,Config.getemail()).then().statusCode(200).log().all();
+	}
 	 //-----------------------------------------------------------------------------------//
 	@Test 
 	public void testCreateProperty() throws FileNotFoundException, IOException {
@@ -346,14 +355,14 @@ public void testDeleteGuestKey() throws FileNotFoundException, IOException {
 
 }
 //--------------------------------------------------------------------------------------------------------------------------//
-//@Test 
+@Test 
 
-//public void regeneratekey() throws FileNotFoundException, IOException { 
-	//given().headers("accept", "application/json", "Authorization", "bearer " + Config.getToken())
-	//		.contentType(ContentType.JSON).log().all()
-	//	.body(request.toJSONString())
-	//	.when().put(Endpoints.regeneraterequestkey,Config.getkeyIDs()).then().statusCode(200);
-//}
+public void regeneratekey() throws FileNotFoundException, IOException { 
+	given().headers("accept", "application/json", "Authorization", "bearer " + Config.getToken())
+		.contentType(ContentType.JSON).log().all()
+		.body(request.toJSONString())
+	.when().put(Endpoints.regeneraterequestkey,Config.getkeyIDs()).then().statusCode(200);
+}
 
 //--------------------------------------------------------------------------------------------------------------------------//
 @Test 
@@ -400,7 +409,7 @@ public void viewStaffKey() throws FileNotFoundException, IOException {
 //---------------------------------------------------------------------------------------------------------------//
 @Test 
 public void testResendStaffkeycode() throws FileNotFoundException, IOException {
-	Response response = given().headers("Authorization","bearer "+Config.getToken(), "accept" ,"application/json").log().all()
+Response response = given().headers("Authorization","bearer "+Config.getToken(), "accept" ,"application/json").log().all()
 	.get(Endpoints.resendstaffkeycode, Config.getkeyId()).andReturn();
 	ResponseBody body= response.getBody();
 	logger.info("Status code is: " + response.getStatusCode());
@@ -408,7 +417,7 @@ public void testResendStaffkeycode() throws FileNotFoundException, IOException {
 	logger.info("Response body is: " + body.asPrettyString());
 	logger.info("Status line is: " + response.getStatusLine());
 	logger.info("Content type is: " + response.getHeader("content-type"));
-	assertEquals(response.getStatusCode(), 400);
+     assertEquals(response.getStatusCode(), 400);
 }
 //------------------------------------------------------------------------------------------------------------------//
 @Test 

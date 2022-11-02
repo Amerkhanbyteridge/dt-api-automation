@@ -5,6 +5,8 @@
     <classes>
       <class name="com.dt.api.Auth.test_PM">
         <methods>
+          <include name="regeneratekey"/>
+          <include name="testPUT"/>
           <include name="testUpdateSelfDetails"/>
           <include name="init"/>
         </methods>
