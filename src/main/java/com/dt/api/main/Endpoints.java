@@ -3,7 +3,7 @@ package com.dt.api.main;
 public class Endpoints {
 
 	public static final String baseURI = "https://api-qa.dthreaddev.com";
-    // GET//
+	// GET//
 	// *********Users*****************//
 	public static final String userdetails = "/api/users/details/{email}";
 	public static final String userInvites = "/api/users/invites";
@@ -36,9 +36,16 @@ public class Endpoints {
 	// *************Activity********************//
 	public static final String useractivityinproperty = "/api/activities/{propertyId}/{emailId}";
 	public static final String useractivity = "/api/activities/{emailId}";
+	// **************Role***********************//
+	public static final String allroles = "/api/roles/{roleType}";
+	// **************UserRole***********************//
+	public static final String userdetails_role = "/api/userroles/{propertyId}/{emailId}/{isActive}";
+	// *************SignedURL********************//
+	public static final String imageuploadURLforproperty = "/api/signedurl/property";
+	public static final String imageuploadURLforprofile = "/api/signedurl/profile/";
 
 //------------------------------------------------------------------------------------------------------------------//		
-    // DELETE//
+	// DELETE//
 	// *********Users*****************//
 	public static final String deleteuser = "/api/users/{email}/{propertyId}";
 	// *********properties*****************//
@@ -48,7 +55,7 @@ public class Endpoints {
 	// *********Devices*****************//
 	public static final String deletedevicesforzone = "/api/devices/";
 //------------------------------------------------------------------------------------------------------------------//
-    // POST//
+	// POST//
 	// *********Users*****************//
 	public static final String setnewpassword = "/api/users/updatepassword";
 	public static final String sendotpmail = "/api/users/forgetpassword";
@@ -70,7 +77,7 @@ public class Endpoints {
 	public static final String deviceaction = "/api/devices/action";
 	public static final String refreshlockstatus = "/api/devices/refresh-lock";
 //------------------------------------------------------------------------------------------------------------------//
-    // PUT//
+	// PUT//
 	// *********Users*****************//
 	public static final String updateuserdetail = "/api/users/{email}";
 	// *********properties*****************//
@@ -79,6 +86,8 @@ public class Endpoints {
 	public static final String updatezone = "/api/zones/{zoneId}";
 	// *********Devices*****************//
 	public static final String movedevices = "/api/devices"; // fromonezonetoanotherzone
-	public static final String renamedevice= "/api/devices/{deviceId}";
+	public static final String renamedevice = "/api/devices/{deviceId}";
+	// *********UserRole*****************//
+	public static final String updateuserRole = "/api/userroles/{propertyId}";
 
 }
