@@ -7,7 +7,6 @@ public class Endpoints {
 	// *********Users*****************//
 	public static final String userdetails = "/api/users/details/{email}";
 	public static final String userInvites = "/api/users/invites";
-	public static final String userdetails_userrole = "/api/userroles/{propertyId}/{emailId}/{isActive}";
 	// *********properties*****************//
 	public static final String propertybyID = "/api/properties/{propertyId}";
 	public static final String propertydetails = "/api/properties/";
@@ -31,7 +30,6 @@ public class Endpoints {
 	public static final String devicebatterystatus = "/api/devices/{deviceId}/battery-status";
 	public static final String deviceactivity = "/api/devices/{propertyId}/{zoneId}/issue/count";
 	public static final String lockstatusfromsmartThings = "/api/devices/{deviceId}/lock-status";
-	public static final String Adddevicestozone = "/api/devices/";
 	// *************HubDevices********************//
 	public static final String allhubdevices = "/api/hubdevices/";
 	public static final String hubdevicebyID = "/api/hubdevices/{id}";
@@ -45,6 +43,21 @@ public class Endpoints {
 	// *************SignedURL********************//
 	public static final String imageuploadURLforproperty = "/api/signedurl/property";
 	public static final String imageuploadURLforprofile = "/api/signedurl/profile/";
+	// *************SmartThings********************//
+	public static final String smartThingsdevices = "/api/smartthings/devices/{propertyId}/{cloudEmailId}";
+	public static final String getaccountofanuser = "/api/smartthings/accounts/{propertyId}";
+	public static final String accountdetails = "/api/smartthings/accounts/{propertyId}/{cloudEmailId}";
+	// *************PropertyTokens********************//
+	public static final String getTokenforproperty = "/api/propertytoken/{propertyId}";
+	// *************Schedule********************//
+	public static final String minandmaxintervals = "/api/schedule/interval/{deviceType}";
+	public static final String getlockmonitoringinterval = "/api/schedule/{deviceId}";
+	// *************KeyRequest********************//
+	public static final String getrequestkeysforguestorstaff = "/api/keyrequest/{propertyId}/{type}";
+	public static final String getdetailforrequestkeysforguestorstaff = "/api/keyrequest/detail/{keyId}";
+	// *************Collection********************//
+	public static final String collectionsinaproperty = "/api/collection/property/{propertyId}";
+	public static final String getalldevicesandzonesinacollection = "/api/collection/{collectionId}";
 
 //------------------------------------------------------------------------------------------------------------------//		
 	// DELETE//
@@ -56,6 +69,16 @@ public class Endpoints {
 	public static final String deletezone = "/api/zones/{zoneId}";
 	// *********Devices*****************//
 	public static final String deletedevicesforzone = "/api/devices/";
+	// *********SmartThings*****************//
+	public static final String deletecloudaccount = "/api/smartthings/{protocolId}";
+	// *************PropertyTokens********************//
+	public static final String deleteTokenforproperty = "/api/propertytoken/";
+	// *************KeyRequest********************//
+	public static final String deletekeyforguestorstaff = "/api/keyrequest/{keyId}";
+	// *************Collection********************//
+	public static final String deletecollection = "/api/collection/{collectionId}";
+	public static final String removezonesandDevicesfromcollection = "/api/collection/removeZonesAndDevices/{collectionId}";
+
 //------------------------------------------------------------------------------------------------------------------//
 	// POST//
 	// *********Users*****************//
@@ -78,6 +101,22 @@ public class Endpoints {
 	public static final String adddevicesforzone = "/api/devices";
 	public static final String deviceaction = "/api/devices/action";
 	public static final String refreshlockstatus = "/api/devices/refresh-lock";
+	// *********smartThings*****************//
+	public static final String savePATforcloudaccount = "/api/zones";
+	// *************PropertyTokens********************//
+	public static final String generateTokenforproperty = "/api/propertytoken";
+	// *************PMSkeyrequest********************//
+	public static final String createguestkeyrequest = "/api/pmskeyrequest";
+	// *************Schedule********************//
+	public static final String setlockmonitoringinterval = "/api/schedule";
+	// *********KeyRequest*****************//
+	public static final String sendcodestolockguestorboth = "/api/keyrequest/resend/{keyId}";
+	public static final String getlocklistbycode = "/api/keyrequest/lockList";
+	public static final String getlockreport = "/api/keyrequest/lockReport";
+	public static final String createkeyrequestforguestorstaff = "/api/keyrequest/create";
+	// *************Collection********************//
+	public static final String createcollection = "/api/collection";
+
 //------------------------------------------------------------------------------------------------------------------//
 	// PUT//
 	// *********Users*****************//
@@ -88,41 +127,19 @@ public class Endpoints {
 	public static final String updatezone = "/api/zones/{zoneId}";
 	// *********Devices*****************//
 	public static final String movedevices = "/api/devices"; // fromonezonetoanotherzone
-//<<<<<<< HEAD
-	public static final String renamedevice= "/api/devices/{deviceId}";
-	public static final String updateuserrole = "/api/userroles/{propertyId}";
-	public static final String updatedeviceename= "/api/devices/{deviceId}";
-	//------------------------------------------------------------------------------------------------------------------//
-	// *************Smartthing********************//
-	public static final String addsmartthingaccount= "/api/smartthings";
-	public static final String getsmartthingaccountdeails= "/api/smartthings/accounts/{propertyId}";
-	public static final String UpdatePAT= "/api/smartthings";
-	public static final String deletesmartthing= "/api/smartthings/{protocolId}";
-	public static final String updateuserdetails= "/api/users/{email}";
-	
-	//------------------------------------------------------------------------------------------------------------------//
-	// *************GUEST KEY Request********************//
-	public static final String createguestkey= "/api/keyrequest/create";
-	public static final String viewguestkey= "/api/keyrequest/{propertyId}/{type}";
-	public static final String regeneraterequestkey= "/api/keyrequest/update/{keyId}";
-	public static final String deleteguestkey= "/api/keyrequest/{keyId}";
-	public static final String resendkeycode= "/api/keyrequest/resend/{keyId}";
-	public static final String updateguest= "/api/keyrequest/update-guest/{keyId}";
-	
-	//------------------------------------------------------------------------------------------------------------------//
-		// *************STAFF KEY Request********************//
-	public static final String createStaffkey= "/api/keyrequest/create";
-	public static final String viewstaffkey= "/api/keyrequest/{propertyId}/{type}";
-	public static final String regeneraterequestaffkey= "/api/keyrequest/update/{keyId}";
-	public static final String deletestaffkey= "/api/keyrequest/{keyId}";
-	public static final String resendstaffkeycode="/api/keyrequest/resend/{keyId}";
-	
-}
-
-
-	
+	public static final String renamedevice = "/api/devices/{deviceId}";
 	// *********UserRole*****************//
-	//public static final String updateuserRole = "/api/userroles/{propertyId}";
-	
-//c5894a01452583338382fe5cfcbda8788ea89e1c
+	public static final String updateuserRole = "/api/userroles/{propertyId}";
+	// *********SmartThings*****************//
+	public static final String updatePAT = "/api/userroles/{propertyId}";
+	// *********KeyRequest*****************//
+	public static final String updateguestdetails = "/api/keyrequest/update-guest/{keyId}";
+	public static final String requestgeneratekeyforguestorstaff = "/api/keyrequest/update/{keyId}";
+	public static final String updatekeytimerequestforguestorstaff = "/api/keyrequest/update-time/{keyId}";
+	public static final String expirekeyforguestorstaff = "/api/keyrequest/expire/{keyId}";
+	public static final String reactivekeyforguestorstaff = "/api/userroles/{propertyId}";
+	// *********Collection*****************//
+	public static final String renamecollection = "/api/collection/{collectionId}";
+	public static final String addDevicesandzonestoacollection = "/api/collection/updatezonesordevices/{collectionId}";
 
+}

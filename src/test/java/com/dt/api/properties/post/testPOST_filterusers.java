@@ -10,13 +10,14 @@ import org.json.simple.JSONObject;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.dt.api.baseclass.Baseclass;
 import com.dt.api.main.Config;
 import com.dt.api.main.Endpoints;
 
 import io.restassured.http.ContentType;
 
-public class testPOST_filterusers {
-	JSONObject request = new JSONObject();
+public class testPOST_filterusers extends Baseclass {
+
 
 	@SuppressWarnings("unchecked")
 	@BeforeClass
@@ -25,7 +26,7 @@ public class testPOST_filterusers {
 		request.put("roleIds", Config.getroleIds());
 		request.put("isPending",true);
 		request.put("isAccepted", true);
-		System.out.println(request.toJSONString());
+		logger.info(request.toJSONString());
 		baseURI = Endpoints.baseURI;
 
 	}

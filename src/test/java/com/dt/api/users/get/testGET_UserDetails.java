@@ -29,3 +29,4 @@ public class testGET_UserDetails extends Baseclass {
 		assertEquals(response.getStatusCode(), 200);
 	}
 }
+
