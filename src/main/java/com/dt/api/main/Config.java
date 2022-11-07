@@ -350,6 +350,7 @@ public class Config {
 		String roletype = prop.getProperty("roletype");
 		return roletype;
 	}
+
 	public static String getcloudEmailId() throws FileNotFoundException, IOException {
 
 		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
@@ -474,4 +475,5 @@ public class Config {
 		return endTime;
 	}
 	
+
 }

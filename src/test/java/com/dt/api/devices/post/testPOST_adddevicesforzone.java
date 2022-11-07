@@ -5,19 +5,26 @@ import static io.restassured.RestAssured.given;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.logging.Logger;
 
 import org.json.simple.JSONObject;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+
 import com.dt.api.baseclass.Baseclass;
+
 import com.dt.api.main.Config;
 import com.dt.api.main.Endpoints;
 
 import io.restassured.http.ContentType;
 
+
+	
+
 public class testPOST_adddevicesforzone extends Baseclass {
 
+	JSONObject request = new JSONObject();
 	@SuppressWarnings("unchecked")
 	@BeforeClass
 	public void init() throws FileNotFoundException, IOException {
@@ -27,7 +34,11 @@ public class testPOST_adddevicesforzone extends Baseclass {
 		request.put("propertyId", Config.getpropertyID());
 		request.put("protocolId", Config.getprotocolId());
 		baseURI=Endpoints.baseURI;
+
+		System.out.println(request.toJSONString());	
+
 		logger.info(request.toJSONString());	
+
 	}
 	
 	@Test
