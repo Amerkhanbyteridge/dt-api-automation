@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.dt.api.users.put.testPUT_UserDetail">
+      <class name="com.api.Auth.RoleAccess_PV">
         <methods>
-          <include name="testPUT"/>
+          <include name="init"/>
+          <include name="viewStaffKey"/>
+          <include name="init_PV"/>
         </methods>
-      </class> <!-- com.dt.api.users.put.testPUT_UserDetail -->
+      </class> <!-- com.api.Auth.RoleAccess_PV -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
