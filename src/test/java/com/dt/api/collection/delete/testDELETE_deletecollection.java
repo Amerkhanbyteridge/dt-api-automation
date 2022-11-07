@@ -21,6 +21,8 @@ public class testDELETE_deletecollection extends Baseclass {
 				.contentType(ContentType.JSON).log().all().when()
 				.delete(Endpoints.deletecollection) 
 				.then().statusCode(200).log().all();
-
 	}
 }
+
+
+
