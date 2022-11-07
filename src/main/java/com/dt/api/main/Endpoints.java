@@ -45,8 +45,7 @@ public class Endpoints {
 	// *************SignedURL********************//
 	public static final String imageuploadURLforproperty = "/api/signedurl/property";
 	public static final String imageuploadURLforprofile = "/api/signedurl/profile/";
-<<<<<<< HEAD
-=======
+
 	// *************SmartThings********************//
 	public static final String smartThingsdevices = "/api/smartthings/devices/{propertyId}/{cloudEmailId}";
 	public static final String getaccountofanuser = "/api/smartthings/accounts/{propertyId}";
@@ -62,7 +61,7 @@ public class Endpoints {
 	// *************Collection********************//
 	public static final String collectionsinaproperty = "/api/collection/property/{propertyId}";
 	public static final String getalldevicesandzonesinacollection = "/api/collection/{collectionId}";
->>>>>>> 01779337959a101ea50d1eba4f3ab2fc233e8fb3
+
 
 //------------------------------------------------------------------------------------------------------------------//		
 	// DELETE//
@@ -132,8 +131,7 @@ public class Endpoints {
 	public static final String updatezone = "/api/zones/{zoneId}";
 	// *********Devices*****************//
 	public static final String movedevices = "/api/devices"; // fromonezonetoanotherzone
-<<<<<<< HEAD
-//<<<<<<< HEAD
+
 	public static final String renamedevice= "/api/devices/{deviceId}";
 	public static final String updateuserrole = "/api/userroles/{propertyId}";
 	public static final String updatedeviceename= "/api/devices/{deviceId}";
@@ -162,8 +160,8 @@ public class Endpoints {
 	public static final String deletestaffkey= "/api/keyrequest/{keyId}";
 	public static final String resendstaffkeycode="/api/keyrequest/resend/{keyId}";
 	
-=======
-	public static final String renamedevice = "/api/devices/{deviceId}";
+
+	//public static final String renamedevice = "/api/devices/{deviceId}";
 	// *********UserRole*****************//
 	public static final String updateuserRole = "/api/userroles/{propertyId}";
 	// *********SmartThings*****************//
@@ -178,7 +176,7 @@ public class Endpoints {
 	public static final String renamecollection = "/api/collection/{collectionId}";
 	public static final String addDevicesandzonestoacollection = "/api/collection/updatezonesordevices/{collectionId}";
 
->>>>>>> 01779337959a101ea50d1eba4f3ab2fc233e8fb3
+
 }
 
 
