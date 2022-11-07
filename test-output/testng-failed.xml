@@ -5,21 +5,9 @@
     <classes>
       <class name="com.api.Auth.RoleAccess_PV">
         <methods>
-          <include name="testCreateGuestKey"/>
-          <include name="testGetallusers"/>
-          <include name="testGetZones"/>
-          <include name="testDeleteProperty"/>
           <include name="init"/>
-          <include name="testUpdateProperty"/>
-          <include name="testUpdateZone"/>
-          <include name="init_PV"/>
-          <include name="testDeleteZone"/>
-          <include name="testCreateStaffKey"/>
-          <include name="testGetDevices"/>
-          <include name="testViewSmartthingDetails"/>
-          <include name="testCreateProperty"/>
           <include name="viewStaffKey"/>
-          <include name="viewGuestKey"/>
+          <include name="init_PV"/>
         </methods>
       </class> <!-- com.api.Auth.RoleAccess_PV -->
     </classes>

@@ -112,6 +112,15 @@ public class ConfigAuth {
 		String propertyId = prop.getProperty("propertyId");
 		return propertyId;
 	}
+	public static String getpropertyID1() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String propertyId1 = prop.getProperty("propertyId1");
+		return propertyId1;
+	}
 	public static String getroleID() throws FileNotFoundException, IOException {
 
 		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
@@ -251,6 +260,16 @@ public class ConfigAuth {
 		return propertyTypeId;
 	}
 	
+	public static String getzoneTypeId() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String zoneTypeId = prop.getProperty("zoneTypeId");
+		return zoneTypeId;
+	}
+	
 	public static String getroleIds() throws FileNotFoundException, IOException {
 
 		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
@@ -259,6 +278,16 @@ public class ConfigAuth {
 		prop.load(new FileInputStream(propertyFilePath));
 		String roleIds = prop.getProperty("roleIds");
 		return roleIds;
+	}
+	
+	public static String getroleId() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String roleId = prop.getProperty("roleId");
+		return roleId;
 	}
 	public static String getdeviceID() throws FileNotFoundException, IOException {
 
@@ -318,6 +347,18 @@ public class ConfigAuth {
 		String pat = prop.getProperty("pat");
 		return pat;
 	}
+	
+	public static String getnewPat() throws FileNotFoundException, IOException {
+
+		
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+
+		String newPat = prop.getProperty("newPat");
+		return newPat;
+	}
 	public static String getdevicehudID() throws FileNotFoundException, IOException {
 
 
@@ -329,17 +370,7 @@ public class ConfigAuth {
 		String devicehudID = prop.getProperty("devicehudID");
 		return devicehudID;}
 	
-	public static String getroleType() throws FileNotFoundException, IOException {
-
-
-		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
-
-		Properties prop = new Properties();
-		prop.load(new FileInputStream(propertyFilePath));
-
-		String cloudEmailId = prop.getProperty("cloudEmailId");
-		return cloudEmailId;
-	}
+	
 	public static String gettokenname() throws FileNotFoundException, IOException {
 
 		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
@@ -532,6 +563,28 @@ public class ConfigAuth {
 		String zoneId = prop.getProperty("zoneId");
 		return zoneId;
 	}
+	public static String getzonename() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String zonename = prop.getProperty("zonename");
+		return zonename;
+	}
+	 
+	public static String getcloudEmailId() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String cloudEmailId = prop.getProperty("cloudEmailId");
+		return cloudEmailId;
+	}
+
+
+	
 
 	
 }	
