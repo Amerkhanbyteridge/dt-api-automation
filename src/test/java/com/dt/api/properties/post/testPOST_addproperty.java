@@ -10,17 +10,18 @@ import org.json.simple.JSONObject;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.dt.api.baseclass.Baseclass;
 import com.dt.api.main.Config;
 import com.dt.api.main.Endpoints;
 
 import io.restassured.http.ContentType;
 
-public class testPOST_addproperty {
-	JSONObject request = new JSONObject();
+public class testPOST_addproperty extends Baseclass {
+
 	@SuppressWarnings("unchecked")
 	@BeforeClass
 	public void init() throws FileNotFoundException, IOException {
-		request = new JSONObject();
+
 		//request.put("id", Config.getID());
 		request.put("name", Config.getname());
 		request.put("imageURL", "");
@@ -34,7 +35,7 @@ public class testPOST_addproperty {
 		request.put("latitude", "");
 		request.put("longitude", "");
 		baseURI=Endpoints.baseURI;
-		System.out.println(request.toJSONString());	
+		logger.info(request.toJSONString());	
 	}
 	
 	@Test

@@ -21,11 +21,11 @@ public class testPOST_setlockmonitoringinterval extends Baseclass{
 	@SuppressWarnings("unchecked")
 	@BeforeClass
 	public void init() throws FileNotFoundException, IOException {
-		request = new JSONObject();
+
 		request.put("roleIds", Config.getroleIds());
 		request.put("isPending",true);
 		request.put("isAccepted", true);
-		System.out.println(request.toJSONString());
+		logger.info(request.toJSONString());
 		baseURI = Endpoints.baseURI;
 
 	}

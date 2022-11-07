@@ -23,7 +23,6 @@ public class testPUT_requestgeneratekeyforguestorstaff extends Baseclass {
 	@BeforeClass
 	public void init() throws FileNotFoundException, IOException {
 		request = new JSONObject();
-		
 		request.put("neverExpires", true);
 		logger.info(request.toJSONString());
 		baseURI = Endpoints.baseURI;

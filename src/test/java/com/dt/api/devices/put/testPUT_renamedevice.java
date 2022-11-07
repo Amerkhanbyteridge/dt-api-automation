@@ -10,20 +10,19 @@ import org.json.simple.JSONObject;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.dt.api.baseclass.Baseclass;
 import com.dt.api.main.Config;
 import com.dt.api.main.Endpoints;
 
 import io.restassured.http.ContentType;
 
-public class testPUT_renamedevice {
-	JSONObject request = new JSONObject();
-
+public class testPUT_renamedevice extends Baseclass {
+	
 	@SuppressWarnings("unchecked")
 	@BeforeClass
 	public void init() throws FileNotFoundException, IOException {
-		request = new JSONObject();
 		request.put("name", Config.getname());
-		System.out.println(request.toJSONString());
+		logger.info(request.toJSONString());
 		baseURI = Endpoints.baseURI;
 	}
 
