@@ -20,7 +20,19 @@
 			<class name="com.dt.api.devices.post.testPOST_adddevicesforzone" />
 			<class name="com.dt.api.devices.post.testPOST_deviceaction" />
 			<class name="com.dt.api.devices.post.testPOST_refreshlockstatus" />
+<<<<<<< HEAD
 
+=======
+			<class name="com.dt.api.keyrequest.post.testPOST_createkeyrequestforguestorstaff" />
+			<class name="com.dt.api.keyrequest.post.testPOST_getlocklistbycode" />
+			<class name="com.dt.api.keyrequest.post.testPOST_getlockreport" />
+			<class name="com.dt.api.keyrequest.post.testPOST_sendcodestolockguestorboth" />
+			<class name="com.dt.api.pmskeyrequest.post.testPOST_createguestkeyrequest" />
+			<class name="com.dt.api.collection.post.testPOST_createcollection" />
+			<class name="com.dt.api.propertytokens.post.testPOST_generateTokenforproperty" />
+			<class name="com.dt.api.smartThings.post.testPOST_savePATforcloudaccount" />
+			<class name="com.dt.api.schedule.post.testPOST_setlockmonitoringinterval" />
+>>>>>>> 01779337959a101ea50d1eba4f3ab2fc233e8fb3
 
 			<!-- GET-->
 			<class name="com.dt.api.users.get.testGET_UserDetails" />
@@ -51,6 +63,19 @@
 			<class name="com.dt.api.hubdevices.get.testGET_hubdevicebyID" />
 			<class name="com.dt.api.role.get.testGET_allroles" />
 			<class name="com.dt.api.userrole.get.testGET_userdetails_role" />
+<<<<<<< HEAD
+=======
+			<class name="com.dt.api.smartThings.get.testGET_accountdetails" />
+			<class name="com.dt.api.smartThings.get.testGET_getaccountofanuser" />
+			<class name="com.dt.api.smartThings.get.testGET_smartThingsdevices" />
+			<class name="com.dt.api.schedule.get.testGET_getlockmonitoringinterval" />
+			<class name="com.dt.api.schedule.get.testGET_minandmaxintervals" />
+			<class name="com.dt.api.propertytokens.get.testGET_getTokenforproperty" />
+			<class name="com.dt.api.keyrequest.get.testGET_getdetailforrequestkeysforguestorstaff" />
+			<class name="com.dt.api.keyrequest.get.testGET_getrequestkeysforguestorstaff" />
+			<class name="com.dt.api.collection.get.testGET_collectionsinaproperty" />
+			<class name="com.dt.api.collection.get.testGET_getalldevicesandzonesinacollection" />
+>>>>>>> 01779337959a101ea50d1eba4f3ab2fc233e8fb3
 
 
 			<!-- Delete-->
@@ -58,7 +83,15 @@
 			<class name="com.dt.api.properties.delete.testDELETE_property" />
 			<class name="com.dt.api.zones.delete.testDELETE_zone" />
 			<class name="com.dt.api.devices.delete.testDELETE_deletedevicesforzone" />
+<<<<<<< HEAD
 
+=======
+			<class name="com.dt.api.smartThings.delete.testDELETE_deletecloudaccount" />
+			<class name="com.dt.api.propertytokens.delete.testDELETE_deleteTokenforproperty" />
+			<class name="com.dt.api.keyrequest.delete.testDELETE_deletekeyforguestorstaff" />
+			<class name="com.dt.api.collection.delete.testDELETE_deletecollection" />
+			<class name="com.dt.api.collection.delete.testDELETE_removezonesandDevicesfromcollection" />
+>>>>>>> 01779337959a101ea50d1eba4f3ab2fc233e8fb3
 
 			<!--PUT -->
 			<class name="com.dt.api.properties.put.testPUT_propertyDetail" />
@@ -67,6 +100,18 @@
 			<class name="com.dt.api.devices.put.testPUT_movedevices" />
 			<class name="com.dt.api.devices.put.testPUT_renamedevice" />
 			<class name="com.dt.api.userrole.put.testPUT_updateuserRole" />
+<<<<<<< HEAD
+=======
+			<class name="com.dt.api.collection.put.testPUT_addDevicesandzonestoacollection" />
+			<class name="com.dt.api.collection.put.testPUT_renamecollection" />
+			<class name="com.dt.api.keyrequest.put.testPUT_expirekeyforguestorstaff" />
+			<class name="com.dt.api.keyrequest.put.testPUT_reactivekeyforguestorstaff" />
+			<class name="com.dt.api.keyrequest.put.testPUT_requestgeneratekeyforguestorstaff" />
+			<class name="com.dt.api.keyrequest.put.testPUT_updateguestdetails" />
+			<class name="com.dt.api.keyrequest.put.testPUT_updatekeytimerequestforguestorstaff" />
+			<class name="com.dt.api.smartThings.put.testPUT_updatePAT" />
+
+>>>>>>> 01779337959a101ea50d1eba4f3ab2fc233e8fb3
 
 		</classes>
 	</test> <!-- Test -->

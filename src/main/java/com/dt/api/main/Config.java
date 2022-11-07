@@ -350,4 +350,131 @@ public class Config {
 		String roletype = prop.getProperty("roletype");
 		return roletype;
 	}
+<<<<<<< HEAD
+=======
+	public static String getcloudEmailId() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String cloudEmailId = prop.getProperty("cloudEmailId");
+		return cloudEmailId;
+	}
+	public static String getPAT() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String pat = prop.getProperty("pat");
+		return pat;
+	}
+	public static String gettokenname() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String tokenname = prop.getProperty("tokenname");
+		return tokenname;
+	}
+	public static String getnewpat() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String newPat = prop.getProperty("newPat");
+		return newPat;
+	}
+	
+	public static String getlabel() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String label = prop.getProperty("label");
+		return label;
+	}
+	public static String getpmsID() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String pmsId = prop.getProperty("pmsId");
+		return pmsId;
+	}
+	public static String getstartdate() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String startDate = prop.getProperty("startDate");
+		return startDate;
+	}
+	public static String getenddate() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String endDate = prop.getProperty("endDate");
+		return endDate;
+	}
+	public static String getcollectionIds() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String collectionIds = prop.getProperty("collectionId");
+		return collectionIds;
+	}
+	public static String gettype() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String type = prop.getProperty("type");
+		return type;
+	}
+	
+	
+	public static String getkeyID() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String keyId = prop.getProperty("keyId");
+		return keyId;
+	}
+	
+	public static String getstartTime() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String startTime = prop.getProperty("startTime");
+		return startTime;
+	}
+	
+	
+	public static String getendTime() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String endTime = prop.getProperty("endTime");
+		return endTime;
+	}
+	
+>>>>>>> 01779337959a101ea50d1eba4f3ab2fc233e8fb3
 }
