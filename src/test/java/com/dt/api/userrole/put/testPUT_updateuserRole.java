@@ -10,14 +10,14 @@ import org.json.simple.JSONObject;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.dt.api.baseclass.Baseclass;
 import com.dt.api.main.Config;
 import com.dt.api.main.Endpoints;
 
 import io.restassured.http.ContentType;
 
-public class testPUT_updateuserRole {
+public class testPUT_updateuserRole extends Baseclass {
 
-	JSONObject request = new JSONObject();
 
 	@SuppressWarnings("unchecked")
 	@BeforeClass
@@ -25,9 +25,9 @@ public class testPUT_updateuserRole {
 		request = new JSONObject();
 		request.put("moveToZoneId", Config.getmoveToZoneId());
 		request.put("devices", Config.getdevices());
-		System.out.println(request.toJSONString());
+		logger.info(request.toJSONString());
 		baseURI = Endpoints.baseURI;
-		//need to add
+	
 	}
 
 	@Test
