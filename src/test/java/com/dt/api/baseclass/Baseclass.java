@@ -27,13 +27,16 @@ public class Baseclass {
 
 	public JSONObject request = new JSONObject();
 	public Logger logger = LogManager.getLogger(getClass());
+	
+	public Baseclass() {
+		// TODO Auto-generated constructor stub
+		baseURI = Endpoints.baseURI;
+	}
+	
 
 	@BeforeClass
 	public void init() throws FileNotFoundException, IOException {
 		request = new JSONObject();
-		baseURI = Endpoints.baseURI;
-		
-	
 	}
 
 	@BeforeMethod
