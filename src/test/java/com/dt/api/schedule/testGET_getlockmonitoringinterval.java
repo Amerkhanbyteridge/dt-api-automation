@@ -1,4 +1,4 @@
-package com.dt.api.schedule.get;
+package com.dt.api.schedule;
 
 import static io.restassured.RestAssured.given;
 import static org.testng.Assert.assertEquals;

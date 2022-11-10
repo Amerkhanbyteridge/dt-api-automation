@@ -1,4 +1,4 @@
-package com.dt.api.users.get;
+package com.dt.api.users;
 
 import static io.restassured.RestAssured.given;
 import static org.testng.Assert.assertEquals;

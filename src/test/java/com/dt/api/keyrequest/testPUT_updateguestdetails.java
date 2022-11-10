@@ -1,4 +1,4 @@
-package com.dt.api.keyrequest.put;
+package com.dt.api.keyrequest;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;

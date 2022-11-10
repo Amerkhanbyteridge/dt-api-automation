@@ -1,4 +1,4 @@
-package com.dt.api.role.get;
+package com.dt.api.role;
 
 import static io.restassured.RestAssured.given;
 import static org.testng.Assert.assertEquals;

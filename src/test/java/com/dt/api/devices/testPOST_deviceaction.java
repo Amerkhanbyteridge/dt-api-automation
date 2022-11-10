@@ -1,4 +1,4 @@
-package com.dt.api.devices.post;
+package com.dt.api.devices;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;

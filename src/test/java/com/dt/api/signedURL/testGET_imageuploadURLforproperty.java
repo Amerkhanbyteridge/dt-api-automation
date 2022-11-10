@@ -1,4 +1,4 @@
-package com.dt.api.signedURL.get;
+package com.dt.api.signedURL;
 
 import static io.restassured.RestAssured.given;
 import static org.testng.Assert.assertEquals;

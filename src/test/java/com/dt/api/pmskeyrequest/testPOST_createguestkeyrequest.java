@@ -1,4 +1,4 @@
-package com.dt.api.pmskeyrequest.post;
+package com.dt.api.pmskeyrequest;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;

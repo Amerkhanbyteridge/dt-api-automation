@@ -1,4 +1,4 @@
-package com.dt.api.collection.put;
+package com.dt.api.collection;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;

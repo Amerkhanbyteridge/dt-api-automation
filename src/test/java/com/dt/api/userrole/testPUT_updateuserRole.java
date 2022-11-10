@@ -1,4 +1,4 @@
-package com.dt.api.userrole.put;
+package com.dt.api.userrole;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;

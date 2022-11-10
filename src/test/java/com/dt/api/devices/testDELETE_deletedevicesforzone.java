@@ -1,4 +1,4 @@
-package com.dt.api.devices.delete;
+package com.dt.api.devices;
 
 import static io.restassured.RestAssured.given;
 

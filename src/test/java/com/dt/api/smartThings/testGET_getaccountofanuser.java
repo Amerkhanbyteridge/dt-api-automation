@@ -1,4 +1,4 @@
-package com.dt.api.smartThings.get;
+package com.dt.api.smartThings;
 
 import static io.restassured.RestAssured.given;
 import static org.testng.Assert.assertEquals;

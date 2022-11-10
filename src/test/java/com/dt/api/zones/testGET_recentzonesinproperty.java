@@ -1,4 +1,4 @@
-package com.dt.api.zones.get;
+package com.dt.api.zones;
 
 import static io.restassured.RestAssured.given;
 import static org.testng.Assert.assertEquals;

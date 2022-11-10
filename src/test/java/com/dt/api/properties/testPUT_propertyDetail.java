@@ -1,4 +1,4 @@
-package com.dt.api.properties.put;
+package com.dt.api.properties;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;

@@ -1,4 +1,4 @@
-package com.dt.api.smartThings.delete;
+package com.dt.api.smartThings;
 
 import static io.restassured.RestAssured.given;
 

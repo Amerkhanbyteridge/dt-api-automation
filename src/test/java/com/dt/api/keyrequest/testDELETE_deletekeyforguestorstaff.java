@@ -1,4 +1,4 @@
-package com.dt.api.keyrequest.delete;
+package com.dt.api.keyrequest;
 
 import static io.restassured.RestAssured.given;
 

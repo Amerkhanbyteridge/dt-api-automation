@@ -1,4 +1,4 @@
-package com.dt.api.hubdevices.get;
+package com.dt.api.hubdevices;
 
 
 import static io.restassured.RestAssured.given;

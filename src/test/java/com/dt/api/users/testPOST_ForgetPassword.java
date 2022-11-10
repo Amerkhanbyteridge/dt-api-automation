@@ -1,4 +1,4 @@
-package com.dt.api.users.post;
+package com.dt.api.users;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
@@ -15,7 +15,7 @@ import com.dt.api.main.Endpoints;
 
 import io.restassured.http.ContentType;
 
-public class testPOST_ResendInvitation {
+public class testPOST_ForgetPassword {
 	JSONObject request = new JSONObject();
 
 	@SuppressWarnings("unchecked")
@@ -23,16 +23,17 @@ public class testPOST_ResendInvitation {
 	public void init() throws FileNotFoundException, IOException {
 		request = new JSONObject();
 		request.put("email", Config.getemailID());
-		request.put("propertyId", Config.getpropertyID());
 		System.out.println(request.toJSONString());
 		baseURI = Endpoints.baseURI;
+
 	}
 
 	@Test
 	public void testPost() throws FileNotFoundException, IOException {
+
 		given().header("Authorization", "bearer " + Config.getToken(), "accept", "application/json")
-				.contentType(ContentType.JSON).body(request.toJSONString()).when().post(Endpoints.resenduserinvite)
-				.then().statusCode(400).log().all();
+				.contentType(ContentType.JSON).body(request.toJSONString()).when()
+				.post(Endpoints.veriifyforgotpasswordotp).then().statusCode(200).log().all();
 
 	}
 

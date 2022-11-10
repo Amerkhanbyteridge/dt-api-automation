@@ -1,4 +1,4 @@
-package com.dt.api.zones.get;
+package com.dt.api.zones;
 
 
 import static io.restassured.RestAssured.given;
@@ -6,6 +6,7 @@ import static org.testng.Assert.assertEquals;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
 import org.testng.annotations.Test;
 
 import com.dt.api.baseclass.Baseclass;
@@ -15,14 +16,15 @@ import com.dt.api.main.Endpoints;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 
-public class testGET_zonetypes extends Baseclass{
+public class testGET_childzones extends Baseclass{
+	
 
 	@SuppressWarnings("rawtypes")
 	@Test
 	public void testGet001() throws FileNotFoundException, IOException {
 		Response response = given()
 				.headers("Authorization", "bearer " +Config.getToken(), "accept", "application/json").log().all()
-				.get(Endpoints.zonestype).andReturn();
+				.get(Endpoints.childzones, Config.getzoneID()).andReturn(); //sub-zones need to be add
 		ResponseBody body= response.getBody();
 		logger.info("Status code is: " + response.getStatusCode());
 		logger.info("Response time is: " + response.getTime());
@@ -31,5 +33,4 @@ public class testGET_zonetypes extends Baseclass{
 		logger.info("Content type is: " + response.getHeader("content-type"));
 		assertEquals(response.getStatusCode(), 200);
 	}
-
 }

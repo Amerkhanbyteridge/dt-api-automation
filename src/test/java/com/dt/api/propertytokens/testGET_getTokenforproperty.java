@@ -1,4 +1,4 @@
-package com.dt.api.propertytokens.get;
+package com.dt.api.propertytokens;
 
 import static io.restassured.RestAssured.given;
 import static org.testng.Assert.assertEquals;

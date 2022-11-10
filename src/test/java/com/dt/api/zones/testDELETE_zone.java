@@ -1,4 +1,4 @@
-package com.dt.api.zones.delete;
+package com.dt.api.zones;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;

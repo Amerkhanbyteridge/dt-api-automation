@@ -1,4 +1,4 @@
-package com.dt.api.smartThings.put;
+package com.dt.api.smartThings;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;

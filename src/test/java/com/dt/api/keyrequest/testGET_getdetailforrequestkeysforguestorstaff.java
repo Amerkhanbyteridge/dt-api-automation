@@ -1,4 +1,4 @@
-package com.dt.api.keyrequest.get;
+package com.dt.api.keyrequest;
 
 import static io.restassured.RestAssured.given;
 import static org.testng.Assert.assertEquals;

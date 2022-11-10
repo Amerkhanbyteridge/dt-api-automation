@@ -1,4 +1,4 @@
-package com.dt.api.propertytokens.delete;
+package com.dt.api.propertytokens;
 
 import static io.restassured.RestAssured.given;
 

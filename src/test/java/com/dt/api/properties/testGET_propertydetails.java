@@ -1,4 +1,4 @@
-package com.dt.api.properties.get;
+package com.dt.api.properties;
 
 
 import static io.restassured.RestAssured.given;

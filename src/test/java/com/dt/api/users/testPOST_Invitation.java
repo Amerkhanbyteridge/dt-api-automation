@@ -1,4 +1,4 @@
-package com.dt.api.users.post;
+package com.dt.api.users;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
@@ -21,7 +21,8 @@ public class testPOST_Invitation {
 	@SuppressWarnings("unchecked")
 	@BeforeClass
 	public void init() throws FileNotFoundException, IOException {
-		request = new JSONObject();
+		request = new JSONObject();// given().header("accept","application/json")
+		//.contentType(ContentType.JSON).body(request.toJSONString()).when().get(TestData.inviteuserdata).andthen. return();
 		request.put("email", Config.getemailID());
 		request.put("firstName", Config.getfirstname());
 		request.put("lastName", Config.getlastname());
