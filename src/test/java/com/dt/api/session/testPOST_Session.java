@@ -26,7 +26,6 @@ public class testPOST_Session extends Baseclass {
 
 		request.put("email", Config.getemailID());
 		request.put("password", Config.getPassword());
-		baseURI = Endpoints.baseURI;
 
 	}
 
