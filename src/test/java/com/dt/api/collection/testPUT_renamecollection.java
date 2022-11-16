@@ -25,7 +25,6 @@ public class testPUT_renamecollection extends Baseclass{
 		request.put("zoneIds", Config.getzoneID());
 		request.put("deviceIds", Config.getdeviceID());
 		logger.info(request.toJSONString());
-		baseURI = Endpoints.baseURI;
 	}
 
 	@Test

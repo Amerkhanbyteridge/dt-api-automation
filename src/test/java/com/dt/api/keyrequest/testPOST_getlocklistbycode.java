@@ -10,11 +10,15 @@ import org.json.simple.JSONObject;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.dt.api.ExtentReports.Reporting;
 import com.dt.api.baseclass.Baseclass;
 import com.dt.api.main.Config;
 import com.dt.api.main.Endpoints;
+import com.relevantcodes.extentreports.LogStatus;
 
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+import io.restassured.response.ResponseBody;
 
 public class testPOST_getlocklistbycode extends Baseclass {
 
@@ -24,15 +28,15 @@ public class testPOST_getlocklistbycode extends Baseclass {
 	public void init() throws FileNotFoundException, IOException {
 		request.put("deviceId", Config.getdeviceID());
 		request.put("action", Config.getaction());
-		baseURI=Endpoints.baseURI;
 		logger.info(request.toJSONString());	
 	}
 	
 	@Test
 	public void testPost001() throws FileNotFoundException, IOException {
 		given().header("Authorization", "bearer " + Config.getToken(), "accept", "application/json")
-				.contentType(ContentType.JSON).body(request.toJSONString()).when().post(Endpoints.getlocklistbycode).then()
+		.contentType(ContentType.JSON).body(request.toJSONString()).when().post(Endpoints.getlocklistbycode).then()
 				.statusCode(201).log().all();
+		
 
 	}
 

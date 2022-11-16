@@ -28,7 +28,6 @@ public class testPUT_updateguestdetails extends Baseclass {
 		request.put("email", Config.getemailID());
 		request.put("phone", Config.getphonenumber());
 		logger.info(request.toJSONString());
-		baseURI = Endpoints.baseURI;
 	}
 
 	@Test

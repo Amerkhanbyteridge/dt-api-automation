@@ -25,7 +25,6 @@ public class testPUT_requestgeneratekeyforguestorstaff extends Baseclass {
 		request = new JSONObject();
 		request.put("neverExpires", true);
 		logger.info(request.toJSONString());
-		baseURI = Endpoints.baseURI;
 	}
 
 	@Test

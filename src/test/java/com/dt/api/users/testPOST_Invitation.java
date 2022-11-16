@@ -2,6 +2,7 @@ package com.dt.api.users;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
+import static org.testng.Assert.assertEquals;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -10,12 +11,20 @@ import org.json.simple.JSONObject;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.dt.api.ExtentReports.Reporting;
+import com.dt.api.baseclass.Baseclass;
 import com.dt.api.main.Config;
 import com.dt.api.main.Endpoints;
+import com.relevantcodes.extentreports.LogStatus;
 
+import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+import io.restassured.response.ResponseBody;
+import io.restassured.response.Validatable;
+import io.restassured.response.ValidatableResponse;
 
-public class testPOST_Invitation {
+public class testPOST_Invitation extends Baseclass {
 	JSONObject request = new JSONObject();
 
 	@SuppressWarnings("unchecked")
@@ -33,9 +42,10 @@ public class testPOST_Invitation {
 	}
 	@Test
 	public void testPost() throws FileNotFoundException, IOException {
-		given().header("Authorization", "bearer " + Config.getToken(), "accept", "application/json")
-				.contentType(ContentType.JSON).body(request.toJSONString()).when().post(Endpoints.inviteuser).then()
-				.statusCode(400).log().all();
+		 given().header("Authorization", "Bearer " + Config.getToken())
+				.header("Content-Type", "application/json").body(request.toJSONString()).when().post(Endpoints.inviteuser).then()
+				.statusCode(403).log().all();
+
 
 	}
 

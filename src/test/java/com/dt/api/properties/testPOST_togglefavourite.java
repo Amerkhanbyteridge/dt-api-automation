@@ -26,7 +26,6 @@ public class testPOST_togglefavourite extends Baseclass {
 		request.put("propertyId", Config.getpropertyID());
 		request.put("isStarred",true);
 		logger.info(request.toJSONString());
-		baseURI = Endpoints.baseURI;
 
 	}
 

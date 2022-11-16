@@ -24,7 +24,6 @@ import io.restassured.http.ContentType;
 
 public class testPOST_adddevicesforzone extends Baseclass {
 
-	JSONObject request = new JSONObject();
 	@SuppressWarnings("unchecked")
 	@BeforeClass
 	public void init() throws FileNotFoundException, IOException {
@@ -33,7 +32,6 @@ public class testPOST_adddevicesforzone extends Baseclass {
 		request.put("devices", Config.getdevices());
 		request.put("propertyId", Config.getpropertyID());
 		request.put("protocolId", Config.getprotocolId());
-		baseURI=Endpoints.baseURI;
 
 		System.out.println(request.toJSONString());	
 

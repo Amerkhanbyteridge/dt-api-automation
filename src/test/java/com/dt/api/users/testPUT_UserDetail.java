@@ -19,7 +19,6 @@ import com.dt.api.main.Endpoints;
 import io.restassured.http.ContentType;
 
 public class testPUT_UserDetail extends Baseclass {
-	JSONObject request = new JSONObject();
 
 	@SuppressWarnings("unchecked")
 	@BeforeClass
@@ -30,7 +29,7 @@ public class testPUT_UserDetail extends Baseclass {
 		request.put("phoneNumber", Config.getphonenumber());
 		request.put("imageURL", Config.getimage());
 		logger.info(request.toJSONString());
-		baseURI = Endpoints.baseURI;
+
 	}
 
 	@Test

@@ -25,7 +25,6 @@ public class testPOST_generateTokenforproperty extends Baseclass {
 		request.put("label", Config.getlabel());
 		request.put("propertyId", Config.getpropertyID());
 		logger.info(request.toJSONString());
-		baseURI = Endpoints.baseURI;
 
 	}
 

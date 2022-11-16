@@ -26,7 +26,6 @@ public class testPUT_updateuserRole extends Baseclass {
 		request.put("moveToZoneId", Config.getmoveToZoneId());
 		request.put("devices", Config.getdevices());
 		logger.info(request.toJSONString());
-		baseURI = Endpoints.baseURI;
 	
 	}
 

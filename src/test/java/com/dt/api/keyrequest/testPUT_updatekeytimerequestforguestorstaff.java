@@ -27,7 +27,6 @@ public class testPUT_updatekeytimerequestforguestorstaff extends Baseclass {
 		request.put("endDate", Config.getenddate());
 		request.put("endTime", Config.getendTime());
 		logger.info(request.toJSONString());
-		baseURI = Endpoints.baseURI;
 	}
 
 	@Test

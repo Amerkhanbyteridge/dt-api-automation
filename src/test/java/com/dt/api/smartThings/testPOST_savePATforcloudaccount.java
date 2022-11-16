@@ -26,7 +26,6 @@ public class testPOST_savePATforcloudaccount extends Baseclass{
 		request.put("pat", Config.getPAT());
 		request.put("propertyId", Config.getpropertyID());
 		request.put("tokenname", Config.gettokenname());
-		baseURI=Endpoints.baseURI;
 		logger.info(request.toJSONString());	
 	}
 	

@@ -20,19 +20,29 @@ import org.testng.annotations.BeforeMethod;
 import com.aventstack.extentreports.Status;
 import com.dt.api.ExtentReports.ExtentManager;
 import com.dt.api.ExtentReports.Reporting;
+import com.dt.api.main.Config;
 import com.dt.api.main.Endpoints;
 import com.relevantcodes.extentreports.LogStatus;
+
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import io.restassured.response.ResponseBody;
+import io.restassured.specification.RequestSpecification;
 
 public class Baseclass {
 
 	public JSONObject request = new JSONObject();
 	public Logger logger = LogManager.getLogger(getClass());
+	public RequestSpecification httpRequest;
+	public Response response;
+	public ResponseBody body;
 
 	@BeforeClass
 	public void init() throws FileNotFoundException, IOException {
 		request = new JSONObject();
 		baseURI = Endpoints.baseURI;
-		
+		 httpRequest = RestAssured.given().header("Authorization", "Bearer " + Config.getToken())
+				.header("Content-Type", "application/json");
 	
 	}
 

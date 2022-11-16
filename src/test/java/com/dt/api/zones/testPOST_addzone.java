@@ -1,6 +1,6 @@
 package com.dt.api.zones;
 
-import static io.restassured.RestAssured.baseURI;
+
 import static io.restassured.RestAssured.given;
 
 import java.io.FileNotFoundException;
@@ -10,14 +10,16 @@ import org.json.simple.JSONObject;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.dt.api.baseclass.Baseclass;
 import com.dt.api.main.Config;
 import com.dt.api.main.Endpoints;
+import com.mongodb.diagnostics.logging.Logger;
 
 import io.restassured.http.ContentType;
 
-public class testPOST_addzone {
+public class testPOST_addzone extends Baseclass{
 
-	JSONObject request = new JSONObject();
+
 
 	@SuppressWarnings("unchecked")
 	@BeforeClass
@@ -27,8 +29,7 @@ public class testPOST_addzone {
 		request.put("zoneTypeId",Config.getzonetypeId());
 		request.put("propertyId",Config.getpropertyID());
 		request.put("parentId", Config.getparentId());
-		System.out.println(request.toJSONString());
-		baseURI = Endpoints.baseURI;
+		logger.info(request.toJSONString());
 
 	}
 

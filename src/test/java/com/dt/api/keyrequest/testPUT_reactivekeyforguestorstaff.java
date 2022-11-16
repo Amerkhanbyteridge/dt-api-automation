@@ -28,7 +28,6 @@ public class testPUT_reactivekeyforguestorstaff extends Baseclass{
 		request.put("endTime", Config.getendTime());
 		request.put("neverExpires", true);
 		logger.info(request.toJSONString());
-		baseURI = Endpoints.baseURI;
 	}
 
 	@Test

@@ -10,13 +10,14 @@ import org.json.simple.JSONObject;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.dt.api.baseclass.Baseclass;
 import com.dt.api.main.Config;
 import com.dt.api.main.Endpoints;
 
 import io.restassured.http.ContentType;
 
-public class testPOST_VerifyOTP {
-	JSONObject request = new JSONObject();
+public class testPOST_VerifyOTP extends Baseclass {
+
 
 	@SuppressWarnings("unchecked")
 	@BeforeClass
@@ -25,7 +26,6 @@ public class testPOST_VerifyOTP {
 		request.put("otp", Config.getotp());
 		request.put("emailID", Config.getemailID());
 		System.out.println(request.toJSONString());
-		baseURI = Endpoints.baseURI;
 	}
 
 	@Test

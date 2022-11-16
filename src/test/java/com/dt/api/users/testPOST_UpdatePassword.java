@@ -10,32 +10,38 @@ import org.json.simple.JSONObject;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.dt.api.baseclass.Baseclass;
 import com.dt.api.main.Config;
 import com.dt.api.main.Endpoints;
+import com.dt.api.main.TestData;
 
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 
-public class testPOST_UpdatePassword {
-	JSONObject request = new JSONObject();
+public class testPOST_UpdatePassword extends Baseclass {
+
+	protected Response reps;
 
 	@SuppressWarnings("unchecked")
 	@BeforeClass
 	public void init() throws FileNotFoundException, IOException {
-		request = new JSONObject();
-		request.put("email", Config.getemailID());
-		request.put("newPassword", Config.getPassword());
-		System.out.println(request.toJSONString());
-		baseURI = Endpoints.baseURI;
+		// reps=
+		// given().header("Content-Type","application/json").contentType(ContentType.JSON).when().log().all().get(TestData.setnewpassworddata).andReturn();
+		// body.asPrettyString();
+		
+		  request.put("email", Config.getemailID()); 
+		  request.put("newPassword",Config.getPassword()); 
+		  System.out.println(request.toJSONString());
+		 
+
 	}
 
 	@Test
 	public void testPost() throws FileNotFoundException, IOException {
-
-		baseURI = Endpoints.baseURI;
 		given().header("Authorization", "bearer " + Config.getToken(), "accept", "application/json")
-				.contentType(ContentType.JSON).body(request.toJSONString()).when().post(Endpoints.setnewpassword).then()
-				.statusCode(200).log().all();
-
+				.contentType(ContentType.JSON).body(request.toJSONString()).when().post(Endpoints.setnewpassword).then().statusCode(200)
+				.log().all();
 	}
 
 }

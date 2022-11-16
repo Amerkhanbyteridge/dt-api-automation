@@ -11,10 +11,12 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
+import com.dt.api.ExtentReports.Reporting;
 import com.dt.api.baseclass.Baseclass;
 import com.dt.api.main.Config;
 import com.dt.api.main.Endpoints;
 //import com.dt.api.reporting.ExtentTestManager;
+import com.relevantcodes.extentreports.LogStatus;
 
 import io.restassured.http.ContentType;
 
@@ -26,6 +28,7 @@ public class testPOST_Session extends Baseclass {
 
 		request.put("email", Config.getemailID());
 		request.put("password", Config.getPassword());
+		logger.info(request.toJSONString());
 		baseURI = Endpoints.baseURI;
 
 	}
@@ -36,10 +39,9 @@ public class testPOST_Session extends Baseclass {
 		String sessionToken = given().header("accept", "application/json").contentType(ContentType.JSON).log().all()
 				.body(request.toJSONString()).when().post("/api/sessions/").then().statusCode(200).extract()
 				.path("data.sessionToken");
-
 		new Config("token", sessionToken);
 		logger.info("token is: " +sessionToken);
-		//ExtentTestManager.getTest().log(Status.INFO, sessionToken);
+		Reporting.getTest().log(LogStatus.INFO, "Token is: " +sessionToken);
 		logger.info("token is: " +Config.getToken());
 	}
 

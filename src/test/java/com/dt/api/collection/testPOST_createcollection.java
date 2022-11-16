@@ -16,25 +16,24 @@ import com.dt.api.main.Endpoints;
 
 import io.restassured.http.ContentType;
 
-public class testPOST_createcollection extends Baseclass{
+public class testPOST_createcollection extends Baseclass {
 
 	@SuppressWarnings("unchecked")
 	@BeforeClass
 	public void init() throws FileNotFoundException, IOException {
 		request = new JSONObject();
 		request.put("propertyId", Config.getpropertyID());
-		request.put("name",Config.getname());
+		request.put("name", Config.getname());
 		logger.info(request.toJSONString());
 		baseURI = Endpoints.baseURI;
-
 	}
 
 	@Test
 	public void testPost001() throws FileNotFoundException, IOException {
 
 		given().header("Authorization", "bearer " + Config.getToken(), "accept", "application/json")
-				.contentType(ContentType.JSON).body(request.toJSONString()).when()
-				.post(Endpoints.createcollection ).then().statusCode(200).log().all();
+				.contentType(ContentType.JSON).body(request.toJSONString()).when().post(Endpoints.createcollection)
+				.then().statusCode(201).log().all();
 
 	}
 

@@ -25,7 +25,6 @@ public class testPUT_movedevices extends Baseclass {
 		request.put("moveToZoneId", Config.getmoveToZoneId());
 		request.put("devices", Config.getdevices());
 		logger.info(request.toJSONString());
-		baseURI = Endpoints.baseURI;
 	}
 
 	@Test

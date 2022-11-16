@@ -10,12 +10,13 @@ import org.json.simple.JSONObject;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.dt.api.baseclass.Baseclass;
 import com.dt.api.main.Config;
 import com.dt.api.main.Endpoints;
 
 import io.restassured.http.ContentType;
 
-public class testPOST_ForgetPassword {
+public class testPOST_ForgetPassword extends Baseclass {
 	JSONObject request = new JSONObject();
 
 	@SuppressWarnings("unchecked")

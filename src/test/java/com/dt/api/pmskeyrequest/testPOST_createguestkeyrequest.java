@@ -34,7 +34,6 @@ public class testPOST_createguestkeyrequest extends Baseclass {
 		request.put("endDate", Config.getenddate());
 		request.put("pmsId", Config.getpmsID());
 		request.put("neverExpires", true);
-		baseURI=Endpoints.baseURI;
 		logger.info(request.toJSONString());	
 	}
 	
