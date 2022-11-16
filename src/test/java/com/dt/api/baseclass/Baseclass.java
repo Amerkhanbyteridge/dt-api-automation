@@ -11,13 +11,12 @@ import java.lang.reflect.Method;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.simple.JSONObject;
-import org.testng.ITestContext;
+
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
-import com.aventstack.extentreports.Status;
 import com.dt.api.ExtentReports.ExtentManager;
 import com.dt.api.ExtentReports.Reporting;
 import com.dt.api.main.Config;
@@ -33,17 +32,29 @@ public class Baseclass {
 
 	public JSONObject request = new JSONObject();
 	public Logger logger = LogManager.getLogger(getClass());
+<<<<<<< HEAD
 	public RequestSpecification httpRequest;
 	public Response response;
 	public ResponseBody body;
+=======
+	
+	public Baseclass() {
+		// TODO Auto-generated constructor stub
+		baseURI = Endpoints.baseURI;
+	}
+	
+>>>>>>> 415243411a0a1d2f5eca3268c682d9f42d57cee3
 
 	@BeforeClass
 	public void init() throws FileNotFoundException, IOException {
 		request = new JSONObject();
+<<<<<<< HEAD
 		baseURI = Endpoints.baseURI;
 		 httpRequest = RestAssured.given().header("Authorization", "Bearer " + Config.getToken())
 				.header("Content-Type", "application/json");
 	
+=======
+>>>>>>> 415243411a0a1d2f5eca3268c682d9f42d57cee3
 	}
 
 	@BeforeMethod
