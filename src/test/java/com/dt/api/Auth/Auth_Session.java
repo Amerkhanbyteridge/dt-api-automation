@@ -1,4 +1,4 @@
-package com.api.Auth;
+package com.dt.api.Auth;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
@@ -15,7 +15,7 @@ import com.dt.api.main.Endpoints;
 
 import io.restassured.http.ContentType;
 
-public class Session_Auth {
+public class Auth_Session {
 	
 	JSONObject request;
 	

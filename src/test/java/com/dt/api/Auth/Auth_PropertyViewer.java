@@ -1,4 +1,4 @@
-package com.api.Auth;
+package com.dt.api.Auth;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
@@ -21,7 +21,7 @@ import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 import io.restassured.response.ResponseOptions;
 
-public class RoleAccess_PV extends Baseclass {
+public class Auth_PropertyViewer extends Baseclass {
 
 
 	private static final int priority = 0;
