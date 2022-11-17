@@ -12,13 +12,14 @@ import org.json.simple.JSONObject;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.dt.api.baseclass.Baseclass;
 import com.dt.api.main.Config;
 import com.dt.api.main.Endpoints;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
-public class testPOST_AcceptInvitation {
+public class testPOST_AcceptInvitation extends Baseclass {
 
 	JSONObject request = new JSONObject();
 	Response response;

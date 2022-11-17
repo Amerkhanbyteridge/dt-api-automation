@@ -26,7 +26,6 @@ public class testPOST_setlockmonitoringinterval extends Baseclass{
 		request.put("isPending",true);
 		request.put("isAccepted", true);
 		logger.info(request.toJSONString());
-		baseURI = Endpoints.baseURI;
 
 	}
 

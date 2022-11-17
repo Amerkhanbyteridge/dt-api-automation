@@ -18,7 +18,6 @@ import io.restassured.http.ContentType;
 
 public class testPUT_updatezone extends Baseclass {
 
-	JSONObject request = new JSONObject();
 
 	@SuppressWarnings("unchecked")
 	@BeforeClass
@@ -27,7 +26,6 @@ public class testPUT_updatezone extends Baseclass {
 		request.put("name", Config.getname());
 		request.put("typeId", Config.gettypeId());
 		logger.info(request.toJSONString());
-		baseURI = Endpoints.baseURI;
 	}
 
 	@Test

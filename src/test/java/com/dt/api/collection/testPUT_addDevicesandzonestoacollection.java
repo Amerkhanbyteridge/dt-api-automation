@@ -24,7 +24,6 @@ public class testPUT_addDevicesandzonestoacollection extends Baseclass {
 		request = new JSONObject();
 		request.put("name", Config.getname());
 		logger.info(request.toJSONString());
-		baseURI = Endpoints.baseURI;
 	}
 
 	@Test

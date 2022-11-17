@@ -34,7 +34,6 @@ public class testPOST_addproperty extends Baseclass {
 		request.put("zipCode", Config.getzipCode());
 		request.put("latitude", "");
 		request.put("longitude", "");
-		baseURI=Endpoints.baseURI;
 		logger.info(request.toJSONString());	
 	}
 	

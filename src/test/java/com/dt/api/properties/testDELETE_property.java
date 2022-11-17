@@ -2,6 +2,7 @@ package com.dt.api.properties;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
+import static org.testng.Assert.assertEquals;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -10,20 +11,33 @@ import org.json.simple.JSONObject;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.dt.api.ExtentReports.Reporting;
 import com.dt.api.baseclass.Baseclass;
 import com.dt.api.main.Config;
 import com.dt.api.main.Endpoints;
+import com.relevantcodes.extentreports.LogStatus;
 
 import io.restassured.http.ContentType;
+import io.restassured.response.ResponseBody;
 
 public class testDELETE_property extends Baseclass {
 
 	
 	@Test
 	public void testDELETE001() throws FileNotFoundException, IOException {
-		given().headers("accept", "application/json", "authorization", "bearer " +Config.getToken())
-				.contentType(ContentType.JSON).log().all().when().delete(Endpoints.deleteproperty, Config.getpropertyID())
-				.then().statusCode(400).log().all();
+		response = httpRequest.delete(Endpoints.deleteproperty).andReturn();
+		ResponseBody body = response.getBody();
+		logger.info("Status code is: " + response.getStatusCode());
+		Reporting.getTest().log(LogStatus.INFO, "Status code is: " + response.getStatusCode());
+		logger.info("Response time is: " + response.getTime());
+		Reporting.getTest().log(LogStatus.INFO, "Response time is: " + response.getTime());
+		logger.info("Response body is: " + body.asPrettyString());
+		Reporting.getTest().log(LogStatus.INFO, "Response body is: " + body.asPrettyString());
+		logger.info("Status line is: " + response.getStatusLine());
+		Reporting.getTest().log(LogStatus.INFO, "Status line is: " + response.getStatusLine());
+		logger.info("Content type is: " + response.getHeader("content-type"));
+		Reporting.getTest().log(LogStatus.INFO, "Content type is: " + response.getHeader("content-type"));
+		assertEquals(response.getStatusCode(), 200);
 	}
 
 }

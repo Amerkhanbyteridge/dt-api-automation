@@ -23,7 +23,6 @@ public class testPUT_renamedevice extends Baseclass {
 	public void init() throws FileNotFoundException, IOException {
 		request.put("name", Config.getname());
 		logger.info(request.toJSONString());
-		baseURI = Endpoints.baseURI;
 	}
 
 	@Test

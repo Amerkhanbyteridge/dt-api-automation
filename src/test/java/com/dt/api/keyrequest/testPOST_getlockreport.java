@@ -23,7 +23,6 @@ public class testPOST_getlockreport extends Baseclass {
 	public void init() throws FileNotFoundException, IOException {
 		request.put("deviceId", Config.getdeviceID());
 		request.put("action", Config.getaction());
-		baseURI=Endpoints.baseURI;
 		logger.info(request.toJSONString());	
 	}
 	

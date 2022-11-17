@@ -33,7 +33,6 @@ public class testPUT_propertyDetail extends Baseclass {
 		request.put("country", Config.getcountry());
 		request.put("zipCode", Config.getzipCode());
 		logger.info(request.toJSONString());
-		baseURI = Endpoints.baseURI;
 	}
 
 	@Test

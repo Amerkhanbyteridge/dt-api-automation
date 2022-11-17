@@ -22,7 +22,6 @@ public class testPOST_refreshlockstatus extends Baseclass {
 	@BeforeClass
 	public void init() throws FileNotFoundException, IOException {
 		request.put("deviceId", Config.getdeviceID());
-		baseURI=Endpoints.baseURI;
 		logger.info(request.toJSONString());	
 	}
 	

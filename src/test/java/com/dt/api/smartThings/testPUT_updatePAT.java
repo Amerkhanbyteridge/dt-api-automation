@@ -26,7 +26,6 @@ public class testPUT_updatePAT extends Baseclass {
 		request.put("cloudEmailId", Config.getcloudEmailId());
 		request.put("newPat", Config.getnewpat());
 		logger.info(request.toJSONString());
-		baseURI = Endpoints.baseURI;
 	}
 
 	@Test
