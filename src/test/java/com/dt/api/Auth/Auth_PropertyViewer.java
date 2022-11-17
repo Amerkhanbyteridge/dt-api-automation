@@ -1,4 +1,4 @@
-package com.api.Auth;
+package com.dt.api.Auth;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
@@ -21,7 +21,7 @@ import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 import io.restassured.response.ResponseOptions;
 
-public class RoleAccess_PV extends Baseclass {
+public class Auth_PropertyViewer extends Baseclass {
 
 
 	private static final int priority = 0;
@@ -175,8 +175,44 @@ public class RoleAccess_PV extends Baseclass {
 				.body(request.toJSONString()).when().put(Endpoints.updateuserdetail).then().statusCode(200);
 		
 	}
-		
 	
+	  
+	  @Test
+	  	  
+	  public void testUpdateUD_PV() throws FileNotFoundException, IOException {
+	  given().headers("accept", "application/json", "Authorization", "bearer " +
+	  ConfigAuth.getToken())
+	  .contentType(ContentType.JSON).log().all().pathParam("email",
+	  ConfigAuth.getemailID())
+	  .body(request.toJSONString()).when().put(Endpoints.updateuserdetail).then().
+	  statusCode(400); }
+	  
+	
+	@Test
+	
+	  public void UpdateUserRole_PV() throws FileNotFoundException, IOException
+	  {
+	  
+	  given().headers("accept", "application/json", "Authorization", "bearer " +
+	  ConfigAuth.getToken()) .contentType(ContentType.JSON).log().all()
+	  .body(request.toJSONString())
+	  .when().put(Endpoints.updateuserrole,ConfigAuth.
+	  getpropertyID())
+	  .then().statusCode(403);
+	  } 
+	
+	@Test 
+	public void testDeleteUser() throws FileNotFoundException, IOException
+	  { 
+		given().headers("accept", "application/json", "authorization", "bearer " +
+	  ConfigAuth.getToken()) .contentType(ContentType.JSON).log().all()
+		.when()
+	  .delete(Endpoints.deleteuser, ConfigAuth.getemailID(), ConfigAuth.getpropertyID())
+	  .then().statusCode(403).log().all();
+	  
+	  }
+		
+	//done!
 @Test 
 public void testCreateProperty() throws FileNotFoundException, IOException {
 	given().header("Authorization", "bearer " + ConfigAuth.getToken(), "accept", "application/json")
@@ -206,13 +242,13 @@ public void testCreateProperty() throws FileNotFoundException, IOException {
 				.body(request.toJSONString()).when().put(Endpoints.updateproperty ,ConfigAuth.getpropertyID()).then().statusCode(400).log().all();
 	}
 	//--------------------------------------------------------------------------------------------------//
-  
+  /*
 	@Test 
 	public void testDeleteProperty() throws FileNotFoundException, IOException {
 		given().headers("accept", "application/json", "authorization", "bearer " +ConfigAuth.getToken())
 				.contentType(ContentType.JSON).log().all().when().delete(Endpoints.deleteproperty, ConfigAuth.getpropertyID1())
 				.then().statusCode(403).log().all();
-	}
+	} */
 	//-----------------------------------------------------------------------------------------//
 	@Test 
 	public void testAddZone() throws FileNotFoundException, IOException {

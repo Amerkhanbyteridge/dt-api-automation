@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.api.Auth.RoleAccess_PV">
+      <class name="com.dt.api.Auth.Auth_PropertyViewer">
         <methods>
           <include name="init"/>
-          <include name="viewStaffKey"/>
           <include name="init_PV"/>
+          <include name="testUpdateUD_PV"/>
         </methods>
-      </class> <!-- com.api.Auth.RoleAccess_PV -->
+      </class> <!-- com.dt.api.Auth.Auth_PropertyViewer -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
