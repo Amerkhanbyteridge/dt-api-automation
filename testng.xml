@@ -4,114 +4,99 @@
 	<test thread-count="5" name="Test">
 		<classes>
 			<!-- POST-->
-			<class name="com.dt.api.users.post.testPOST_VerifyOTP" />
-			<class name="com.dt.api.users.post.testPOST_Invitation" />
-			<class name="com.dt.api.users.post.testPOST_CancelInvitation" />
-			<class name="com.dt.api.users.post.testPOST_UpdatePassword" />
-			<class name="com.dt.api.users.post.testPOST_ForgetPassword" />
-			<class name="com.dt.api.users.post.testPOST_ResendInvitation" />
-			<class name="com.dt.api.users.post.testPOST_VerifyInvitation" />
-			<class name="com.dt.api.users.post.testPOST_RegisterUser" />
-			<class name="com.dt.api.users.post.testPOST_AcceptInvitation" />
-			<class name="com.dt.api.properties.post.testPOST_addproperty" />
-			<class name="com.dt.api.properties.post.testPOST_filterusers" />
-			<class name="com.dt.api.properties.post.testPOST_togglefavourite" />
-			<class name="com.dt.api.zones.post.testPOST_addzone" />
-			<class name="com.dt.api.devices.post.testPOST_adddevicesforzone" />
-			<class name="com.dt.api.devices.post.testPOST_deviceaction" />
-			<class name="com.dt.api.devices.post.testPOST_refreshlockstatus" />
-<<<<<<< HEAD
-
-=======
-			<class name="com.dt.api.keyrequest.post.testPOST_createkeyrequestforguestorstaff" />
-			<class name="com.dt.api.keyrequest.post.testPOST_getlocklistbycode" />
-			<class name="com.dt.api.keyrequest.post.testPOST_getlockreport" />
-			<class name="com.dt.api.keyrequest.post.testPOST_sendcodestolockguestorboth" />
-			<class name="com.dt.api.pmskeyrequest.post.testPOST_createguestkeyrequest" />
-			<class name="com.dt.api.collection.post.testPOST_createcollection" />
-			<class name="com.dt.api.propertytokens.post.testPOST_generateTokenforproperty" />
-			<class name="com.dt.api.smartThings.post.testPOST_savePATforcloudaccount" />
-			<class name="com.dt.api.schedule.post.testPOST_setlockmonitoringinterval" />
->>>>>>> 01779337959a101ea50d1eba4f3ab2fc233e8fb3
+			<class name="com.dt.api.users.testPOST_VerifyOTP" />
+			<class name="com.dt.api.users.testPOST_Invitation" />
+			<class name="com.dt.api.users.testPOST_CancelInvitation" />
+			<class name="com.dt.api.users.testPOST_UpdatePassword" />
+			<class name="com.dt.api.users.testPOST_ForgetPassword" />
+			<class name="com.dt.api.users.testPOST_ResendInvitation" />
+			<class name="com.dt.api.users.testPOST_VerifyInvitation" />
+			<class name="com.dt.api.users.testPOST_RegisterUser" />
+			<class name="com.dt.api.users.testPOST_AcceptInvitation" />
+			<class name="com.dt.api.properties.testPOST_addproperty" />
+			<class name="com.dt.api.properties.testPOST_filterusers" />
+			<class name="com.dt.api.properties.testPOST_togglefavourite" />
+			<class name="com.dt.api.zones.testPOST_addzone" />
+			<class name="com.dt.api.devices.testPOST_adddevicesforzone" />
+			<class name="com.dt.api.devices.testPOST_deviceaction" />
+			<class name="com.dt.api.devices.testPOST_refreshlockstatus" />
+			<class name="com.dt.api.keyrequest.testPOST_createkeyrequestforguestorstaff" />
+			<class name="com.dt.api.keyrequest.testPOST_getlocklistbycode" />
+			<class name="com.dt.api.keyrequest.testPOST_getlockreport" />
+			<class name="com.dt.api.keyrequest.testPOST_sendcodestolockguestorboth" />
+			<class name="com.dt.api.pmskeyrequest.testPOST_createguestkeyrequest" />
+			<class name="com.dt.api.collection.testPOST_createcollection" />
+			<class name="com.dt.api.propertytokens.testPOST_generateTokenforproperty" />
+			<class name="com.dt.api.smartThings.testPOST_savePATforcloudaccount" />
+			<class name="com.dt.api.schedule.testPOST_setlockmonitoringinterval" />
 
 			<!-- GET-->
-			<class name="com.dt.api.users.get.testGET_UserDetails" />
-			<class name="com.dt.api.users.get.testGET_UserInvites" />
-			<class name="com.dt.api.properties.get.testGET_issues" />
-			<class name="com.dt.api.properties.get.testGET_propertyallusers" />
-			<class name="com.dt.api.properties.get.testGET_propertybyID" />
-			<class name="com.dt.api.properties.get.testGET_propertydetails" />
-			<class name="com.dt.api.properties.get.testGET_propertytype" />
-			<class name="com.dt.api.properties.get.testGET_rooms" />
-			<class name="com.dt.api.properties.get.testGET_usstatelist" />
-			<class name="com.dt.api.zones.get.testGET_childzones" />
-			<class name="com.dt.api.zones.get.testGET_recentzonesinproperty" />
-			<class name="com.dt.api.zones.get.testGET_zonecountinproperty" />
-			<class name="com.dt.api.zones.get.testGET_Zonesinproperty" />
-			<class name="com.dt.api.zones.get.testGET_zonetypes" />
-			<class name="com.dt.api.devices.get.testGET_alldevicesforproperty" />
-			<class name="com.dt.api.devices.get.testGET_alldevicesforzone" />
-			<class name="com.dt.api.devices.get.testGET_deviceactivity" />
-			<class name="com.dt.api.devices.get.testGET_devicebatterystatus" />
-			<class name="com.dt.api.devices.get.testGET_issuecountsforproperty" />
-			<class name="com.dt.api.devices.get.testGET_issuescountforzones" />
-			<class name="com.dt.api.devices.get.testGET_issuesforproperty" />
-			<class name="com.dt.api.devices.get.testGET_lockstatusfromsmartThings" />
-			<class name="com.dt.api.activity.get.testGET_useractivity" />
-			<class name="com.dt.api.activity.get.testGET_useractivityinproperty" />
-			<class name="com.dt.api.hubdevices.get.testGET_allhubdevices" />
-			<class name="com.dt.api.hubdevices.get.testGET_hubdevicebyID" />
-			<class name="com.dt.api.role.get.testGET_allroles" />
-			<class name="com.dt.api.userrole.get.testGET_userdetails_role" />
-<<<<<<< HEAD
-=======
-			<class name="com.dt.api.smartThings.get.testGET_accountdetails" />
-			<class name="com.dt.api.smartThings.get.testGET_getaccountofanuser" />
-			<class name="com.dt.api.smartThings.get.testGET_smartThingsdevices" />
-			<class name="com.dt.api.schedule.get.testGET_getlockmonitoringinterval" />
-			<class name="com.dt.api.schedule.get.testGET_minandmaxintervals" />
-			<class name="com.dt.api.propertytokens.get.testGET_getTokenforproperty" />
-			<class name="com.dt.api.keyrequest.get.testGET_getdetailforrequestkeysforguestorstaff" />
-			<class name="com.dt.api.keyrequest.get.testGET_getrequestkeysforguestorstaff" />
-			<class name="com.dt.api.collection.get.testGET_collectionsinaproperty" />
-			<class name="com.dt.api.collection.get.testGET_getalldevicesandzonesinacollection" />
->>>>>>> 01779337959a101ea50d1eba4f3ab2fc233e8fb3
+			<class name="com.dt.api.users.testGET_UserDetails" />
+			<class name="com.dt.api.users.testGET_UserInvites" />
+			<class name="com.dt.api.properties.testGET_issues" />
+			<class name="com.dt.api.properties.testGET_propertyallusers" />
+			<class name="com.dt.api.properties.testGET_propertybyID" />
+			<class name="com.dt.api.properties.testGET_propertydetails" />
+			<class name="com.dt.api.properties.testGET_propertytype" />
+			<class name="com.dt.api.properties.testGET_rooms" />
+			<class name="com.dt.api.properties.testGET_usstatelist" />
+			<class name="com.dt.api.zones.testGET_childzones" />
+			<class name="com.dt.api.zones.testGET_recentzonesinproperty" />
+			<class name="com.dt.api.zones.testGET_zonecountinproperty" />
+			<class name="com.dt.api.zones.testGET_Zonesinproperty" />
+			<class name="com.dt.api.zones.testGET_zonetypes" />
+			<class name="com.dt.api.devices.testGET_alldevicesforproperty" />
+			<class name="com.dt.api.devices.testGET_alldevicesforzone" />
+			<class name="com.dt.api.devices.testGET_deviceactivity" />
+			<class name="com.dt.api.devices.testGET_devicebatterystatus" />
+			<class name="com.dt.api.devices.testGET_issuecountsforproperty" />
+			<class name="com.dt.api.devices.testGET_issuescountforzones" />
+			<class name="com.dt.api.devices.testGET_issuesforproperty" />
+			<class name="com.dt.api.devices.testGET_lockstatusfromsmartThings" />
+			<class name="com.dt.api.activity.testGET_useractivity" />
+			<class name="com.dt.api.activity.testGET_useractivityinproperty" />
+			<class name="com.dt.api.hubdevices.testGET_allhubdevices" />
+			<class name="com.dt.api.hubdevices.testGET_hubdevicebyID" />
+			<class name="com.dt.api.role.testGET_allroles" />
+			<class name="com.dt.api.userrole.testGET_userdetails_role" />
+			<class name="com.dt.api.smartThings.testGET_accountdetails" />
+			<class name="com.dt.api.smartThings.testGET_getaccountofanuser" />
+			<class name="com.dt.api.smartThings.testGET_smartThingsdevices" />
+			<class name="com.dt.api.schedule.testGET_getlockmonitoringinterval" />
+			<class name="com.dt.api.schedule.testGET_minandmaxintervals" />
+			<class name="com.dt.api.propertytokens.testGET_getTokenforproperty" />
+			<class name="com.dt.api.keyrequest.testGET_getdetailforrequestkeysforguestorstaff" />
+			<class name="com.dt.api.keyrequest.testGET_getrequestkeysforguestorstaff" />
+			<class name="com.dt.api.collection.testGET_collectionsinaproperty" />
+			<class name="com.dt.api.collection.testGET_getalldevicesandzonesinacollection" />
 
 
 			<!-- Delete-->
-			<class name="com.dt.api.users.delete.testDELETE_User" />
-			<class name="com.dt.api.properties.delete.testDELETE_property" />
-			<class name="com.dt.api.zones.delete.testDELETE_zone" />
-			<class name="com.dt.api.devices.delete.testDELETE_deletedevicesforzone" />
-<<<<<<< HEAD
-
-=======
-			<class name="com.dt.api.smartThings.delete.testDELETE_deletecloudaccount" />
-			<class name="com.dt.api.propertytokens.delete.testDELETE_deleteTokenforproperty" />
-			<class name="com.dt.api.keyrequest.delete.testDELETE_deletekeyforguestorstaff" />
-			<class name="com.dt.api.collection.delete.testDELETE_deletecollection" />
-			<class name="com.dt.api.collection.delete.testDELETE_removezonesandDevicesfromcollection" />
->>>>>>> 01779337959a101ea50d1eba4f3ab2fc233e8fb3
+			<class name="com.dt.api.users.testDELETE_User" />
+			<class name="com.dt.api.properties.testDELETE_property" />
+			<class name="com.dt.api.zones.testDELETE_zone" />
+			<class name="com.dt.api.devices.testDELETE_deletedevicesforzone" />
+			<class name="com.dt.api.smartThings.testDELETE_deletecloudaccount" />
+			<class name="com.dt.api.propertytokens.testDELETE_deleteTokenforproperty" />
+			<class name="com.dt.api.keyrequest.testDELETE_deletekeyforguestorstaff" />
+			<class name="com.dt.api.collection.testDELETE_deletecollection" />
+			<class name="com.dt.api.collection.testDELETE_removezonesandDevicesfromcollection" />
 
 			<!--PUT -->
-			<class name="com.dt.api.properties.put.testPUT_propertyDetail" />
-			<class name="com.dt.api.users.put.testPUT_UserDetail" />
-			<class name="com.dt.api.zones.put.testPUT_updatezone" />
-			<class name="com.dt.api.devices.put.testPUT_movedevices" />
-			<class name="com.dt.api.devices.put.testPUT_renamedevice" />
-			<class name="com.dt.api.userrole.put.testPUT_updateuserRole" />
-<<<<<<< HEAD
-=======
-			<class name="com.dt.api.collection.put.testPUT_addDevicesandzonestoacollection" />
-			<class name="com.dt.api.collection.put.testPUT_renamecollection" />
-			<class name="com.dt.api.keyrequest.put.testPUT_expirekeyforguestorstaff" />
-			<class name="com.dt.api.keyrequest.put.testPUT_reactivekeyforguestorstaff" />
-			<class name="com.dt.api.keyrequest.put.testPUT_requestgeneratekeyforguestorstaff" />
-			<class name="com.dt.api.keyrequest.put.testPUT_updateguestdetails" />
-			<class name="com.dt.api.keyrequest.put.testPUT_updatekeytimerequestforguestorstaff" />
-			<class name="com.dt.api.smartThings.put.testPUT_updatePAT" />
-
->>>>>>> 01779337959a101ea50d1eba4f3ab2fc233e8fb3
+			<class name="com.dt.api.properties.testPUT_propertyDetail" />
+			<class name="com.dt.api.users.testPUT_UserDetail" />
+			<class name="com.dt.api.zones.testPUT_updatezone" />
+			<class name="com.dt.api.devices.testPUT_movedevices" />
+			<class name="com.dt.api.devices.testPUT_renamedevice" />
+			<class name="com.dt.api.userrole.testPUT_updateuserRole" />
+			<class name="com.dt.api.collection.testPUT_addDevicesandzonestoacollection" />
+			<class name="com.dt.api.collection.testPUT_renamecollection" />
+			<class name="com.dt.api.keyrequest.testPUT_expirekeyforguestorstaff" />
+			<class name="com.dt.api.keyrequest.testPUT_reactivekeyforguestorstaff" />
+			<class name="com.dt.api.keyrequest.testPUT_requestgeneratekeyforguestorstaff" />
+			<class name="com.dt.api.keyrequest.testPUT_updateguestdetails" />
+			<class name="com.dt.api.keyrequest.testPUT_updatekeytimerequestforguestorstaff" />
+			<class name="com.dt.api.smartThings.testPUT_updatePAT" />
 
 		</classes>
 	</test> <!-- Test -->
