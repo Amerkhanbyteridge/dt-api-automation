@@ -5,9 +5,10 @@
     <classes>
       <class name="com.dt.api.Auth.Auth_PropertyViewer">
         <methods>
+          <include name="testUpdateZone"/>
+          <include name="afterMethod"/>
           <include name="init"/>
-          <include name="init_PV"/>
-          <include name="testUpdateUD_PV"/>
+          <include name="beforeMethod"/>
         </methods>
       </class> <!-- com.dt.api.Auth.Auth_PropertyViewer -->
     </classes>

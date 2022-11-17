@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\dell\AppData\Local\Temp\testng-eclipse-1570083707\testng-customsuite.xml</span>
+                    <span>C:\Users\dell\AppData\Local\Temp\testng-eclipse--1667396034\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -104,7 +104,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.dt.api.Auth.Auth_PropertyViewer" class="method navigator-link" hash-for-method="testUpdateUD_PV">testUpdateUD_PV</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.dt.api.Auth.Auth_PropertyViewer" class="method navigator-link" hash-for-method="testUpdateZone">testUpdateZone</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -127,9 +127,9 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testUpdateUD_PV">
-                  </a> <!-- testUpdateUD_PV -->
-                  <span class="method-name">testUpdateUD_PV</span>
+                  <a name="testUpdateZone">
+                  </a> <!-- testUpdateZone -->
+                  <span class="method-name">testUpdateZone</span>
                   <div class="stack-trace">java.lang.AssertionError: 1 expectation failed.
 Expected status code &lt;400&gt; but was &lt;200&gt;.
 
@@ -171,7 +171,7 @@ Expected status code &lt;400&gt; but was &lt;200&gt;.
 	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
 	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
 	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
-	at com.dt.api.Auth.Auth_PropertyViewer.testUpdateUD_PV(Auth_PropertyViewer.java:188)
+	at com.dt.api.Auth.Auth_PropertyViewer.testUpdateZone(Auth_PropertyViewer.java:268)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -207,7 +207,7 @@ Expected status code &lt;400&gt; but was &lt;200&gt;.
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\dell\AppData\Local\Temp\testng-eclipse-1570083707\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\dell\AppData\Local\Temp\testng-eclipse--1667396034\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -218,7 +218,7 @@ Expected status code &lt;400&gt; but was &lt;200&gt;.
     &lt;classes&gt;
       &lt;class name=&quot;com.dt.api.Auth.Auth_PropertyViewer&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;testUpdateUD_PV&quot;/&gt;
+          &lt;include name=&quot;testUpdateZone&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- com.dt.api.Auth.Auth_PropertyViewer --&gt;
     &lt;/classes&gt;
@@ -262,14 +262,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testUpdateUD_PV')
+data.setCell(0, 1, 'testUpdateZone')
 data.setCell(0, 2, 'com.dt.api.Auth.Auth_PropertyViewer')
-data.setCell(0, 3, 3597);
+data.setCell(0, 3, 4413);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 seconds</span>
+              <span class="suite-total-time">Total running time: 4 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -314,6 +314,8 @@ return data;
                 <br/>
                 <span class="ignored-method-name">regeneratekey</span>
                 <br/>
+                <span class="ignored-method-name">testUpdateUD_PV</span>
+                <br/>
                 <span class="ignored-method-name">viewStaffKey</span>
                 <br/>
                 <span class="ignored-method-name">testCreateProperty</span>
@@ -330,11 +332,9 @@ return data;
                 <br/>
                 <span class="ignored-method-name">testDeleteUser</span>
                 <br/>
-                <span class="ignored-method-name">testUpdateZone</span>
+                <span class="ignored-method-name">testDeleteGuestKey</span>
                 <br/>
                 <span class="ignored-method-name">testUpdatePAT</span>
-                <br/>
-                <span class="ignored-method-name">testDeleteGuestKey</span>
                 <br/>
                 <span class="ignored-method-name">testCreateStaffKey</span>
                 <br/>
@@ -369,16 +369,20 @@ return data;
                 <span class="method-name">init</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
-              <div class="configuration-class before">
-                <span class="method-name">init_PV</span>
-                <span class="method-start">631 ms</span>
-              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void com.dt.api.Auth.Auth_PropertyViewer.testUpdateZone() throws java.io.FileNotFoundExceptio...)</span>
+                <span class="method-start">40 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">testUpdateUD_PV</span>
-                <span class="method-start">666 ms</span>
+                <span class="method-name">testUpdateZone</span>
+                <span class="method-start">196 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=testUpdateZone status=FAILURE method=Auth_PropertyViewer.testUpdateZone()[pri:0, in...)</span>
+                <span class="method-start">4614 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

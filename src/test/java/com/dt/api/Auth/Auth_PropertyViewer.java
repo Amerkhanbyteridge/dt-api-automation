@@ -12,79 +12,75 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.dt.api.baseclass.Baseclass;
-import com.dt.api.main.Config;
 import com.dt.api.main.ConfigAuth;
 import com.dt.api.main.Endpoints;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
-import io.restassured.response.ResponseOptions;
 
 public class Auth_PropertyViewer extends Baseclass {
 
 
 	private static final int priority = 0;
 	JSONObject request = new JSONObject();
-
-	@SuppressWarnings("unchecked")
-	@BeforeClass
-	                                        
-	public void init_PV() throws FileNotFoundException, IOException {
-
-	request = new JSONObject();
-		request.put("email", ConfigAuth.getemail());
-		request.put("firstName", ConfigAuth.getfirstname());
-		request.put("lastName", ConfigAuth.getlastname());
-		request.put("propertyId", ConfigAuth.getpropertyID());
-		request.put("roleId", ConfigAuth.getroleID());
-		request.put("deviceIds", ConfigAuth.getdeviceID());
-		request.put("roleIds", ConfigAuth.getroleIds());  
-		request.put("name", ConfigAuth.getname());
-		request.put("imageURL", ConfigAuth.getimage());
-		request.put("propertyTypeId", ConfigAuth.getpropertyTypeId());
-		request.put("apartment", ConfigAuth.getapartment());
-		request.put("street", ConfigAuth.getstreet());
-		request.put("city", ConfigAuth.getcity());
-		request.put("state", ConfigAuth.getstate());
-		request.put("country", ConfigAuth.getcountry());
-		request.put("zipCode", ConfigAuth.getzipCode());
-		request.put("latitude", ConfigAuth.getlatitude());
-		request.put("longitude", ConfigAuth.getlongitude());
-		request.put("parentId", ConfigAuth.getparentId());
-		request.put("zoneTypeId", ConfigAuth.getzoneTypeId());
-		//request.put("name", ConfigAuth.getzonename());
-		request.put("type", ConfigAuth.gettype());
-		
-		request.put("cloudEmailId", ConfigAuth.getcloudEmailId());
-		request.put("pat", ConfigAuth.getpat());
-		request.put("tokenname", ConfigAuth.gettokenname());
-		request.put("newPat", ConfigAuth.getnewPat());
-		//request.put("id", ConfigAuth.getid());
-		request.put("typeId", ConfigAuth.gettypeId());
-		
-		request.put("devices", ConfigAuth.getdevices());
-		request.put("protocolId", ConfigAuth.getprotocolId());
-		request.put("moveToZoneId", ConfigAuth.getmoveToZoneId());
-		request.put("type", ConfigAuth.gettype());
-		request.put("collectionIds", ConfigAuth.getcollectionIds());
-		request.put("phone", ConfigAuth.getphone());
-		request.put("phoneNumber", ConfigAuth.getphonenumber());
-		request.put("requestKeyName", ConfigAuth.getrequestKeyName());
-		request.put("startDate", ConfigAuth.getstartDate());
-		request.put("startTime", ConfigAuth.getstartTime());
-		request.put("endDate", ConfigAuth.getendDate());
-		request.put("endTime", ConfigAuth.getendTime());
-		request.put("neverExpires", false);
-		request.put("usePhoneNumberAsKey", false);
-		request.put("sendToLock", true);
-		request.put("sendToGuest", true); 
-		request.put("keyID", ConfigAuth.getkeyId());
-		
-		System.out.println(request.toJSONString());
-		baseURI = Endpoints.baseURI;
-	}
-	
+	  
+	  @SuppressWarnings("unchecked")
+	  
+	  @BeforeClass
+	  public void init() throws FileNotFoundException, IOException {
+		  request = new JSONObject();
+			request.put("email", ConfigAuth.getemail());
+			request.put("firstName", ConfigAuth.getfirstname());
+			request.put("lastName", ConfigAuth.getlastname());
+			request.put("propertyId", ConfigAuth.getpropertyID());
+			request.put("roleId", ConfigAuth.getroleID());
+			request.put("deviceIds", ConfigAuth.getdeviceID());
+			request.put("roleIds", ConfigAuth.getroleIds());  
+			request.put("name", ConfigAuth.getname());
+			request.put("imageURL", ConfigAuth.getimage());
+			request.put("propertyTypeId", ConfigAuth.getpropertyTypeId());
+			request.put("apartment", ConfigAuth.getapartment());
+			request.put("street", ConfigAuth.getstreet());
+			request.put("city", ConfigAuth.getcity());
+			request.put("state", ConfigAuth.getstate());
+			request.put("country", ConfigAuth.getcountry());
+			request.put("zipCode", ConfigAuth.getzipCode());
+			request.put("latitude", ConfigAuth.getlatitude());
+			request.put("longitude", ConfigAuth.getlongitude());
+			request.put("parentId", ConfigAuth.getparentId());
+			request.put("zoneTypeId", ConfigAuth.getzoneTypeId());
+			//request.put("name", ConfigAuth.getzonename());
+			request.put("type", ConfigAuth.gettype());
+			
+			request.put("cloudEmailId", ConfigAuth.getcloudEmailId());
+			request.put("pat", ConfigAuth.getpat());
+			request.put("tokenname", ConfigAuth.gettokenname());
+			request.put("newPat", ConfigAuth.getnewPat());
+			//request.put("id", ConfigAuth.getid());
+			request.put("typeId", ConfigAuth.gettypeId());
+			
+			request.put("devices", ConfigAuth.getdevices());
+			request.put("protocolId", ConfigAuth.getprotocolId());
+			request.put("moveToZoneId", ConfigAuth.getmoveToZoneId());
+			request.put("type", ConfigAuth.gettype());
+			request.put("collectionIds", ConfigAuth.getcollectionIds());
+			request.put("phone", ConfigAuth.getphone());
+			request.put("phoneNumber", ConfigAuth.getphonenumber());
+			request.put("requestKeyName", ConfigAuth.getrequestKeyName());
+			request.put("startDate", ConfigAuth.getstartDate());
+			request.put("startTime", ConfigAuth.getstartTime());
+			request.put("endDate", ConfigAuth.getendDate());
+			request.put("endTime", ConfigAuth.getendTime());
+			request.put("neverExpires", false);
+			request.put("usePhoneNumberAsKey", false);
+			request.put("sendToLock", true);
+			request.put("sendToGuest", true); 
+			request.put("keyID", ConfigAuth.getkeyId());
+			
+			System.out.println(request.toJSONString());
+			baseURI = Endpoints.baseURI;
+		}
 	                                                //Invite user//
 	@Test
 	public void testInvite_asPV() throws FileNotFoundException, IOException {
@@ -92,7 +88,7 @@ public class Auth_PropertyViewer extends Baseclass {
 		header("Authorization", "bearer " + ConfigAuth.getToken(), "accept", "application/json")
 		.contentType(ContentType.JSON).body(request.toJSONString()).when().post(Endpoints.inviteuser)
 		.then()
-		.statusCode(400).log().all();  
+		.statusCode(403).log().all();  
 	}
 	
 	
@@ -133,18 +129,17 @@ public class Auth_PropertyViewer extends Baseclass {
 	
 	
 	                                         //remove user from property//
-	
-	
-/*
+		@Test 
+		public void testDeleteUser() throws FileNotFoundException, IOException
+		  { 
+			given().headers("accept", "application/json", "authorization", "bearer " +
+		  ConfigAuth.getToken()) .contentType(ContentType.JSON).log().all()
+			.when()
+		  .delete(Endpoints.deleteuser, ConfigAuth.getemailID(), ConfigAuth.getpropertyID())
+		  .then().statusCode(403).log().all();
+		  
+		  }
 
-		@Test
-		public void testDELETE() throws FileNotFoundException, IOException {
-			given().headers("accept", "application/json", "authorization", "bearer " + ConfigAuth.getToken())
-					.contentType(ContentType.JSON).log().all().when()
-					.delete(Endpoints.deleteuser, ConfigAuth.getemailID(), ConfigAuth.getpropertyID()) // users/{email}/{propertyId}","vindhyar@byteridge.com",
-					.then().statusCode(400).log().all();
-
-		} */
 
 	
 	
@@ -201,16 +196,7 @@ public class Auth_PropertyViewer extends Baseclass {
 	  .then().statusCode(403);
 	  } 
 	
-	@Test 
-	public void testDeleteUser() throws FileNotFoundException, IOException
-	  { 
-		given().headers("accept", "application/json", "authorization", "bearer " +
-	  ConfigAuth.getToken()) .contentType(ContentType.JSON).log().all()
-		.when()
-	  .delete(Endpoints.deleteuser, ConfigAuth.getemailID(), ConfigAuth.getpropertyID())
-	  .then().statusCode(403).log().all();
-	  
-	  }
+	
 		
 	//done!
 @Test 
@@ -255,7 +241,7 @@ public void testCreateProperty() throws FileNotFoundException, IOException {
 
 		given().header("Authorization", "bearer " + ConfigAuth.getToken(), "accept", "application/json")
 				.contentType(ContentType.JSON).body(request.toJSONString()).when()
-				.post(Endpoints.addzone).then().statusCode(400).log().all();
+				.post(Endpoints.addzone).then().statusCode(403).log().all();
 
 	}
 //--------------------------------------------------------------------------------------------------//

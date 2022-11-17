@@ -237,7 +237,7 @@ import com.dt.api.main.ConfigAuth;
 	  given().header("Authorization", "bearer " + ConfigAuth.getToken(), "accept",
 	  "application/json")
 	  .contentType(ContentType.JSON).body(request.toJSONString()).when()
-	  .post(Endpoints.addzone).then().statusCode(400).log().all();
+	  .post(Endpoints.addzone).then().statusCode(201).log().all();
 	  
 	  }
 	  //---------------------------------------------------------------------------
