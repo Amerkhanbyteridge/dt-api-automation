@@ -35,12 +35,18 @@ public class Baseclass {
 	public Logger logger = LogManager.getLogger(getClass());
 	public RequestSpecification httpRequest;
 	public Response response;
+	@SuppressWarnings("rawtypes")
 	public ResponseBody body;
 
+	
+	public  Baseclass() {
+		// TODO Auto-generated constructor stub
+		baseURI = Endpoints.baseURI;
+	}
 	@BeforeClass
 	public void init() throws FileNotFoundException, IOException {
 		request = new JSONObject();
-		baseURI = Endpoints.baseURI;
+	
 		 httpRequest = RestAssured.given().header("Authorization", "Bearer " + Config.getToken())
 				.header("Content-Type", "application/json");
 	
