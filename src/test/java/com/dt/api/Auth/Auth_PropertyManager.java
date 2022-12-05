@@ -10,13 +10,14 @@
 	  import org.json.simple.JSONObject; 
 	  import org.testng.annotations.BeforeClass;
 	  import org.testng.annotations.Test;
-	  
-	  import com.dt.api.baseclass.Baseclass;
-import com.dt.api.main.Config;
-import com.dt.api.main.ConfigAuth;
+
+import com.dt.api.ExtentReports.Reporting;
+import com.dt.api.baseclass.Baseclass;
+      import com.dt.api.main.ConfigAuth;
       import com.dt.api.main.Endpoints;
-	  
-	  import io.restassured.http.ContentType; 
+import com.relevantcodes.extentreports.LogStatus;
+
+import io.restassured.http.ContentType; 
 	  import io.restassured.response.Response; 
 	  import io.restassured.response.ResponseBody;
 	  
@@ -50,7 +51,7 @@ import com.dt.api.main.ConfigAuth;
 			request.put("longitude", ConfigAuth.getlongitude());
 			request.put("parentId", ConfigAuth.getparentId());
 			request.put("zoneTypeId", ConfigAuth.getzoneTypeId());
-			//request.put("name", ConfigAuth.getzonename());
+			request.put("zoneId", ConfigAuth.getzoneID());
 			request.put("type", ConfigAuth.gettype());
 			
 			request.put("cloudEmailId", ConfigAuth.getcloudEmailId());
@@ -82,7 +83,9 @@ import com.dt.api.main.ConfigAuth;
 			baseURI = Endpoints.baseURI;
 		}
 	  
-	  @Test public void testInviteUser() throws FileNotFoundException, IOException
+	  @Test 
+	  
+	  public void testInviteUser() throws FileNotFoundException, IOException
 	  { 
 		  given().header("Authorization", "bearer " + ConfigAuth.getToken(), "accept",
 	  "application/json")
@@ -102,12 +105,18 @@ import com.dt.api.main.ConfigAuth;
 	  Response response = given() .headers("Authorization", "bearer " +
 	  ConfigAuth.getToken(), "accept", "application/json").log().all()
 	  .get(Endpoints.propertyallusers, ConfigAuth.getpropertyID()).andReturn();
-	  ResponseBody body = response.getBody(); 
-	    logger.info("Status code is: " + response.getStatusCode());
+	 
+	    ResponseBody body = response.getBody();
+		logger.info("Status code is: " + response.getStatusCode());
+		Reporting.getTest().log(LogStatus.INFO,"Status code is: " + response.getStatusCode());
 		logger.info("Response time is: " + response.getTime());
+		Reporting.getTest().log(LogStatus.INFO,"Response time is: " + response.getTime());
 		logger.info("Response body is: " + body.asPrettyString());
+		Reporting.getTest().log(LogStatus.INFO,"Response body is: " + body.asPrettyString());
 		logger.info("Status line is: " + response.getStatusLine());
+		Reporting.getTest().log(LogStatus.INFO,"Status line is: " + response.getStatusLine());
 		logger.info("Content type is: " + response.getHeader("content-type"));
+		Reporting.getTest().log(LogStatus.INFO,"Content type is: " + response.getHeader("content-type"));
 		assertEquals(response.getStatusCode(), 200);
 		}
 	  //---------------------------------------------------------------------------
@@ -118,14 +127,21 @@ import com.dt.api.main.ConfigAuth;
 		  Response response = given()
 					.headers("Authorization", "bearer " + ConfigAuth.getToken(), "accept", "application/json").log().all()
 					.get(Endpoints.userdetails, ConfigAuth.getemail()).andReturn();
-			ResponseBody body = response.getBody();
+			
+	        ResponseBody body = response.getBody();
 			logger.info("Status code is: " + response.getStatusCode());
+			Reporting.getTest().log(LogStatus.INFO,"Status code is: " + response.getStatusCode());
 			logger.info("Response time is: " + response.getTime());
+			Reporting.getTest().log(LogStatus.INFO,"Response time is: " + response.getTime());
 			logger.info("Response body is: " + body.asPrettyString());
+			Reporting.getTest().log(LogStatus.INFO,"Response body is: " + body.asPrettyString());
 			logger.info("Status line is: " + response.getStatusLine());
+			Reporting.getTest().log(LogStatus.INFO,"Status line is: " + response.getStatusLine());
 			logger.info("Content type is: " + response.getHeader("content-type"));
-			assertEquals(response.getStatusCode(), 200);
-	  
+			Reporting.getTest().log(LogStatus.INFO,"Content type is: " + response.getHeader("content-type"));
+			assertEquals(response.getStatusCode(), 200);	
+			
+			
 	  }
 	  //---------------------------------------------------------------------------
 	  
@@ -172,14 +188,21 @@ import com.dt.api.main.ConfigAuth;
 	  ConfigAuth.getToken(), "accept", "application/json").log().all()
 	  .get(Endpoints.userdetails_userrole,
 	  ConfigAuth.getpropertyID(),ConfigAuth.getemailID(),ConfigAuth.getisActive()).andReturn();
-	  ResponseBody body = response.getBody(); logger.info("Status code is: " +
-	  response.getStatusCode()); logger.info("Response time is: " +
-	  response.getTime()); 
-	  //logger.info("Response body is: " +body.asPrettyString()); 
-	  logger.info("Status line is: " +
-	  response.getStatusLine()); logger.info("Content type is: " +
-	  response.getHeader("content-type")); assertEquals(response.getStatusCode(),
-	  200);}
+	  
+	    ResponseBody body = response.getBody();
+		logger.info("Status code is: " + response.getStatusCode());
+		Reporting.getTest().log(LogStatus.INFO,"Status code is: " + response.getStatusCode());
+		logger.info("Response time is: " + response.getTime());
+		Reporting.getTest().log(LogStatus.INFO,"Response time is: " + response.getTime());
+		logger.info("Response body is: " + body.asPrettyString());
+		Reporting.getTest().log(LogStatus.INFO,"Response body is: " + body.asPrettyString());
+		logger.info("Status line is: " + response.getStatusLine());
+		Reporting.getTest().log(LogStatus.INFO,"Status line is: " + response.getStatusLine());
+		logger.info("Content type is: " + response.getHeader("content-type"));
+		Reporting.getTest().log(LogStatus.INFO,"Content type is: " + response.getHeader("content-type"));
+		assertEquals(response.getStatusCode(), 200);
+		
+	  }
 	  //---------------------------------------------------------------------------
 	  
 	  @Test
@@ -206,13 +229,20 @@ import com.dt.api.main.ConfigAuth;
 	  IOException { Response response =
 	  given().headers("Authorization","bearer "+ConfigAuth.getToken(), "accept"
 	  ,"application/json").log().all() .get(Endpoints.propertydetails).andReturn();
-	  ResponseBody body= response.getBody(); logger.info("Status code is: " +
-	  response.getStatusCode()); logger.info("Response time is: " +
-	  response.getTime()); logger.info("Response body is: " +
-	  body.asPrettyString()); logger.info("Status line is: " +
-	  response.getStatusLine()); logger.info("Content type is: " +
-	  response.getHeader("content-type")); assertEquals(response.getStatusCode(),
-	  200); }
+	  ResponseBody body = response.getBody();
+		logger.info("Status code is: " + response.getStatusCode());
+		Reporting.getTest().log(LogStatus.INFO,"Status code is: " + response.getStatusCode());
+		logger.info("Response time is: " + response.getTime());
+		Reporting.getTest().log(LogStatus.INFO,"Response time is: " + response.getTime());
+		logger.info("Response body is: " + body.asPrettyString());
+		Reporting.getTest().log(LogStatus.INFO,"Response body is: " + body.asPrettyString());
+		logger.info("Status line is: " + response.getStatusLine());
+		Reporting.getTest().log(LogStatus.INFO,"Status line is: " + response.getStatusLine());
+		logger.info("Content type is: " + response.getHeader("content-type"));
+		Reporting.getTest().log(LogStatus.INFO,"Content type is: " + response.getHeader("content-type"));
+		assertEquals(response.getStatusCode(), 200); 
+	  
+	  }
 	  //---------------------------------------------------------------------------
 	  
 	  @Test
@@ -242,17 +272,25 @@ import com.dt.api.main.ConfigAuth;
 	  }
 	  //---------------------------------------------------------------------------
 	  
-	  @Test public void testGetZones() throws FileNotFoundException, IOException {
+	  @Test 
+	  public void testGetZones() throws FileNotFoundException, IOException {
 	  Response response = given() .headers("Authorization", "bearer " +
 	  ConfigAuth.getToken(), "accept", "application/json").log().all()
 	  .get(Endpoints.zoneinproperty, ConfigAuth.getpropertyID()).andReturn();
-	  ResponseBody body = response.getBody(); logger.info("Status code is: " +
-	  response.getStatusCode()); logger.info("Response time is: " +
-	  response.getTime()); logger.info("Response body is: " +
-	  body.asPrettyString()); logger.info("Status line is: " +
-	  response.getStatusLine()); logger.info("Content type is: " +
-	  response.getHeader("content-type")); assertEquals(response.getStatusCode(),
-	  200); }
+	  ResponseBody body = response.getBody();
+		logger.info("Status code is: " + response.getStatusCode());
+		Reporting.getTest().log(LogStatus.INFO,"Status code is: " + response.getStatusCode());
+		logger.info("Response time is: " + response.getTime());
+		Reporting.getTest().log(LogStatus.INFO,"Response time is: " + response.getTime());
+		logger.info("Response body is: " + body.asPrettyString());
+		Reporting.getTest().log(LogStatus.INFO,"Response body is: " + body.asPrettyString());
+		logger.info("Status line is: " + response.getStatusLine());
+		Reporting.getTest().log(LogStatus.INFO,"Status line is: " + response.getStatusLine());
+		logger.info("Content type is: " + response.getHeader("content-type"));
+		Reporting.getTest().log(LogStatus.INFO,"Content type is: " + response.getHeader("content-type"));
+		assertEquals(response.getStatusCode(), 200);
+	  
+	  }
 	  //---------------------------------------------------------------------------
 	  
 	  @Test
@@ -261,14 +299,14 @@ import com.dt.api.main.ConfigAuth;
 	  given().headers("accept", "application/json", "Authorization", "bearer " +
 	  ConfigAuth.getToken()) .contentType(ContentType.JSON).log().all()
 	  .body(request.toJSONString()).when().put(Endpoints.updatezone ,
-	  ConfigAuth.getzoneID()).then().statusCode(400).log().all(); }
+	  ConfigAuth.getzoneID()).then().statusCode(200).log().all(); }
 	  //---------------------------------------------------------------------------
 	  
 	  @Test public void testDeleteZone() throws FileNotFoundException, IOException
 	  { given().headers("accept", "application/json", "authorization", "bearer "
 	  +ConfigAuth.getToken())
 	  .contentType(ContentType.JSON).log().all().when().delete(Endpoints.deletezone
-	  ,ConfigAuth.getzoneID()) .then().statusCode(400).log().all(); }
+	  ,ConfigAuth.getzoneID()) .then().statusCode(200).log().all(); }
 	  //---------------------------------------------------------------------------
 	  
 	  @Test public void testAddDevices() throws FileNotFoundException, IOException
@@ -277,20 +315,30 @@ import com.dt.api.main.ConfigAuth;
 	  given().header("Authorization", "bearer " + ConfigAuth.getToken(), "accept",
 	  "application/json")
 	  .contentType(ContentType.JSON).body(request.toJSONString()).when()
-	  .post(Endpoints.Adddevicestozone).then().statusCode(400).log().all();}
+	  .post(Endpoints.Adddevicestozone).then().statusCode(200).log().all();}
+	  
+	
 	  //---------------------------------------------------------------------------
 	  
 	  @Test public void testGetDevices() throws FileNotFoundException, IOException
 	  { Response response =
 	  given().headers("Authorization","bearer "+ConfigAuth.getToken(), "accept"
 	  ,"application/json").log().all() .get(Endpoints.alldevicesforproperty,
-	  ConfigAuth.getpropertyID()).andReturn(); ResponseBody body= response.getBody();
-	  logger.info("Status code is: " + response.getStatusCode());
-	  logger.info("Response time is: " + response.getTime());
-	  logger.info("Response body is: " + body.asPrettyString());
-	  logger.info("Status line is: " + response.getStatusLine());
-	  logger.info("Content type is: " + response.getHeader("content-type"));
-	  assertEquals(response.getStatusCode(), 200); }
+	  ConfigAuth.getpropertyID()).andReturn(); 
+	  
+	  ResponseBody body = response.getBody();
+		logger.info("Status code is: " + response.getStatusCode());
+		Reporting.getTest().log(LogStatus.INFO,"Status code is: " + response.getStatusCode());
+		logger.info("Response time is: " + response.getTime());
+		Reporting.getTest().log(LogStatus.INFO,"Response time is: " + response.getTime());
+		logger.info("Response body is: " + body.asPrettyString());
+		Reporting.getTest().log(LogStatus.INFO,"Response body is: " + body.asPrettyString());
+		logger.info("Status line is: " + response.getStatusLine());
+		Reporting.getTest().log(LogStatus.INFO,"Status line is: " + response.getStatusLine());
+		logger.info("Content type is: " + response.getHeader("content-type"));
+		Reporting.getTest().log(LogStatus.INFO,"Content type is: " + response.getHeader("content-type"));
+		assertEquals(response.getStatusCode(), 200);
+	  }
 	  //---------------------------------------------------------------------------
 	  
 	  @Test
@@ -299,23 +347,27 @@ import com.dt.api.main.ConfigAuth;
 	  given().headers("accept", "application/json", "Authorization", "bearer " +
 	  ConfigAuth.getToken()) .contentType(ContentType.JSON).log().all()
 	  .body(request.toJSONString()).when().put(Endpoints.updatedeviceename ,
-	  ConfigAuth.getdeviceID()).then().statusCode(400).log().all(); }
-	  //---------------------------------------------------------------------------
-	  
-	  @Test public void testDeleteDevice() throws FileNotFoundException,
-	  IOException { given().headers("accept", "application/json", "authorization",
-	  "bearer " + ConfigAuth.getToken())
-	  .contentType(ContentType.JSON).log().all().when()
-	  .delete(Endpoints.deletedevicesforzone) .then().statusCode(400).log().all();
-	  
+	  ConfigAuth.getdeviceID()).then().statusCode(200).log().all();
 	  }
+	  //---------------------------------------------------------------------------
+	  //nw=============
+	  @Test 
+	  public void testDeleteDevice() throws FileNotFoundException, IOException {
+			given().headers("accept", "application/json", "authorization", "bearer " + ConfigAuth.getToken())
+					.contentType(ContentType.JSON).log().all().when()
+					.delete(Endpoints.deletedevicesforzone) 
+					.then().statusCode(200).log().all();
+
+		}
+	
 	  //---------------------------------------------------------------------------
 	  
 	  @Test public void testAddSmartthingAccount() throws FileNotFoundException,
 	  IOException { given().header("Authorization", "bearer " + ConfigAuth.getToken(),
 	  "accept", "application/json")
 	  .contentType(ContentType.JSON).body(request.toJSONString()).when().post(
-	  Endpoints.addsmartthingaccount).then() .statusCode(400).log().all(); }
+	  Endpoints.addsmartthingaccount).then() .statusCode(201).log().all(); 
+	  }
 	  //---------------------------------------------------------------------------
 	  
 	  
@@ -326,13 +378,20 @@ import com.dt.api.main.ConfigAuth;
 	  IOException { Response response =
 	  given().headers("Authorization","bearer "+ConfigAuth.getToken(), "accept"
 	  ,"application/json").log().all() .get(Endpoints.getsmartthingaccountdeails,
-	  ConfigAuth.getpropertyID()).andReturn(); ResponseBody body= response.getBody();
-	  logger.info("Status code is: " + response.getStatusCode());
-	  logger.info("Response time is: " + response.getTime());
-	  logger.info("Response body is: " + body.asPrettyString());
-	  logger.info("Status line is: " + response.getStatusLine());
-	  logger.info("Content type is: " + response.getHeader("content-type"));
-	  assertEquals(response.getStatusCode(), 200); }
+	  ConfigAuth.getpropertyID()).andReturn();
+	  ResponseBody body = response.getBody();
+		logger.info("Status code is: " + response.getStatusCode());
+		Reporting.getTest().log(LogStatus.INFO,"Status code is: " + response.getStatusCode());
+		logger.info("Response time is: " + response.getTime());
+		Reporting.getTest().log(LogStatus.INFO,"Response time is: " + response.getTime());
+		logger.info("Response body is: " + body.asPrettyString());
+		Reporting.getTest().log(LogStatus.INFO,"Response body is: " + body.asPrettyString());
+		logger.info("Status line is: " + response.getStatusLine());
+		Reporting.getTest().log(LogStatus.INFO,"Status line is: " + response.getStatusLine());
+		logger.info("Content type is: " + response.getHeader("content-type"));
+		Reporting.getTest().log(LogStatus.INFO,"Content type is: " + response.getHeader("content-type"));
+		assertEquals(response.getStatusCode(), 200);
+	  }
 	  
 	  //---------------------------------------------------------------------------
 	  
@@ -349,7 +408,7 @@ import com.dt.api.main.ConfigAuth;
 	  IOException { given().headers("accept", "application/json", "authorization",
 	  "bearer " + ConfigAuth.getToken())
 	  .contentType(ContentType.JSON).log().all().when() .delete(Endpoints.
-	  deletesmartthing,ConfigAuth.getprotocolId()) .then().statusCode(400).log().all();
+	  deletesmartthing,ConfigAuth.getprotocolId()) .then().statusCode(200).log().all();
 	  
 	  }
 	  //---------------------------------------------------------------------------
@@ -368,13 +427,21 @@ import com.dt.api.main.ConfigAuth;
 	  given().headers("Authorization","bearer "+ConfigAuth.getToken(), "accept"
 	  ,"application/json").log().all()
 	  .get(Endpoints.viewguestkey,ConfigAuth.getpropertyID(),ConfigAuth.gettype()).
-	  andReturn(); ResponseBody body= response.getBody();
-	  logger.info("Status code is: " + response.getStatusCode());
-	  logger.info("Response time is: " + response.getTime());
-	  logger.info("Response body is: " + body.asPrettyString());
-	  logger.info("Status line is: " + response.getStatusLine());
-	  logger.info("Content type is: " + response.getHeader("content-type"));
-	  assertEquals(response.getStatusCode(), 200); }
+	  andReturn(); 
+	  ResponseBody body = response.getBody();
+		logger.info("Status code is: " + response.getStatusCode());
+		Reporting.getTest().log(LogStatus.INFO,"Status code is: " + response.getStatusCode());
+		logger.info("Response time is: " + response.getTime());
+		Reporting.getTest().log(LogStatus.INFO,"Response time is: " + response.getTime());
+		logger.info("Response body is: " + body.asPrettyString());
+		Reporting.getTest().log(LogStatus.INFO,"Response body is: " + body.asPrettyString());
+		logger.info("Status line is: " + response.getStatusLine());
+		Reporting.getTest().log(LogStatus.INFO,"Status line is: " + response.getStatusLine());
+		logger.info("Content type is: " + response.getHeader("content-type"));
+		Reporting.getTest().log(LogStatus.INFO,"Content type is: " + response.getHeader("content-type"));
+		assertEquals(response.getStatusCode(), 200);
+	  
+	  }
 	  //---------------------------------------------------------------------------
 	  
 	  @Test public void testDeleteGuestKey() throws FileNotFoundException,
@@ -392,7 +459,7 @@ import com.dt.api.main.ConfigAuth;
 	  given().headers("accept", "application/json", "Authorization", "bearer " +
 	  ConfigAuth.getToken()) .contentType(ContentType.JSON).log().all()
 	  .body(request.toJSONString())
-	  .when().put(Endpoints.regeneraterequestkey,ConfigAuth.getkeyIDs()).then().
+	  .when().put(Endpoints.regeneraterequestkey,ConfigAuth.getkeyId()).then().
 	  statusCode(200); }
 	  
 	  //---------------------------------------------------------------------------
@@ -401,13 +468,20 @@ import com.dt.api.main.ConfigAuth;
 	  IOException { Response response =
 	  given().headers("Authorization","bearer "+ConfigAuth.getToken(), "accept"
 	  ,"application/json").log().all() .get(Endpoints.resendkeycode,
-	  ConfigAuth.getkeyId()).andReturn(); ResponseBody body= response.getBody();
-	  logger.info("Status code is: " + response.getStatusCode());
-	  logger.info("Response time is: " + response.getTime());
-	  logger.info("Response body is: " + body.asPrettyString());
-	  logger.info("Status line is: " + response.getStatusLine());
-	  logger.info("Content type is: " + response.getHeader("content-type"));
-	  assertEquals(response.getStatusCode(), 400); }
+	  ConfigAuth.getkeyId()).andReturn();
+	  ResponseBody body = response.getBody();
+		logger.info("Status code is: " + response.getStatusCode());
+		Reporting.getTest().log(LogStatus.INFO,"Status code is: " + response.getStatusCode());
+		logger.info("Response time is: " + response.getTime());
+		Reporting.getTest().log(LogStatus.INFO,"Response time is: " + response.getTime());
+		logger.info("Response body is: " + body.asPrettyString());
+		Reporting.getTest().log(LogStatus.INFO,"Response body is: " + body.asPrettyString());
+		logger.info("Status line is: " + response.getStatusLine());
+		Reporting.getTest().log(LogStatus.INFO,"Status line is: " + response.getStatusLine());
+		logger.info("Content type is: " + response.getHeader("content-type"));
+		Reporting.getTest().log(LogStatus.INFO,"Content type is: " + response.getHeader("content-type"));
+		assertEquals(response.getStatusCode(), 200);
+	  }
 	  //---------------------------------------------------------------------------
 	  
 	  @Test
@@ -416,7 +490,8 @@ import com.dt.api.main.ConfigAuth;
 	  IOException { given().headers("accept", "application/json", "Authorization",
 	  "bearer " + ConfigAuth.getToken()) .contentType(ContentType.JSON).log().all()
 	  .body(request.toJSONString()).when().put(Endpoints.updateguest,ConfigAuth.
-	  getkeyId() ).then().statusCode(200).log().all(); }
+	  getkeyId() ).then().statusCode(200).log().all(); 
+	  }
 	  //---------------------------------------------------------------------------
 	  
 	  @Test 
@@ -434,26 +509,41 @@ import com.dt.api.main.ConfigAuth;
 	  given().headers("Authorization","bearer "+ConfigAuth.getToken(), "accept"
 	  ,"application/json").log().all()
 	  .get(Endpoints.viewstaffkey,ConfigAuth.getpropertyID(),ConfigAuth.gettype()).
-	  andReturn(); ResponseBody body= response.getBody();
-	  logger.info("Status code is: " + response.getStatusCode());
-	  logger.info("Response time is: " + response.getTime());
-	  logger.info("Response body is: " + body.asPrettyString());
-	  logger.info("Status line is: " + response.getStatusLine());
-	  logger.info("Content type is: " + response.getHeader("content-type"));
-	  assertEquals(response.getStatusCode(), 200); }
+	  andReturn(); 
+	  ResponseBody body = response.getBody();
+		logger.info("Status code is: " + response.getStatusCode());
+		Reporting.getTest().log(LogStatus.INFO,"Status code is: " + response.getStatusCode());
+		logger.info("Response time is: " + response.getTime());
+		Reporting.getTest().log(LogStatus.INFO,"Response time is: " + response.getTime());
+		logger.info("Response body is: " + body.asPrettyString());
+		Reporting.getTest().log(LogStatus.INFO,"Response body is: " + body.asPrettyString());
+		logger.info("Status line is: " + response.getStatusLine());
+		Reporting.getTest().log(LogStatus.INFO,"Status line is: " + response.getStatusLine());
+		logger.info("Content type is: " + response.getHeader("content-type"));
+		Reporting.getTest().log(LogStatus.INFO,"Content type is: " + response.getHeader("content-type"));
+		assertEquals(response.getStatusCode(), 200);
+	  }
 	  //---------------------------------------------------------------------------
 	  
 	  @Test public void testResendStaffkeycode() throws FileNotFoundException,
 	  IOException { Response response =
 	  given().headers("Authorization","bearer "+ConfigAuth.getToken(), "accept"
 	  ,"application/json").log().all() .get(Endpoints.resendstaffkeycode,
-	  ConfigAuth.getkeyId()).andReturn(); ResponseBody body= response.getBody();
-	  logger.info("Status code is: " + response.getStatusCode());
-	  logger.info("Response time is: " + response.getTime());
-	  logger.info("Response body is: " + body.asPrettyString());
-	  logger.info("Status line is: " + response.getStatusLine());
-	  logger.info("Content type is: " + response.getHeader("content-type"));
-	  assertEquals(response.getStatusCode(), 400); }
+	  ConfigAuth.getkeyId()).andReturn(); 
+	  
+	  ResponseBody body = response.getBody();
+		logger.info("Status code is: " + response.getStatusCode());
+		Reporting.getTest().log(LogStatus.INFO,"Status code is: " + response.getStatusCode());
+		logger.info("Response time is: " + response.getTime());
+		Reporting.getTest().log(LogStatus.INFO,"Response time is: " + response.getTime());
+		logger.info("Response body is: " + body.asPrettyString());
+		Reporting.getTest().log(LogStatus.INFO,"Response body is: " + body.asPrettyString());
+		logger.info("Status line is: " + response.getStatusLine());
+		Reporting.getTest().log(LogStatus.INFO,"Status line is: " + response.getStatusLine());
+		logger.info("Content type is: " + response.getHeader("content-type"));
+		Reporting.getTest().log(LogStatus.INFO,"Content type is: " + response.getHeader("content-type"));
+		assertEquals(response.getStatusCode(), 200); 
+	  }
 	  //---------------------------------------------------------------------------
 	  
 	  @Test

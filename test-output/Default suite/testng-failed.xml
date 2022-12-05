@@ -3,14 +3,32 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.dt.api.Auth.Auth_PropertyViewer">
+      <class name="com.dt.api.Auth.Auth_PropertyEngineer">
         <methods>
-          <include name="testUpdateZone"/>
-          <include name="afterMethod"/>
+          <include name="testInvite_asPE"/>
           <include name="init"/>
+          <include name="testUpdateGuestDetails"/>
+          <include name="afterMethod"/>
+          <include name="testDeleteSmartthing"/>
+          <include name="viewGuestKey"/>
+          <include name="testAddSmartthingAccount"/>
+          <include name="testDeleteZone"/>
+          <include name="testDeleteDevice"/>
+          <include name="testUpdateDevices"/>
+          <include name="testUpdateZone"/>
+          <include name="testDeleteGuestKey"/>
+          <include name="testUpdatePAT"/>
+          <include name="testUpdateProperty"/>
+          <include name="testUpdateUD_PE"/>
           <include name="beforeMethod"/>
+          <include name="testResendStaffkeycode"/>
+          <include name="regeneratekey"/>
+          <include name="testCreateGuestKey"/>
+          <include name="testPUTEditSelf"/>
+          <include name="testAddZone"/>
+          <include name="testResendkeycode"/>
         </methods>
-      </class> <!-- com.dt.api.Auth.Auth_PropertyViewer -->
+      </class> <!-- com.dt.api.Auth.Auth_PropertyEngineer -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
