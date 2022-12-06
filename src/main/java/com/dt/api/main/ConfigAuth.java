@@ -66,6 +66,16 @@ public class ConfigAuth {
 		return emailID;
 	}
 
+	public static String getemailID1() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String emailID1 = prop.getProperty("emailID1");
+		return emailID1;
+	}
+	
 	public static String getPassword() throws FileNotFoundException, IOException {
 
 		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
@@ -582,6 +592,9 @@ public class ConfigAuth {
 		String cloudEmailId = prop.getProperty("cloudEmailId");
 		return cloudEmailId;
 	}
+
+
+
 
 
 	

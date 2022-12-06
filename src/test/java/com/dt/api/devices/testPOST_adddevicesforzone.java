@@ -19,11 +19,14 @@ import com.dt.api.main.Endpoints;
 
 import io.restassured.http.ContentType;
 
+<<<<<<< HEAD
+public class testPOST_adddevicesforzone {
 
-	
-
+	JSONObject request = new JSONObject();
+=======
 public class testPOST_adddevicesforzone extends Baseclass {
 
+>>>>>>> 01779337959a101ea50d1eba4f3ab2fc233e8fb3
 	@SuppressWarnings("unchecked")
 	@BeforeClass
 	public void init() throws FileNotFoundException, IOException {
@@ -32,9 +35,10 @@ public class testPOST_adddevicesforzone extends Baseclass {
 		request.put("devices", Config.getdevices());
 		request.put("propertyId", Config.getpropertyID());
 		request.put("protocolId", Config.getprotocolId());
-
+		baseURI=Endpoints.baseURI;
+<<<<<<< HEAD
 		System.out.println(request.toJSONString());	
-
+=======
 		logger.info(request.toJSONString());	
 
 	}
@@ -46,4 +50,4 @@ public class testPOST_adddevicesforzone extends Baseclass {
 				.statusCode(201).log().all();
 
 	}
-}
+} }
