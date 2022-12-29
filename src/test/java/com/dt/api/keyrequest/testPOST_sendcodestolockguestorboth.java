@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 
 import com.dt.api.baseclass.Baseclass;
 import com.dt.api.main.Config;
+import com.dt.api.main.ConfigAuth;
 import com.dt.api.main.Endpoints;
 
 import io.restassured.http.ContentType;
@@ -30,9 +31,9 @@ public class testPOST_sendcodestolockguestorboth extends Baseclass {
 	@Test
 	public void testPost001() throws FileNotFoundException, IOException {
 		given().header("Authorization", "bearer " + Config.getToken(), "accept", "application/json")
-				.contentType(ContentType.JSON).body(request.toJSONString()).when().post(Endpoints.sendcodestolockguestorboth).then()
-				.statusCode(201).log().all();
+				.contentType(ContentType.JSON).body(request.toJSONString()).when().post(Endpoints.resendkeycode,ConfigAuth.getkeyId1()).then()
+				.statusCode(202).log().all();
 
 	}
-
+	  
 }

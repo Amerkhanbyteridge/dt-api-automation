@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.dt.api.Auth.Auth_FrontdeskAdmin">
+      <class name="com.dt.api.Auth.Auth_PropertyManager">
         <methods>
-          <include name="init"/>
           <include name="afterMethod"/>
-          <include name="testDeleteUser"/>
           <include name="beforeMethod"/>
+          <include name="testResendKeycode"/>
+          <include name="init"/>
         </methods>
-      </class> <!-- com.dt.api.Auth.Auth_FrontdeskAdmin -->
+      </class> <!-- com.dt.api.Auth.Auth_PropertyManager -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

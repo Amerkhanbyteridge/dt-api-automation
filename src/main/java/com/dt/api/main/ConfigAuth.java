@@ -94,6 +94,27 @@ public class ConfigAuth {
 		String email = prop.getProperty("email");
 		return email;
 	}
+	
+	public static String getemail1() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String email1 = prop.getProperty("email1");
+		return email1;
+	}
+	
+	public static String getemail2() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String email2 = prop.getProperty("email2");
+		return email2;
+	}
+	
 	public static String getfirstname() throws FileNotFoundException, IOException {
 
 		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
@@ -308,6 +329,17 @@ public class ConfigAuth {
 		String deviceID = prop.getProperty("deviceId");
 		return deviceID;
 	}
+	
+	
+	public static String getdeviceIDs() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String deviceIDs = prop.getProperty("deviceIds");
+		return deviceIDs;
+	}
 	public static String getdevices() throws FileNotFoundException, IOException {
 
 		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
@@ -417,6 +449,17 @@ public class ConfigAuth {
 		String keyId = prop.getProperty("keyId");
 		return keyId;
 	}
+	
+	public static String getkeyId1() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String keyId1 = prop.getProperty("keyId1");
+		return keyId1;
+	}
+	
 	public static String getsendToLock() throws FileNotFoundException, IOException {
 
 		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
@@ -573,6 +616,17 @@ public class ConfigAuth {
 		String zoneId = prop.getProperty("zoneId");
 		return zoneId;
 	}
+	
+	
+	public static String getzoneID1() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String zoneId1 = prop.getProperty("zoneId1");
+		return zoneId1;
+	}
 	public static String getzonename() throws FileNotFoundException, IOException {
 
 		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
@@ -583,6 +637,10 @@ public class ConfigAuth {
 		return zonename;
 	}
 	 
+	
+	
+	
+	
 	public static String getcloudEmailId() throws FileNotFoundException, IOException {
 
 		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
@@ -592,6 +650,49 @@ public class ConfigAuth {
 		String cloudEmailId = prop.getProperty("cloudEmailId");
 		return cloudEmailId;
 	}
+
+	public static String gettimezone() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String timezone = prop.getProperty("timezone");
+		return timezone;
+	}
+
+	public static String getphoneNumberCountryCode() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String phoneNumberCountryCode = prop.getProperty("phoneNumberCountryCode");
+		return phoneNumberCountryCode;
+	}
+	
+	public static String getuserId() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String userId = prop.getProperty("userId");
+		return userId;
+	}
+	public static String getstaffId() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String staffId = prop.getProperty("staffId");
+		return staffId;
+	}
+
+
+
+	
 
 
 

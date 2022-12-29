@@ -33,11 +33,15 @@ public class Auth_PropertyViewer extends Baseclass {
 	  public void init() throws FileNotFoundException, IOException {
 		  request = new JSONObject();
 			request.put("email", ConfigAuth.getemail());
+			request.put("emailID1", ConfigAuth.getemailID1());
+			request.put("email1", ConfigAuth.getemail1());
+			request.put("email2", ConfigAuth.getemail2());
 			request.put("firstName", ConfigAuth.getfirstname());
 			request.put("lastName", ConfigAuth.getlastname());
-			request.put("propertyId", ConfigAuth.getpropertyID());
+			 request.put("propertyId", ConfigAuth.getpropertyID());
 			request.put("roleId", ConfigAuth.getroleID());
-			request.put("deviceIds", ConfigAuth.getdeviceID());
+			request.put("deviceId", ConfigAuth.getdeviceID());
+			request.put("deviceIds", ConfigAuth.getdeviceIDs());
 			request.put("roleIds", ConfigAuth.getroleIds());  
 			request.put("name", ConfigAuth.getname());
 			request.put("imageURL", ConfigAuth.getimage());
@@ -52,18 +56,22 @@ public class Auth_PropertyViewer extends Baseclass {
 			request.put("longitude", ConfigAuth.getlongitude());
 			request.put("parentId", ConfigAuth.getparentId());
 			request.put("zoneTypeId", ConfigAuth.getzoneTypeId());
-			//request.put("name", ConfigAuth.getzonename());
-			request.put("type", ConfigAuth.gettype());
 			request.put("zoneId", ConfigAuth.getzoneID());
+			request.put("zoneId1", ConfigAuth.getzoneID1());
+			request.put("type", ConfigAuth.gettype());
+			request.put("timezone", ConfigAuth.gettimezone());
+			
+			
 			request.put("cloudEmailId", ConfigAuth.getcloudEmailId());
 			request.put("pat", ConfigAuth.getpat());
 			request.put("tokenname", ConfigAuth.gettokenname());
+			
 			request.put("newPat", ConfigAuth.getnewPat());
 			//request.put("id", ConfigAuth.getid());
 			request.put("typeId", ConfigAuth.gettypeId());
 			
 			request.put("devices", ConfigAuth.getdevices());
-			request.put("protocolId", ConfigAuth.getprotocolId());
+			 request.put("protocolId", ConfigAuth.getprotocolId());
 			request.put("moveToZoneId", ConfigAuth.getmoveToZoneId());
 			request.put("type", ConfigAuth.gettype());
 			request.put("collectionIds", ConfigAuth.getcollectionIds());
@@ -79,6 +87,10 @@ public class Auth_PropertyViewer extends Baseclass {
 			request.put("sendToLock", true);
 			request.put("sendToGuest", true); 
 			request.put("keyID", ConfigAuth.getkeyId());
+			request.put("keyID1", ConfigAuth.getkeyId1());
+			request.put("phoneNumberCountryCode", ConfigAuth.getphoneNumberCountryCode());
+			//request.put("userId", ConfigAuth.getuserId());
+			//request.put("staffId", ConfigAuth.getstaffId());
 			
 			System.out.println(request.toJSONString());
 			baseURI = Endpoints.baseURI;
@@ -391,7 +403,7 @@ public void testUpdatePAT() throws FileNotFoundException, IOException {
  @Test 
 public void testDeleteSmartthing() throws FileNotFoundException, IOException {
 	given().headers("accept", "application/json", "authorization", "bearer " + ConfigAuth.getToken())
-			.contentType(ContentType.JSON).log().all().when()
+			.contentType(ContentType.JSON).body(request.toJSONString()).log().all().when()
 			.delete(Endpoints. deletesmartthing,ConfigAuth.getprotocolId())
 			.then().statusCode(400).log().all();
 
@@ -443,23 +455,17 @@ public void regeneratekey() throws FileNotFoundException, IOException {
 }
 
 //--------------------------------------------------------------------------------------------------------------------------//
-@Test 
-public void testResendkeycode() throws FileNotFoundException, IOException {
-	Response response = given().headers("Authorization","bearer "+ConfigAuth.getToken(), "accept" ,"application/json").log().all()
-	.get(Endpoints.resendkeycode, ConfigAuth.getkeyId()).andReturn();
-	ResponseBody body = response.getBody();
-	logger.info("Status code is: " + response.getStatusCode());
-	Reporting.getTest().log(LogStatus.INFO,"Status code is: " + response.getStatusCode());
-	logger.info("Response time is: " + response.getTime());
-	Reporting.getTest().log(LogStatus.INFO,"Response time is: " + response.getTime());
-	logger.info("Response body is: " + body.asPrettyString());
-	Reporting.getTest().log(LogStatus.INFO,"Response body is: " + body.asPrettyString());
-	logger.info("Status line is: " + response.getStatusLine());
-	Reporting.getTest().log(LogStatus.INFO,"Status line is: " + response.getStatusLine());
-	logger.info("Content type is: " + response.getHeader("content-type"));
-	Reporting.getTest().log(LogStatus.INFO,"Content type is: " + response.getHeader("content-type"));
-	assertEquals(response.getStatusCode(), 400);
-}
+
+@SuppressWarnings("rawtypes")
+//---------------------------------------------------------------------------new & works
+@Test
+public void testResendKeycode() throws FileNotFoundException, IOException {
+		given().header("Authorization", "bearer " + ConfigAuth.getToken(), "accept", "application/json")
+				.contentType(ContentType.JSON).body(request.toJSONString()).when().post(Endpoints.resendkeycode,ConfigAuth.getkeyId1()).then()
+				.statusCode(202).log().all();
+		 
+
+	}
 //----------------------------------------------------------------------------------------------------------------------------//
 @Test 
 
