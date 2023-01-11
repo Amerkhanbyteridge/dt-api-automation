@@ -90,6 +90,8 @@ public class Auth_Frontdesk extends Baseclass {
 			request.put("phoneNumberCountryCode", ConfigAuth.getphoneNumberCountryCode());
 			//request.put("userId", ConfigAuth.getuserId());
 			//request.put("staffId", ConfigAuth.getstaffId());
+			request.put("groupId", ConfigAuth.getgroupId());
+			
 
 		System.out.println(request.toJSONString());
 		baseURI = Endpoints.baseURI;

@@ -691,6 +691,15 @@ public class ConfigAuth {
 	}
 
 
+	public static String getgroupId() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String groupId = prop.getProperty("groupId");
+		return groupId;
+	}
 
 	
 

@@ -92,14 +92,17 @@ import io.restassured.http.ContentType;
 			request.put("keyID", ConfigAuth.getkeyId());
 			request.put("keyID1", ConfigAuth.getkeyId1());
 			request.put("phoneNumberCountryCode", ConfigAuth.getphoneNumberCountryCode());
-		
+			request.put("groupId", ConfigAuth.getgroupId());
+			
+	
 			
 			System.out.println(request.toJSONString());
 			baseURI = Endpoints.baseURI;
 		}
 	  
 	  @Test 
-	  //works-----28/12
+	  //groupid---9/1/23 new changes
+		//all groupid & invite method for all roles to be updated
 	  public void testInviteUser() throws FileNotFoundException, IOException
 	  { 
 		  given().header("Authorization", "bearer " + ConfigAuth.getToken(), "accept",
@@ -223,10 +226,12 @@ import io.restassured.http.ContentType;
 	  @Test
 	  //works
 	  public void testUpdateSelfDetails() throws FileNotFoundException, IOException
-	  { given().headers("accept", "application/json", "Authorization", "bearer " +
+	  { 
+		  given().headers("accept", "application/json", "Authorization", "bearer " +
 	  ConfigAuth.getToken()) .contentType(ContentType.JSON).log().all()
 	  .body(request.toJSONString()).when().put(Endpoints.updateuserdetails,ConfigAuth.
-	  getemail1()).then().statusCode(200).log().all(); }
+	  getemailID()).then().statusCode(200).log().all(); 
+		  }
 	  //---------------------------------------------------------------------------
 //works
 	  @Test public void testCreateProperty() throws FileNotFoundException,  IOException 
@@ -265,22 +270,26 @@ import io.restassured.http.ContentType;
 	  
 	  @Test
 	  
-	  public void testUpdateProperty() throws FileNotFoundException, IOException {
+	  public void testUpdateProperty() throws FileNotFoundException, IOException 
+	  {
 	  given().headers("accept", "application/json", "Authorization", "bearer " +
 	  ConfigAuth.getToken()) .contentType(ContentType.JSON).log().all()
 	  .body(request.toJSONString()).when().put(Endpoints.updateproperty
-	  ,ConfigAuth.getpropertyID()).then().statusCode(200).log().all(); }
-	  //---------------------------------------------------------------------------
-	  
-	  @Test public void testDeleteProperty() throws FileNotFoundException,
-	  IOException { given().headers("accept", "application/json", "authorization",
-	  "bearer " +ConfigAuth.getToken())
-	  .contentType(ContentType.JSON).log().all().when().delete(Endpoints.
-	  deleteproperty, ConfigAuth.getpropertyID()) .then().statusCode(403).log().all();
+	  ,ConfigAuth.getpropertyID()).then().statusCode(200).log().all(); 
 	  }
 	  //---------------------------------------------------------------------------
 	  
-	  @Test public void testAddZone() throws FileNotFoundException, IOException {
+	  @Test public void testDeleteProperty() throws FileNotFoundException, IOException
+	  {
+		  given().headers("accept", "application/json", "authorization",
+	  "bearer " +ConfigAuth.getToken())
+	  .contentType(ContentType.JSON).log().all().when().delete(Endpoints.
+	  deleteproperty, ConfigAuth.getpropertyID1()) .then().statusCode(403).log().all();
+	  }
+	  //---------------------------------------------------------------------------
+	  
+	  @Test 
+	  public void testAddZone() throws FileNotFoundException, IOException {
 	  
 	  given().header("Authorization", "bearer " + ConfigAuth.getToken(), "accept",
 	  "application/json")
@@ -321,12 +330,6 @@ import io.restassured.http.ContentType;
 	  }
 	  
 	  
-	  public void testPUT001() throws FileNotFoundException, IOException {
-			given().headers("accept", "application/json", "Authorization", "bearer " + Config.getToken())
-					.contentType(ContentType.JSON).log().all()
-					.body(request.toJSONString()).when().put(Endpoints.updatezone , Config.getzoneID()).then().statusCode(200).log().all();
-			
-		}
 	  //---------------------------------------------------------------------------
 	  
 	  @Test public void testDeleteZone() throws FileNotFoundException, IOException
@@ -339,8 +342,10 @@ import io.restassured.http.ContentType;
 	  //---------------------------------------------------------------------------
 	  
 	  //works...27/12
-	  @Test public void testAddSmartthingAccount() throws FileNotFoundException,
-	  IOException { given().header("Authorization", "bearer " + ConfigAuth.getToken(),
+	  @Test 
+	  public void testAddSmartthingAccount() throws FileNotFoundException,IOException 
+	  {
+		  given().header("Authorization", "bearer " + ConfigAuth.getToken(),
 	  "accept", "application/json")
 	  .contentType(ContentType.JSON).body(request.toJSONString()).when().post(
 	  Endpoints.addsmartthingaccount).then() .statusCode(201).log().all(); 
@@ -352,7 +357,9 @@ import io.restassured.http.ContentType;
 	  
 	  
 	  public void testViewSmartthingDetails() throws FileNotFoundException,
-	  IOException { Response response =
+	  IOException 
+	  { 
+		  Response response =
 	  given().headers("Authorization","bearer "+ConfigAuth.getToken(), "accept"
 	  ,"application/json").log().all() .get(Endpoints.getsmartthingaccountdeails,
 	  ConfigAuth.getpropertyID()).andReturn();

@@ -494,6 +494,17 @@ public class Config {
 		String phoneNumberCountryCode = prop.getProperty("phoneNumberCountryCode");
 		return phoneNumberCountryCode;
 	}
+
+	public static String getgroupId() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\Config.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String groupId = prop.getProperty("groupId");
+		return groupId;
+	}
+
 	
 	
 //>>>>>>> 01779337959a101ea50d1eba4f3ab2fc233e8fb3
