@@ -161,6 +161,8 @@ public class Endpoints {
 	public static final String deletestaffkey= "/api/keyrequest/{keyId}";
 	public static final String resendstaffkeycode="/api/keyrequest/{keyId}/resend";
 	
+	public static final String viewmykeydetails= "/api/keyrequest/{propertyId}/my-key";
+	
 
 	public static final String renamedevice = "/api/devices/{deviceId}";
 	// *********UserRole*****************//
@@ -177,6 +179,13 @@ public class Endpoints {
 	public static final String renamecollection = "/api/collection/{collectionId}";
 	public static final String addDevicesandzonestoacollection = "/api/collection/updatezonesordevices/{collectionId}";
 
+	
+	// *************MASTER CODES ********************//
+	public static final String generateMasterCode = "/api/mastercode";
+	public static final String regenerateMasterCode = "/api/mastercode/{masterCodeId}/regenerate";
+	public static final String viewMasterCode = "/api/mastercode/{propertyId}/all";
+	public static final String deletemasterCode= "/api/mastercode";
+	
 //>>>>>>> 01779337959a101ea50d1eba4f3ab2fc233e8fb3
 }
 

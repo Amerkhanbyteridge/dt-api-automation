@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-29T16:34:12 IST" name="Default suite" finished-at="2022-12-29T16:34:18 IST" duration-ms="5354">
+  <suite started-at="2023-02-23T10:40:11 IST" name="Default suite" finished-at="2023-02-23T10:40:17 IST" duration-ms="5862">
     <groups>
     </groups>
-    <test started-at="2022-12-29T16:34:12 IST" name="Default test" finished-at="2022-12-29T16:34:18 IST" duration-ms="5354">
+    <test started-at="2023-02-23T10:40:11 IST" name="Default test" finished-at="2023-02-23T10:40:17 IST" duration-ms="5862">
       <class name="com.dt.api.Auth.Auth_Session">
-        <test-method is-config="true" signature="init()[pri:0, instance:com.dt.api.Auth.Auth_Session@635eaaf1]" started-at="2022-12-29T16:34:12 IST" name="init" finished-at="2022-12-29T16:34:13 IST" duration-ms="859" status="PASS">
+        <test-method is-config="true" signature="init()[pri:0, instance:com.dt.api.Auth.Auth_Session@635eaaf1]" started-at="2023-02-23T10:40:11 IST" name="init" finished-at="2023-02-23T10:40:12 IST" duration-ms="1125" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method signature="testPost()[pri:0, instance:com.dt.api.Auth.Auth_Session@635eaaf1]" started-at="2022-12-29T16:34:13 IST" name="testPost" finished-at="2022-12-29T16:34:18 IST" duration-ms="4437" status="PASS">
+        <test-method signature="testPost()[pri:0, instance:com.dt.api.Auth.Auth_Session@635eaaf1]" started-at="2023-02-23T10:40:12 IST" name="testPost" finished-at="2023-02-23T10:40:17 IST" duration-ms="4668" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testPost -->

@@ -487,14 +487,24 @@ public class ConfigAuth {
 		String types = prop.getProperty("types");
 		return types;
 	}
+	public static String getcollectionId() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String collectionId = prop.getProperty("collectionId");
+		return collectionId;
+	}
+	
 	public static String getcollectionIds() throws FileNotFoundException, IOException {
 
 		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
 
 		Properties prop = new Properties();
 		prop.load(new FileInputStream(propertyFilePath));
-		String collectionIds = prop.getProperty("collectionIds");
-		return collectionIds;
+		String collectionId = prop.getProperty("collectionIds");
+		return collectionId;
 	}
 	public static String getrequestKeyName() throws FileNotFoundException, IOException {
 
@@ -701,12 +711,30 @@ public class ConfigAuth {
 		return groupId;
 	}
 
+	public static String getmasterCodeId() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String masterCodeId = prop.getProperty("masterCodeId");
+		return masterCodeId;
+	}
+	public static String getdtproperty() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String dtpropertyId = prop.getProperty("dt-property-id");
+		return dtpropertyId;
+	}
 	
 
 
 
 
-
+	
 	
 
 	

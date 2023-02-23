@@ -77,7 +77,7 @@ import io.restassured.http.ContentType;
 			 request.put("protocolId", ConfigAuth.getprotocolId());
 			request.put("moveToZoneId", ConfigAuth.getmoveToZoneId());
 			request.put("type", ConfigAuth.gettype());
-			request.put("collectionIds", ConfigAuth.getcollectionIds());
+			request.put("collectionId", ConfigAuth.getcollectionId());
 			request.put("phone", ConfigAuth.getphone());
 			request.put("phoneNumber", ConfigAuth.getphonenumber());
 			request.put("requestKeyName", ConfigAuth.getrequestKeyName());
@@ -93,8 +93,8 @@ import io.restassured.http.ContentType;
 			request.put("keyID1", ConfigAuth.getkeyId1());
 			request.put("phoneNumberCountryCode", ConfigAuth.getphoneNumberCountryCode());
 			request.put("groupId", ConfigAuth.getgroupId());
-			
-	
+			request.put("masterCodeId", ConfigAuth.getmasterCodeId());
+			request.put("dt-property-id", ConfigAuth.getdtproperty());
 			
 			System.out.println(request.toJSONString());
 			baseURI = Endpoints.baseURI;
@@ -645,7 +645,54 @@ import io.restassured.http.ContentType;
 	  deletestaffkey,ConfigAuth.getkeyId()) .then().statusCode(200).log().all();
 	  
 	  }   */
+	  //---------------mastercodesflow----------------------------//
 	  
+	  @Test
+	  public void testGenerateMasterCodes() throws FileNotFoundException, IOException {
+
+	  	given().header("Authorization", "bearer " + ConfigAuth.getToken(), "accept", "application/json")
+	  			.contentType(ContentType.JSON).body(request.toJSONString()).when()
+	  			.post(Endpoints.generateMasterCode).then().statusCode(201).log().all();
+	  	}	  
+ 
+    @Test	  
+	  public void testRegenerateMasterCode() throws FileNotFoundException, IOException
+    {
+	  given().headers("accept", "application/json", "Authorization", "bearer " +
+	  ConfigAuth.getToken()) .contentType(ContentType.JSON).log().all()
+	  .body(request.toJSONString())
+	  .when().put(Endpoints.regenerateMasterCode,ConfigAuth.getmasterCodeId()).then().statusCode(200); 
+		  
+ }
+    @Test 
+    public void viewMasterCode() throws FileNotFoundException, IOException {
+    	Response response = given().headers("Authorization","bearer "+ConfigAuth.getToken(), "accept" ,"application/json").log().all()
+    	.get(Endpoints.viewMasterCode,ConfigAuth.getpropertyID()).andReturn();
+    	ResponseBody body = response.getBody();
+    	logger.info("Status code is: " + response.getStatusCode());
+    	Reporting.getTest().log(LogStatus.INFO,"Status code is: " + response.getStatusCode());
+    	logger.info("Response time is: " + response.getTime());
+    	Reporting.getTest().log(LogStatus.INFO,"Response time is: " + response.getTime());
+    	logger.info("Response body is: " + body.asPrettyString());
+    	Reporting.getTest().log(LogStatus.INFO,"Response body is: " + body.asPrettyString());
+    	logger.info("Status line is: " + response.getStatusLine());
+    	Reporting.getTest().log(LogStatus.INFO,"Status line is: " + response.getStatusLine());
+    	logger.info("Content type is: " + response.getHeader("content-type"));
+    	Reporting.getTest().log(LogStatus.INFO,"Content type is: " + response.getHeader("content-type"));
+    	assertEquals(response.getStatusCode(), 200);
+    }
+    @Test 
+    public void testDeleteMastercode() throws FileNotFoundException, IOException 
+    {
+    	given().headers("accept", "application/json", "authorization", "bearer " + ConfigAuth.getToken())
+    			.contentType(ContentType.JSON).log().all().when()
+    			.delete(Endpoints.deletemasterCode,ConfigAuth.getmasterCodeId()).then().statusCode(200).log().all();
+
+    }
+    
+	  
+	
 	  }
 	  
+	
 	 

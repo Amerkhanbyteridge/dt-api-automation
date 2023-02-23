@@ -6,8 +6,8 @@
       <class name="com.dt.api.Auth.Auth_PropertyManager">
         <methods>
           <include name="afterMethod"/>
+          <include name="testDeleteMastercode"/>
           <include name="beforeMethod"/>
-          <include name="testResendKeycode"/>
           <include name="init"/>
         </methods>
       </class> <!-- com.dt.api.Auth.Auth_PropertyManager -->

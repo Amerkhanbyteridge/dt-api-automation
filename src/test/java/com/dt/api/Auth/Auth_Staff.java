@@ -21,9 +21,10 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 
-public class Auth_PropertyEngineer extends Baseclass {
+public class Auth_Staff extends Baseclass{
 
-
+	
+	
 	private static final int priority = 0;
 	JSONObject request = new JSONObject();
 	  
@@ -74,7 +75,7 @@ public class Auth_PropertyEngineer extends Baseclass {
 			 request.put("protocolId", ConfigAuth.getprotocolId());
 			request.put("moveToZoneId", ConfigAuth.getmoveToZoneId());
 			request.put("type", ConfigAuth.gettype());
-			request.put("collectionIds", ConfigAuth.getcollectionIds());
+			request.put("collectionId", ConfigAuth.getcollectionIds());
 			request.put("phone", ConfigAuth.getphone());
 			request.put("phoneNumber", ConfigAuth.getphonenumber());
 			request.put("requestKeyName", ConfigAuth.getrequestKeyName());
@@ -98,7 +99,7 @@ public class Auth_PropertyEngineer extends Baseclass {
 		}
 	                                                //Invite user//
 	@Test
-	public void testInvite_asPE() throws FileNotFoundException, IOException {
+	public void testInvite_asPV() throws FileNotFoundException, IOException {
 		given().
 		header("Authorization", "bearer " + ConfigAuth.getToken(), "accept", "application/json")
 		.contentType(ContentType.JSON).body(request.toJSONString()).when().post(Endpoints.inviteuser)
@@ -149,7 +150,7 @@ public class Auth_PropertyEngineer extends Baseclass {
 			Reporting.getTest().log(LogStatus.INFO,"Status line is: " + response.getStatusLine());
 			logger.info("Content type is: " + response.getHeader("content-type"));
 			Reporting.getTest().log(LogStatus.INFO,"Content type is: " + response.getHeader("content-type"));
-			assertEquals(response.getStatusCode(), 200);
+			assertEquals(response.getStatusCode(), 403);
 		}
 	
 	
@@ -160,8 +161,8 @@ public class Auth_PropertyEngineer extends Baseclass {
 			given().headers("accept", "application/json", "authorization", "bearer " +
 		  ConfigAuth.getToken()) .contentType(ContentType.JSON).log().all()
 			.when()
-		  .delete(Endpoints.deleteuser, ConfigAuth.getemailID1(), ConfigAuth.getpropertyID())
-		  .then().statusCode(200).log().all();
+		  .delete(Endpoints.deleteuser, ConfigAuth.getemailID(), ConfigAuth.getpropertyID())
+		  .then().statusCode(403).log().all();
 		  
 		  }
 
@@ -172,7 +173,7 @@ public class Auth_PropertyEngineer extends Baseclass {
 		
 		@SuppressWarnings("rawtypes")
 		@Test
-		public void testGET_SelfDetails_PE() throws FileNotFoundException, IOException {
+		public void testGET_SelfDetails_PV() throws FileNotFoundException, IOException {
 			Response response = given()
 					.headers("Authorization", "bearer " + ConfigAuth.getToken(), "accept", "application/json").log().all()
 					.get(Endpoints.userdetails, ConfigAuth.getemailID()).andReturn();
@@ -204,7 +205,7 @@ public class Auth_PropertyEngineer extends Baseclass {
 	  
 	  @Test
 	  	  
-	  public void testUpdateUD_PE() throws FileNotFoundException, IOException {
+	  public void testUpdateUD_PV() throws FileNotFoundException, IOException {
 	  given().headers("accept", "application/json", "Authorization", "bearer " +
 	  ConfigAuth.getToken())
 	  .contentType(ContentType.JSON).log().all().pathParam("email",
@@ -215,7 +216,7 @@ public class Auth_PropertyEngineer extends Baseclass {
 	
 	@Test
 	
-	  public void UpdateUserRole_PE() throws FileNotFoundException, IOException
+	  public void UpdateUserRole_PV() throws FileNotFoundException, IOException
 	  {
 	  
 	  given().headers("accept", "application/json", "Authorization", "bearer " +
@@ -223,7 +224,7 @@ public class Auth_PropertyEngineer extends Baseclass {
 	  .body(request.toJSONString())
 	  .when().put(Endpoints.updateuserrole,ConfigAuth.
 	  getpropertyID())
-	  .then().statusCode(200);
+	  .then().statusCode(403);
 	  } 
 	
 	
@@ -276,7 +277,7 @@ public void testCreateProperty() throws FileNotFoundException, IOException {
 
 		given().header("Authorization", "bearer " + ConfigAuth.getToken(), "accept", "application/json")
 				.contentType(ContentType.JSON).body(request.toJSONString()).when()
-				.post(Endpoints.addzone).then().statusCode(201).log().all();
+				.post(Endpoints.addzone).then().statusCode(403).log().all();
 
 	}
 //--------------------------------------------------------------------------------------------------//
@@ -297,7 +298,7 @@ public void testCreateProperty() throws FileNotFoundException, IOException {
 		Reporting.getTest().log(LogStatus.INFO,"Status line is: " + response.getStatusLine());
 		logger.info("Content type is: " + response.getHeader("content-type"));
 		Reporting.getTest().log(LogStatus.INFO,"Content type is: " + response.getHeader("content-type"));
-		assertEquals(response.getStatusCode(), 200);
+		assertEquals(response.getStatusCode(), 403);
 	}
 	//-----------------------------------------------------------------------------------------//
 	@Test
@@ -305,7 +306,7 @@ public void testCreateProperty() throws FileNotFoundException, IOException {
 	public void testUpdateZone() throws FileNotFoundException, IOException {
 		given().headers("accept", "application/json", "Authorization", "bearer " + ConfigAuth.getToken())
 				.contentType(ContentType.JSON).log().all()
-				.body(request.toJSONString()).when().put(Endpoints.updatezone , ConfigAuth.getzoneID()).then().statusCode(200).log().all();
+				.body(request.toJSONString()).when().put(Endpoints.updatezone , ConfigAuth.getzoneID()).then().statusCode(403).log().all();
 	}
 	//----------------------------------------------------------------------------------------------//
 	
@@ -313,7 +314,7 @@ public void testCreateProperty() throws FileNotFoundException, IOException {
 	public void testDeleteZone() throws FileNotFoundException, IOException  {
 		given().headers("accept", "application/json", "authorization", "bearer " +ConfigAuth.getToken())
 				.contentType(ContentType.JSON).log().all().when().delete(Endpoints.deletezone,ConfigAuth.getzoneID())
-				.then().statusCode(200).log().all();
+				.then().statusCode(403).log().all();
 	}
 	//-----------------------------------------------------------------------------------------//
 	@Test 
@@ -321,7 +322,7 @@ public void testCreateProperty() throws FileNotFoundException, IOException {
 
 		given().header("Authorization", "bearer " + ConfigAuth.getToken(), "accept", "application/json")
 				.contentType(ContentType.JSON).body(request.toJSONString()).when()
-				.post(Endpoints.Adddevicestozone).then().statusCode(200).log().all();
+				.post(Endpoints.Adddevicestozone).then().statusCode(403).log().all();
 		
 	}
 		//----------------------------------------------------------------------------------------------//  
@@ -340,7 +341,7 @@ public void testCreateProperty() throws FileNotFoundException, IOException {
 		Reporting.getTest().log(LogStatus.INFO,"Status line is: " + response.getStatusLine());
 		logger.info("Content type is: " + response.getHeader("content-type"));
 		Reporting.getTest().log(LogStatus.INFO,"Content type is: " + response.getHeader("content-type"));
-		assertEquals(response.getStatusCode(), 200);
+		assertEquals(response.getStatusCode(), 403);
 	}
 	//-----------------------------------------------------------------------------------------//
 	
@@ -349,7 +350,7 @@ public void testCreateProperty() throws FileNotFoundException, IOException {
 		public void testUpdateDevices() throws FileNotFoundException, IOException {
 			given().headers("accept", "application/json", "Authorization", "bearer " + ConfigAuth.getToken())
 					.contentType(ContentType.JSON).log().all()
-					.body(request.toJSONString()).when().put(Endpoints.updatedeviceename , ConfigAuth.getdeviceID()).then().statusCode(200).log().all();
+					.body(request.toJSONString()).when().put(Endpoints.updatedeviceename , ConfigAuth.getdeviceID()).then().statusCode(403).log().all();
 		}
 		//-----------------------------------------------------------------------------------------//
 	@Test 
@@ -357,7 +358,7 @@ public void testCreateProperty() throws FileNotFoundException, IOException {
 		given().headers("accept", "application/json", "authorization", "bearer " + ConfigAuth.getToken())
 				.contentType(ContentType.JSON).log().all().when()
 				.delete(Endpoints.deletedevicesforzone) 
-				.then().statusCode(200).log().all();
+				.then().statusCode(403).log().all();
 
 	}
 	//-----------------------------------------------------------------------------------------//   
@@ -365,7 +366,7 @@ public void testCreateProperty() throws FileNotFoundException, IOException {
 	public void testAddSmartthingAccount() throws FileNotFoundException, IOException {
 		given().header("Authorization", "bearer " + ConfigAuth.getToken(), "accept", "application/json")
 				.contentType(ContentType.JSON).body(request.toJSONString()).when().post(Endpoints.addsmartthingaccount).then()
-				.statusCode(200).log().all();
+				.statusCode(403).log().all();
 	}
 	//-------------------------------------------------------------------------------------------//
 
@@ -387,7 +388,7 @@ public void testCreateProperty() throws FileNotFoundException, IOException {
 		Reporting.getTest().log(LogStatus.INFO,"Status line is: " + response.getStatusLine());
 		logger.info("Content type is: " + response.getHeader("content-type"));
 		Reporting.getTest().log(LogStatus.INFO,"Content type is: " + response.getHeader("content-type"));
-		assertEquals(response.getStatusCode(), 200);
+		assertEquals(response.getStatusCode(), 403);
 	}
 
 //--------------------------------------------------------------------------------------------------------//
@@ -397,7 +398,7 @@ public void testCreateProperty() throws FileNotFoundException, IOException {
 public void testUpdatePAT() throws FileNotFoundException, IOException {
 	given().headers("accept", "application/json", "Authorization", "bearer " + ConfigAuth.getToken())
 			.contentType(ContentType.JSON).log().all()
-			.body(request.toJSONString()).when().put(Endpoints.UpdatePAT ).then().statusCode(200).log().all();
+			.body(request.toJSONString()).when().put(Endpoints.UpdatePAT ).then().statusCode(403).log().all();
 }
 
 //------------------------------------------------------------------------------------------------------------//
@@ -406,7 +407,7 @@ public void testDeleteSmartthing() throws FileNotFoundException, IOException {
 	given().headers("accept", "application/json", "authorization", "bearer " + ConfigAuth.getToken())
 			.contentType(ContentType.JSON).body(request.toJSONString()).log().all().when()
 			.delete(Endpoints. deletesmartthing,ConfigAuth.getprotocolId())
-			.then().statusCode(200).log().all();
+			.then().statusCode(403).log().all();
 
 }
 //----------------------------------------------------------------------------------------------------------// 
@@ -463,11 +464,10 @@ public void regeneratekey() throws FileNotFoundException, IOException {
 public void testResendKeycode() throws FileNotFoundException, IOException {
 		given().header("Authorization", "bearer " + ConfigAuth.getToken(), "accept", "application/json")
 				.contentType(ContentType.JSON).body(request.toJSONString()).when().post(Endpoints.resendkeycode,ConfigAuth.getkeyId1()).then()
-				.statusCode(202).log().all();
+				.statusCode(403).log().all();
 		 
 
 	}
-
 //----------------------------------------------------------------------------------------------------------------------------//
 @Test 
 
@@ -482,7 +482,7 @@ public void testCreateStaffKey() throws FileNotFoundException, IOException {
 
 	given().header("Authorization", "bearer " + ConfigAuth.getToken(), "accept", "application/json")
 			.contentType(ContentType.JSON).body(request.toJSONString()).when()
-			.post(Endpoints.createStaffkey).then().statusCode(201).log().all();
+			.post(Endpoints.createStaffkey).then().statusCode(403).log().all();
 	}
 //----------------------------------------------------------------------------------------------------//
 @Test 
@@ -500,9 +500,29 @@ public void viewStaffKey() throws FileNotFoundException, IOException {
 	Reporting.getTest().log(LogStatus.INFO,"Status line is: " + response.getStatusLine());
 	logger.info("Content type is: " + response.getHeader("content-type"));
 	Reporting.getTest().log(LogStatus.INFO,"Content type is: " + response.getHeader("content-type"));
-	assertEquals(response.getStatusCode(), 200);
+	assertEquals(response.getStatusCode(), 403);
 }
 //---------------------------------------------------------------------------------------------------------------//
+@SuppressWarnings("rawtypes")
+@Test 
+public void viewMyKey() throws FileNotFoundException, IOException {
+	Response response = given().headers("Authorization","bearer "+ConfigAuth.getToken(), "accept" ,"application/json").log().all()
+	.get(Endpoints.viewmykeydetails,ConfigAuth.getpropertyID()).andReturn();
+	ResponseBody body = response.getBody();
+	logger.info("Status code is: " + response.getStatusCode());
+	Reporting.getTest().log(LogStatus.INFO,"Status code is: " + response.getStatusCode());
+	logger.info("Response time is: " + response.getTime());
+	Reporting.getTest().log(LogStatus.INFO,"Response time is: " + response.getTime());
+	logger.info("Response body is: " + body.asPrettyString());
+	Reporting.getTest().log(LogStatus.INFO,"Response body is: " + body.asPrettyString());
+	logger.info("Status line is: " + response.getStatusLine());
+	Reporting.getTest().log(LogStatus.INFO,"Status line is: " + response.getStatusLine());
+	logger.info("Content type is: " + response.getHeader("content-type"));
+	Reporting.getTest().log(LogStatus.INFO,"Content type is: " + response.getHeader("content-type"));
+	assertEquals(response.getStatusCode(), 200);
+}
+
+
 @Test 
 public void testResendStaffkeycode() throws FileNotFoundException, IOException {
 	Response response = given().headers("Authorization","bearer "+ConfigAuth.getToken(), "accept" ,"application/json").log().all()
@@ -518,7 +538,7 @@ public void testResendStaffkeycode() throws FileNotFoundException, IOException {
 	Reporting.getTest().log(LogStatus.INFO,"Status line is: " + response.getStatusLine());
 	logger.info("Content type is: " + response.getHeader("content-type"));
 	Reporting.getTest().log(LogStatus.INFO,"Content type is: " + response.getHeader("content-type"));
-	assertEquals(response.getStatusCode(), 200);
+	assertEquals(response.getStatusCode(), 403);
 }
 //------------------------------------------------------------------------------------------------------------------//
 @Test 
@@ -526,9 +546,9 @@ public void testDeleteStaffKey() throws FileNotFoundException, IOException {
 	given().headers("accept", "application/json", "authorization", "bearer " + ConfigAuth.getToken())
 			.contentType(ContentType.JSON).log().all().when()
 			.delete(Endpoints. deletestaffkey,ConfigAuth.getkeyId())
-		.then().statusCode(200).log().all();
+		.then().statusCode(403).log().all();
 
-}  
+}
 //---------------mastercodesflow----------------------------//
 
 @Test
@@ -570,14 +590,9 @@ public void testDeleteMastercode() throws FileNotFoundException, IOException
 {
 	given().headers("accept", "application/json", "authorization", "bearer " + ConfigAuth.getToken())
 			.contentType(ContentType.JSON).log().all().when()
-			.delete(Endpoints.deletemasterCode,ConfigAuth.getmasterCodeId()).then().statusCode(200).log().all();
+			.delete(Endpoints.deletemasterCode).then().statusCode(403).log().all();
 
 }
-
-
 }
-
-
-
 
 
