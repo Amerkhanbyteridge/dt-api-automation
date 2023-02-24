@@ -37,6 +37,9 @@ public class testPOST_Invitation extends Baseclass {
 		request.put("lastName", Config.getlastname());
 		request.put("propertyId", Config.getpropertyID());
 		request.put("roleId", Config.getroleID());
+		
+		request.put("groupId", Config.getgroupId());
+		
 		System.out.println(request.toJSONString());
 		baseURI = Endpoints.baseURI;
 	}
@@ -44,7 +47,7 @@ public class testPOST_Invitation extends Baseclass {
 	public void testPost() throws FileNotFoundException, IOException {
 		 given().header("Authorization", "Bearer " + Config.getToken())
 				.header("Content-Type", "application/json").body(request.toJSONString()).when().post(Endpoints.inviteuser).then()
-				.statusCode(403).log().all();
+				.statusCode(200).log().all();
 
 
 	}

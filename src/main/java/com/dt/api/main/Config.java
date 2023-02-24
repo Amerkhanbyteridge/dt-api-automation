@@ -475,6 +475,37 @@ public class Config {
 		String endTime = prop.getProperty("endTime");
 		return endTime;
 	}
+	public static String gettimezone() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String timezone = prop.getProperty("timezone");
+		return timezone;
+	}
+
+	public static String getphoneNumberCountryCode() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String phoneNumberCountryCode = prop.getProperty("phoneNumberCountryCode");
+		return phoneNumberCountryCode;
+	}
+
+	public static String getgroupId() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\Config.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String groupId = prop.getProperty("groupId");
+		return groupId;
+	}
+
+	
 	
 //>>>>>>> 01779337959a101ea50d1eba4f3ab2fc233e8fb3
 }

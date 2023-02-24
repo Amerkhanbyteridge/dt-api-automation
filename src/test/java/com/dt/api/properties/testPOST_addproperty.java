@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 
 import com.dt.api.baseclass.Baseclass;
 import com.dt.api.main.Config;
+import com.dt.api.main.ConfigAuth;
 import com.dt.api.main.Endpoints;
 
 import io.restassured.http.ContentType;
@@ -34,6 +35,8 @@ public class testPOST_addproperty extends Baseclass {
 		request.put("zipCode", Config.getzipCode());
 		request.put("latitude", "");
 		request.put("longitude", "");
+		request.put("timezone", Config.gettimezone());
+		
 		logger.info(request.toJSONString());	
 	}
 	
