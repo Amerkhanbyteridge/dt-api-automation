@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\dell\Downloads\qa-automation-main"/>
+			<item value="C:\Users\dell\OneDrive - Byteridge Software Private Limited\Documents\New folder"/>
 			<item value="C:\Users\dell\dt-api-automation"/>
 		</list>
 		<list key="projectNameTemplate">

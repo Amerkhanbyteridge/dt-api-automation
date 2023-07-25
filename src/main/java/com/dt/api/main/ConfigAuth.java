@@ -27,6 +27,8 @@ public class ConfigAuth {
 		System.out.println("value--" + value);
 
 	}
+	
+	
 
 
 	
@@ -94,6 +96,18 @@ public class ConfigAuth {
 		String email = prop.getProperty("email");
 		return email;
 	}
+	public static String getCode() throws FileNotFoundException, IOException {
+
+		String propertyFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\ConfigAuth.properties";
+
+		Properties prop = new Properties();
+		prop.load(new FileInputStream(propertyFilePath));
+		String Code = prop.getProperty("code");
+		return Code;
+	}
+	
+	
+	
 	
 	public static String getemail1() throws FileNotFoundException, IOException {
 

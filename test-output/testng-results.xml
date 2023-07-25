@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-02-23T10:40:11 IST" name="Default suite" finished-at="2023-02-23T10:40:17 IST" duration-ms="5862">
+  <suite started-at="2023-07-25T15:22:43 IST" name="Default suite" finished-at="2023-07-25T15:22:51 IST" duration-ms="7847">
     <groups>
     </groups>
-    <test started-at="2023-02-23T10:40:11 IST" name="Default test" finished-at="2023-02-23T10:40:17 IST" duration-ms="5862">
-      <class name="com.dt.api.Auth.Auth_Session">
-        <test-method is-config="true" signature="init()[pri:0, instance:com.dt.api.Auth.Auth_Session@635eaaf1]" started-at="2023-02-23T10:40:11 IST" name="init" finished-at="2023-02-23T10:40:12 IST" duration-ms="1125" status="PASS">
+    <test started-at="2023-07-25T15:22:43 IST" name="Default test" finished-at="2023-07-25T15:22:51 IST" duration-ms="7847">
+      <class name="com.dt.api.Auth.AuthenticationDemo">
+        <test-method is-config="true" signature="init()[pri:0, instance:com.dt.api.Auth.AuthenticationDemo@635eaaf1]" started-at="2023-07-25T15:22:43 IST" name="init" finished-at="2023-07-25T15:22:44 IST" duration-ms="1341" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method signature="testPost()[pri:0, instance:com.dt.api.Auth.Auth_Session@635eaaf1]" started-at="2023-02-23T10:40:12 IST" name="testPost" finished-at="2023-02-23T10:40:17 IST" duration-ms="4668" status="PASS">
+        <test-method signature="testuserList()[pri:0, instance:com.dt.api.Auth.AuthenticationDemo@635eaaf1]" started-at="2023-07-25T15:22:44 IST" name="testuserList" finished-at="2023-07-25T15:22:51 IST" duration-ms="6464" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testPost -->
-      </class> <!-- com.dt.api.Auth.Auth_Session -->
+        </test-method> <!-- testuserList -->
+      </class> <!-- com.dt.api.Auth.AuthenticationDemo -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
